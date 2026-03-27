@@ -1,3 +1,4 @@
+import Banner from "@/components/home/banner";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="flex justify-center items-center min-h-screen">
-      
+      <Banner/>
     </main>
   );
 }
