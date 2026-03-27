@@ -10,7 +10,6 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./language-switcher";
 
@@ -21,11 +20,7 @@ const navigationItems = [
 ];
 
 export function Navbar() {
-
   const t = useTranslations("navLinks");
-  const tAuth = useTranslations("auth");
-
-  console.log("Intl navigation links: ", t("home"))
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
@@ -56,12 +51,6 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
-          <Button variant="ghost" asChild>
-            <Link href="/auth/login">{tAuth("signIn")}</Link>
-          </Button>
-          <Button asChild>
-            <Link href="/auth/signup">{tAuth("signUp")}</Link>
-          </Button>
         </div>
       </div>
     </header>
