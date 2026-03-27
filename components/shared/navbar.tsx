@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Mail, Phone, X, Menu, Asterisk, ChevronRight } from "lucide-react";
 import CTAButton from "./cta";
+import Link from "next/link";
 
 gsap.registerPlugin(useGSAP);
 
@@ -86,21 +87,23 @@ export default function Navbar() {
     <>
       <nav
         ref={navRef}
-        className="fixed top-0 left-0 w-full z-40 bg-transparent transition-all duration-300 py-6"
+        className="fixed top-1 md:top-5 left-0 w-full z-40 bg-transparent transition-all duration-300 py-6"
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
-          <div className="flex items-center gap-x-16">
-            <div className="flex flex-col leading-none cursor-pointer">
-              <img src="/logo.svg" alt="Fistech Logo" />
-            </div>
+        <div className="container flex items-center justify-between">
+          <div className="flex items-center gap-x-16 pl-3">
+            <Link href="/">
+              <div className="flex flex-col leading-none cursor-pointer">
+                <img src="/logo.svg" alt="Fistech Logo" />
+              </div>
+            </Link>
 
-            <div className="hidden md:flex items-center gap-2 text-gray-700 text-[13px] font-medium uppercase tracking-wider">
+            <div className="hidden md:flex items-center gap-2 text-foreground/60 text-[13px] font-medium uppercase tracking-wider">
               <Asterisk size={14} className="text-black" />
               <span>Based on California, USA.</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 pr-5">
             <CTAButton
               btnText="Let's Talk"
               href="/contact"
@@ -177,7 +180,7 @@ export default function Navbar() {
       {isOpen && (
         <div
           onClick={closeMenu}
-          className="fixed inset-0 z-40 bg-black/10 backdrop-blur-sm transition-opacity"
+          className="fixed inset-0 z-40 bg-foreground/10 backdrop-blur-xs transition-opacity"
         />
       )}
     </>
