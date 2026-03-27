@@ -23,9 +23,9 @@ export default function AppProvider({
   return (
     <>
       <SmoothScrollProvider>
-        {!hideNavAndFooter.includes(pathname) && <Navbar />}
+        {/* {!hideNavAndFooter.includes(pathname) && <Navbar />} */}
         {children}
-        {!hideNavAndFooter.includes(pathname) && <Footer />}
+        {/* {!hideNavAndFooter.includes(pathname) && <Footer />} */}
       </SmoothScrollProvider>
     </>
   );
