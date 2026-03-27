@@ -17,7 +17,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "bn")) {
+  if (!routing.locales.includes(locale as "en" | "de" | "es" | "fr")) {
     notFound();
   }
 
@@ -25,9 +25,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <AppProvider>
-        {children}
-      </AppProvider>
+      <AppProvider>{children}</AppProvider>
     </NextIntlClientProvider>
   );
 }

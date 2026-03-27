@@ -1,11 +1,13 @@
-'use client';
+"use client";
 
-import { useRouter, usePathname } from 'next/navigation';
-import { useLocale } from 'next-intl';
+import { useRouter, usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
 
 const languages = [
-  { code: 'en', label: 'English', flag: '🇺🇸' },
-  { code: 'bn', label: 'বাংলা', flag: '🇧🇩' }
+  { code: "en", label: "English", flag: "🇺🇸" },
+  { code: "de", label: "Deutsch", flag: "🇩🇪" },
+  { code: "es", label: "Español", flag: "🇪🇸" },
+  { code: "fr", label: "Français", flag: "🇫🇷" },
 ];
 
 export default function LanguageSwitcher() {
@@ -22,7 +24,7 @@ export default function LanguageSwitcher() {
     <select
       value={currentLocale}
       onChange={(e) => switchLocale(e.target.value)}
-      className='cursor-pointer'
+      className="cursor-pointer"
     >
       {languages.map((lang) => (
         <option key={lang.code} value={lang.code}>

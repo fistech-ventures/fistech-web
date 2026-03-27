@@ -5,6 +5,7 @@ import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
+import SmoothScrollProvider from "./smooth-scroll.provider";
 
 export default function AppProvider({
   children,
@@ -21,9 +22,11 @@ export default function AppProvider({
 
   return (
     <>
-      {!hideNavAndFooter.includes(pathname) && <Navbar />}
-      {children}
-      {!hideNavAndFooter.includes(pathname) && <Footer />}
+      <SmoothScrollProvider>
+        {!hideNavAndFooter.includes(pathname) && <Navbar />}
+        {children}
+        {!hideNavAndFooter.includes(pathname) && <Footer />}
+      </SmoothScrollProvider>
     </>
   );
 }
