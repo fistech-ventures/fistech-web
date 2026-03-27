@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
 import { usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
 import SmoothScrollProvider from "./smooth-scroll.provider";
+import Navbar from "@/components/shared/navbar";
 
 export default function AppProvider({
   children,

@@ -44,15 +44,14 @@
 
 :root {
   /* Font */
-  --font-poppins: "Poppins", sans-serif;
-  --font-mono: "Geist Mono", monospace;
+  --font-archivo: "Archivo", sans-serif;
 
   /* Colors */
-  --primary: rgb(162, 17, 17);
-  --secondary: 97% 0 0;
-  --accent: 97% 0 0; 
+  --primary: rgb(37, 48, 203);
+  --secondary: 0.8854 0.2139 122.5;
+  --accent: 97% 0 0;
   --muted: 97% 0 0;
-  --destructive: 58% 0.22 27; 
+  --destructive: 58% 0.22 27;
 
   --foreground: oklch(0.145 0 0);
   --background: oklch(1 0 0);
@@ -77,6 +76,30 @@
     @apply bg-background text-foreground;
   }
   .container {
-    @apply mx-auto px-2!;
+    @apply mx-auto max-w-[95vw]!;
+  }
+}
+
+@layer components {
+  .main-headline {
+    @apply text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] rounded-2xl;
+  }
+  .description {
+    @apply text-base md:text-lg lg:text-xl xl:text-2xl;
+  }
+  .section-tag {
+    @apply text-xs md:text-sm lg:text-base font-medium text-center text-foreground relative before:absolute before:-left-3 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:bg-foreground/60 before:rounded-full before:content-[""];
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl xl:text-[49px] text-foreground font-semibold leading-normal;
+  }
+  .item-title {
+    @apply text-xl md:text-2xl lg:text-3xl xl:text-[35px] text-foreground font-semibold leading-normal;
+  }
+  .page-title {
+    @apply text-5xl md:text-7xl lg:text-8xl xl:text-[100px] text-foreground font-medium leading-normal;
+  }
+  .tag {
+    @apply text-xs md:text-sm font-medium text-foreground py-1.5 px-4 rounded-full border border-foreground/40;
   }
 }
