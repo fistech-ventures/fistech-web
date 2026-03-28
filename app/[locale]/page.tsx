@@ -1,4 +1,5 @@
 import Banner from "@/components/home/banner";
+import ProjectHeadline from "@/components/home/project-headline";
 import Whoweare from "@/components/home/whoweare";
 import { Metadata } from "next";
 
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Banner />
       <Whoweare />
+      <ProjectHeadline/>
     </>
   );
 }
