@@ -4,11 +4,16 @@ import { MoveDown } from "lucide-react";
 
 export default function Banner() {
   return (
-    <section className="px-3 md:px-0">
-      <div className="container my-4">
-        <div className="rounded-2xl overflow-hidden">
+    <section className="max-h-[calc(100vh-64px)] flex items-center overflow-hidden my-4">
+      <div
+        className="container rounded-3xl"
+        style={{
+          background: `radial-gradient(circle at 15% 90%, rgba(168, 85, 247, 0.25) 0%, rgba(229, 231, 235, 0) 50%), #F3F4F6`,
+        }}
+      >
+        <div className="rounded-2xl">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-5">
-            <div className="flex-1 px-5 py-10 md:px-10 lg:py-0 text-center lg:text-left order-2 lg:order-1">
+            <div className="w-3/5 px-5 py-10 md:px-40 lg:py-0 text-center lg:text-left order-2 lg:order-1">
               <h1 className="main-headline">
                 Design & Development for Startup.
               </h1>
@@ -21,11 +26,11 @@ export default function Banner() {
               </div>
             </div>
 
-            <div className="flex-1 relative w-full order-1 lg:order-2">
+            <div className="w-2/5 relative order-1 lg:order-2">
               <img
                 src="/images/home/homebanner.png"
                 alt="homebanner"
-                className="rounded-2xl w-full object-cover min-h-75"
+                className="rounded-2xl w-full object-cover min-h-75 max-h-[calc(100vh-64px)]"
               />
 
               <div className="absolute -bottom-10 right-10 lg:top-1/2 lg:-translate-y-1/2 lg:-left-20 lg:bottom-auto lg:right-auto z-10">
