@@ -74,7 +74,7 @@ export default function ProjectHeadline() {
   return (
     <section
       ref={sectionRef}
-      className="py-16 lg:py-32 overflow-hidden select-none border-y border-gray-100 bg-white flex items-center"
+      className="pt-4 lg:pt-6 xl:pt-12 pb-15 overflow-hidden select-none bg-white flex items-center"
     >
       <div className="flex whitespace-nowrap">
         {[...Array(5)].map((_, i) => (
@@ -84,7 +84,7 @@ export default function ProjectHeadline() {
             </h2>
             <StarIcon />
             <h2 className="text-[70px] md:text-[130px] lg:text-[200px] font-black uppercase tracking-tighter text-[#E5E7EB]">
-              2015-2026
+              2023-2026
             </h2>
             <StarIcon />
           </div>
