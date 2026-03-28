@@ -1,129 +1,130 @@
+import React from "react";
+import { Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
-import { Command } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useTranslations } from "next-intl";
 
-export function Footer() {
-  const currentYear = new Date().getFullYear();
-
-  const tFooter = useTranslations("footer");
-
-  const socialLinks = tFooter.raw("social") as Array<{
-    name: string;
-    href: string;
-  }>;
+export default function Footer() {
+  const footerNav = [
+    {
+      title: "Company",
+      links: [
+        { name: "Company", path: "/about" },
+        { name: "Our Work", path: "/work" },
+        { name: "Contact Us", path: "/contact" },
+      ],
+    },
+    {
+      title: "Solutions",
+      links: [
+        { name: "Solutions", path: "/solutions" },
+        { name: "Case Studies", path: "/case-studies" },
+        { name: "FAQ", path: "/faq" },
+      ],
+    },
+  ];
+  const socialLinks = [
+    { Icon: Facebook, path: "https://facebook.com/fistech" },
+    { Icon: Twitter, path: "https://twitter.com/fistech" },
+    { Icon: Linkedin, path: "https://linkedin.com/company/fistech" },
+    { Icon: Youtube, path: "https://youtube.com/fistech" },
+  ];
 
   return (
-    <footer className="border-t bg-background">
-      <div className="container px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          {/* Brand & Newsletter Section */}
-          <div className="lg:col-span-4 flex flex-col gap-6">
-            <Link href="/" className="flex items-center gap-2">
-              <Command className="h-6 w-6 text-primary" />
-              <span className="font-bold text-xl tracking-tight uppercase">
-                {tFooter("brandName")}
-              </span>
-            </Link>
-            <p className="text-sm text-muted-foreground max-w-75">
-              {tFooter("description")}
-            </p>
-            <div className="space-y-3">
-              <h4 className="text-sm font-semibold">
-                {tFooter("newsletter.title")}
-              </h4>
-              <div className="flex max-w-[320px] items-center space-x-2">
-                <Input
-                  type="email"
-                  placeholder={tFooter("newsletter.placeholder")}
-                  className="h-9"
-                />
-                <Button size="sm" type="submit">
-                  {tFooter("newsletter.button")}
-                </Button>
-              </div>
-            </div>
+    <footer className="">
+      <div className="container bg-foreground text-white rounded-xl py-5 md:py-8 lg:py-14 px-6">
+        {/* Top Section: Logo and Top Info */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5 md:mb-8 lg:mb-12">
+          <Link href="/" className="footer-fade">
+            <img
+              src="/logo.svg"
+              alt="Anio Agency"
+              className="h-10 w-auto mb-6 invert"
+            />
+          </Link>
+
+          <div className="footer-fade">
+            <h4 className="text-gray-500 uppercase text-xs font-bold tracking-widest mb-4">
+              Office Location
+            </h4>
+            <address className="not-italic text-lg md:text-xl font-medium leading-snug underline decoration-gray-600 underline-offset-4">
+              308 Crescent Avenue, Level 3, Los <br /> Angeles, CA 90012, USA
+            </address>
           </div>
 
-          {/* Links Sections */}
-          <div className="lg:col-span-8 grid grid-cols-2 gap-8 sm:grid-cols-3">
-            <div className="flex flex-col gap-3">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/70">
-                {tFooter("sections.product")}
-              </h4>
-              {(
-                tFooter.raw("links.product") as Array<{
-                  name: string;
-                  href: string;
-                }>
-              ).map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-            <div className="flex flex-col gap-3">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/70">
-                {tFooter("sections.company")}
-              </h4>
-              {(
-                tFooter.raw("links.company") as Array<{
-                  name: string;
-                  href: string;
-                }>
-              ).map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-            <div className="flex flex-col gap-3">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/70">
-                {tFooter("sections.legal")}
-              </h4>
-              {(
-                tFooter.raw("links.legal") as Array<{
-                  name: string;
-                  href: string;
-                }>
-              ).map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
+          <div className="footer-fade">
+            <h4 className="text-gray-500 uppercase text-xs font-bold tracking-widest mb-4">
+              Contact Info
+            </h4>
+            <div className="flex flex-col gap-2">
+              <Link
+                href="mailto:hello@anioagency.com"
+                className="text-lg md:text-xl font-medium hover:text-gray-400 transition-colors"
+              >
+                info@fistech.org
+              </Link>
+              <Link
+                href="tel:+9902577576980"
+                className="text-lg md:text-xl font-medium hover:text-gray-400 transition-colors"
+              >
+                +99 (0) 257 757 6980
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section: Copyright & Socials */}
-        <div className="mt-12 pt-8 border-t flex flex-col-reverse gap-4 md:flex-row md:items-center md:justify-between">
-          <p className="text-xs text-muted-foreground">
-            {tFooter("copyright", { year: currentYear })}
-          </p>
-          <div className="flex items-center gap-4">
-            {socialLinks.map((link) => (
+        <hr className="border-gray-800 mb-5 md:mb-8 lg:mb-12" />
+
+        {/* Middle Section: CTA and Links */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-5 md:mb-8 lg:mb-12">
+          <div className="lg:col-span-6 footer-fade">
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight max-w-md">
+              Starting a new project or want to collaborate with us?{" "}
               <Link
-                key={link.name}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                href="/contact"
+                className="text-[#D4FF70] underline underline-offset-8 decoration-2 hover:opacity-80 transition-opacity"
               >
-                {link.name}
+                Lets talk
               </Link>
-            ))}
+            </h2>
+
+            {/* Centralized Social Rendering */}
+            <div className="flex gap-4 mt-10">
+              {socialLinks.map((social, i) => (
+                <Link
+                  key={i}
+                  href={social.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-secondary hover:text-black transition-all"
+                >
+                  <social.Icon size={18} />
+                </Link>
+              ))}
+            </div>
           </div>
+
+          {footerNav.map((section) => (
+            <div
+              key={section.title}
+              className="lg:col-span-3 grid grid-cols-1 gap-3 footer-fade self-start"
+            >
+              {section.links.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.path}
+                  className="text-base md:text-lg lg:text-2xl font-medium text-gray-300 hover:text-white transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Section: Giant Text and Scroll Top */}
+        <div className="relative border-t border-gray-800 pt-10 overflow-hidden">
+          <h2 className="text-[10vw] font-black leading-none opacity-20 tracking-tighter uppercase select-none text-center">
+            @{new Date().getFullYear()} FISTECH
+          </h2>
         </div>
       </div>
     </footer>
