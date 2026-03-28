@@ -5,7 +5,7 @@ import { MoveDown } from "lucide-react";
 export default function Banner() {
   return (
     <section className="px-3 md:px-0">
-      <div className="container my-4 md:my-10">
+      <div className="container my-4">
         <div className="rounded-2xl overflow-hidden">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-5">
             <div className="flex-1 px-5 py-10 md:px-10 lg:py-0 text-center lg:text-left order-2 lg:order-1">
