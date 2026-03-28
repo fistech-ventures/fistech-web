@@ -1,30 +1,49 @@
 import React from "react";
 import CTAButton from "../shared/cta";
-import { MoveDown } from "lucide-react";
+import { Facebook, Linkedin, MoveDown, Twitter, Youtube } from "lucide-react";
+import Link from "next/link";
 
 export default function Banner() {
+  const socialLinks = [
+    { Icon: Facebook, path: "https://facebook.com/fistech" },
+    { Icon: Twitter, path: "https://twitter.com/fistech" },
+    { Icon: Linkedin, path: "https://linkedin.com/company/fistech" },
+    { Icon: Youtube, path: "https://youtube.com/fistech" },
+  ];
   return (
-    <section className="lg:max-h-[calc(100vh-64px)] flex items-center overflow-hidden my-4 md:my-8 px-4">
+    <section className="lg:max-h-[calc(100vh-64px)] flex items-center overflow-hidden my-4 px-4">
       <div
         className="container mx-auto rounded-3xl overflow-visible"
         style={{
           background: `radial-gradient(circle at 15% 90%, rgba(168, 85, 247, 0.25) 0%, rgba(229, 231, 235, 0) 50%), #F3F4F6`,
         }}
       >
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-0">
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-0">
           <div className="w-full lg:w-3/5 px-6 py-12 lg:py-20 text-center lg:text-left order-2 lg:order-1">
-            <div className="max-w-2xl">
-            <h1 className="main-headline text-3xl md:text-5xl lg:text-6xl font-bold">
-              Design & Development for Startup.
-            </h1>
-            <p className="description lg:py-8 py-6 text-base md:text-lg">
-              We provide tailored strategies, creative design, and rapid
-              development for startups ready to grow fast.
-            </p>
-
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
-              <CTAButton btnText="Get Your Free Consultation" href="/" />
+            <div className="max-w-xl mx-aut lg:mt-20 mt-0">
+              <h1 className="main-headline text-3xl md:text-5xl lg:text-6xl font-bold">
+                Design & Development for Startup.
+              </h1>
+              <p className="description lg:py-8 py-6 text-base md:text-lg">
+                We provide tailored strategies, creative design, and rapid
+                development for startups ready to grow fast.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
+                <CTAButton btnText="Get Your Free Consultation" href="/" />
+              </div>
+              <div className="flex gap-4 mt-10 lg:justify-start justify-center">
+                {socialLinks.map((social, i) => (
+                  <Link
+                    key={i}
+                    href={social.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full border-2 border-gray-700 flex items-center justify-center hover:bg-secondary hover:text-black transition-all"
+                  >
+                    <social.Icon size={18} />
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -32,7 +51,7 @@ export default function Banner() {
             <img
               src="/images/home/homebanner.png"
               alt="homebanner"
-              className="rounded-2xl w-full object-cover min-h-[250px] lg:max-h-[calc(100vh-100px)]"
+              className="rounded-2xl w-full object-cover min-h-62.5 h-full"
             />
 
             <div className="absolute -bottom-8 right-8 lg:bottom-auto lg:right-auto lg:top-1/2 lg:-translate-y-1/2 lg:-left-20 z-20">

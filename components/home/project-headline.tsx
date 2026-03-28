@@ -9,29 +9,26 @@ if (typeof window !== "undefined") {
 }
 
 export default function ProjectHeadline() {
-  const scrollingText = useRef<HTMLElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const scrollTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const loop = gsap
-        .to(".marquee-item", {
-          xPercent: -100,
-          repeat: -1,
-          duration: 25,
-          ease: "none",
-        })
-        .totalProgress(0.5);
+      const loop = gsap.to(".marquee-item", {
+        xPercent: -100,
+        repeat: -1,
+        duration: 25,
+        ease: "none",
+      });
 
       ScrollTrigger.create({
-        trigger: document.documentElement,
-        start: 0,
-        end: "max",
+        trigger: sectionRef.current,
+        start: "top bottom",
+        end: "bottom top",
         onUpdate: (self) => {
           const velocity = self.getVelocity();
           const direction = self.direction;
-
-          const scrollBoost = Math.min(Math.abs(velocity / 500), 15);
+          const scrollBoost = Math.min(Math.abs(velocity / 400), 15);
           const targetTimeScale = (1 + scrollBoost) * direction;
 
           gsap.to(loop, {
@@ -45,14 +42,14 @@ export default function ProjectHeadline() {
 
           scrollTimer.current = setTimeout(() => {
             gsap.to(loop, {
-              timeScale: direction, 
-              duration: 1.5,
-              ease: "expo.out",
+              timeScale: direction,
+              duration: 1.2,
+              ease: "power2.out",
             });
-          }, 150);
+          }, 100);
         },
       });
-    }, scrollingText);
+    }, sectionRef);
 
     return () => {
       ctx.revert();
@@ -76,7 +73,7 @@ export default function ProjectHeadline() {
 
   return (
     <section
-      ref={scrollingText}
+      ref={sectionRef}
       className="py-16 lg:py-32 overflow-hidden select-none border-y border-gray-100 bg-white flex items-center"
     >
       <div className="flex whitespace-nowrap">
