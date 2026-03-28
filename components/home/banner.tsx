@@ -13,7 +13,7 @@ export default function Banner() {
       >
         <div className="rounded-2xl">
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-5">
-            <div className="w-3/5 px-5 py-10 md:px-40 lg:py-0 text-center lg:text-left order-2 lg:order-1">
+            <div className="w-3/5 px-5 py-10 lg:py-0 text-center lg:text-left order-2 lg:order-1">
               <h1 className="main-headline">
                 Design & Development for Startup.
               </h1>
