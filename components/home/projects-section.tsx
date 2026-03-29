@@ -3,6 +3,7 @@ import { Project } from "@/types";
 import React from "react";
 import ProjectCard from "../shared/project-card";
 import ProjectHeadline from "./project-headline";
+import CTAButton from "../shared/cta";
 
 export default function ProjectsSection() {
   return (
@@ -13,6 +14,9 @@ export default function ProjectsSection() {
           {projects.map((project: Project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
+        </div>
+        <div className="flex justify-center  mt-5 md:mt-10 lg:mt-20">
+          <CTAButton  btnText="Discover All Projects" href="/projects"/>
         </div>
       </div>
     </section>
