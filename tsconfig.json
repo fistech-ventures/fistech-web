@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "commitlint.config.js"  ],
+, "commitlint.config.js", "components/shared/customcursor.tsxx"  ],
   "exclude": [
     "node_modules"
   ]
