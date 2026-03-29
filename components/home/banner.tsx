@@ -24,7 +24,7 @@ export default function Banner() {
               <h1 className="main-headline text-3xl md:text-5xl lg:text-6xl font-bold">
                 Design & Development for Startup.
               </h1>
-              <p className="description lg:py-8 py-6 text-base md:text-lg">
+              <p className="description lg:py-8 py-6">
                 We provide tailored strategies, creative design, and rapid
                 development for startups ready to grow fast.
               </p>
