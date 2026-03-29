@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Step() {
   return (
-    <section className="py-6 md:py-8 lg:py-10 xl:py-16 px-4 md:px-0">
+    <section className="py-6 md:pb-8 lg:pb-10 xl:pb-30 px-4 md:px-0">
       <div className="flex items-center gap-2 md:gap-0">
         <div className="hidden sm:block bg-foreground/10 h-px w-full"></div>
 

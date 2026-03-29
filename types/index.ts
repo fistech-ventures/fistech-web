@@ -1,3 +1,6 @@
+import { LucideIcon } from "lucide-react";
+import { ElementType } from "react";
+
 export interface ProjectFeature {
   title: string;
   desc: string;
@@ -42,4 +45,15 @@ export interface Testimonial {
   country: string;
   businessLogo: string;
   profileImage?: string;
+}
+
+// Services
+export interface Service {
+  id: number;
+  title: string;
+  icon: LucideIcon | ElementType; 
+  tags: string[];
+  link: string;
+  description?: string; 
+  images?: string[];    
 }
