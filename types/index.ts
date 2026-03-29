@@ -1,4 +1,3 @@
-
 export interface ProjectFeature {
   title: string;
   desc: string;
@@ -33,4 +32,14 @@ export interface Project {
   heroImage: string;
   gallery: string[];
   sections: ProjectSection[];
+}
+
+// Testimonials
+export interface Testimonial {
+  title: string;
+  name: string;
+  description: string;
+  country: string;
+  businessLogo: string;
+  profileImage?: string;
 }
