@@ -1,9 +1,12 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Mail, Phone, X, Menu, Asterisk, ChevronRight } from "lucide-react";
 import CTAButton from "./cta";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 gsap.registerPlugin(useGSAP);
 
@@ -15,6 +18,8 @@ export default function Navbar() {
   const navRef = useRef(null);
   const menuRef = useRef(null);
   const menuItemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -112,7 +117,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsOpen(true)}
-              className="p-3 border text-white rounded-full hover:rotate-90 duration-500 ease-in-out cursor-pointer hover:bg-secondary hover:text-foreground"
+              className={`p-3 border ${pathname === "/en" ? "text-white" : "text-foreground"} rounded-full hover:rotate-90 duration-500 ease-in-out cursor-pointer hover:bg-secondary hover:text-foreground`}
             >
               <Menu size={20} />
             </button>
