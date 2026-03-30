@@ -108,7 +108,7 @@ export default function AboutMe() {
 
       <div className="relative flex flex-col mt-40">
         {/* BLACK RIBBON */}
-        <div className="bg-black py-10 -rotate-10 w-[200%] -translate-x-[30%] z-20 shadow-2xl">
+        <div className="bg-black py-10 lg:-rotate-10 -rotate-30 w-[200%] -translate-x-[30%] z-20 shadow-2xl">
           <div
             ref={tickerLeftRef}
             className="flex whitespace-nowrap gap-16 items-center w-max"
@@ -129,7 +129,7 @@ export default function AboutMe() {
         </div>
 
         {/* WHITE RIBBON */}
-        <div className="bg-white py-10 rotate-15 w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
+        <div className="bg-white py-10 lg:rotate-15 rotate-40 w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
           <div
             ref={tickerRightRef}
             className="flex whitespace-nowrap gap-16 items-center w-max"
