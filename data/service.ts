@@ -46,13 +46,13 @@ export const SERVICES_DATA: Service[] = [
       media: [
         {
           type: "image",
-          url: "/images/services/web1.jpg",
+          url: "/images/service/service-image.png",
           alt: "dashboard ui",
           order: 1,
         },
         {
           type: "image",
-          url: "/images/services/web2.jpg",
+          url: "/images/service/service-image.png",
           alt: "web app interface",
           order: 2,
         },
@@ -183,13 +183,13 @@ export const SERVICES_DATA: Service[] = [
       media: [
         {
           type: "image",
-          url: "/images/services/mobile1.jpg",
+          url: "/images/service/service-image.png",
           alt: "mobile ui",
           order: 1,
         },
         {
           type: "image",
-          url: "/images/services/mobile2.jpg",
+          url: "/images/service/service-image.png",
           alt: "app screens",
           order: 2,
         },
@@ -298,7 +298,7 @@ export const SERVICES_DATA: Service[] = [
       media: [
         {
           type: "image",
-          url: "/images/services/design1.jpg",
+          url: "/images/service/service-image.png",
           alt: "design ui",
           order: 1,
         },
@@ -412,7 +412,7 @@ export const SERVICES_DATA: Service[] = [
       media: [
         {
           type: "image",
-          url: "/images/services/seo1.jpg",
+          url: "/images/service/service-image.png",
           alt: "seo analytics",
           order: 1,
         },

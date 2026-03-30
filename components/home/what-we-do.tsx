@@ -176,7 +176,7 @@ export default function WhatWeDo() {
                           <img
                             src={item.url}
                             alt={item.alt}
-                            className="h-full w-full object-cover grayscale transition-all duration-1000 ease-out group-hover/img:scale-110 group-hover/img:grayscale-0"
+                            className="h-full w-full object-cover  transition-all duration-1000 ease-out group-hover/img:scale-110"
                           />
                         </div>
                       ))}
