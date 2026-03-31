@@ -4,7 +4,7 @@ import SectionTag from "../shared/section-tag";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
-const CASE_STUDIES = [
+export const CASE_STUDIES = [
   {
     id: 1,
     title: "The rise of human-centered design in digital strategy.",
