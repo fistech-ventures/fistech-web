@@ -93,7 +93,7 @@ export default function Navbar() {
           <div className="flex items-center gap-x-16 pl-3">
             <Link href="/">
               <div className="flex flex-col leading-none cursor-pointer">
-                <img src="/logo.svg" alt="Fistech Logo" />
+                <img src="/logo.png" alt="Fistech Logo" className="w-20 h-20"/>
               </div>
             </Link>
 

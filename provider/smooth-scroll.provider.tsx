@@ -15,7 +15,7 @@ export default function SmoothScrollProvider({
     ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 1.5,
+      smooth: 2.5,
       effects: true,
     });
   }, []);
