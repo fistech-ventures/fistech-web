@@ -100,6 +100,9 @@
     @apply text-5xl md:text-7xl lg:text-8xl xl:text-[100px] text-foreground font-medium leading-normal;
   }
   .tag {
-    @apply text-xs md:text-sm font-medium text-foreground py-1.5 px-4 rounded-full border border-foreground/40;
+    @apply text-xs md:text-sm font-medium text-foreground py-1 px-2 rounded-full border border-foreground/40;
+  }
+  .section-gap {
+    @apply my-5 md:my-8 lg:my-12 xl:my-16;
   }
 }
