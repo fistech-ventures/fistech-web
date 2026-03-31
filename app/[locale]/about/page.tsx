@@ -1,6 +1,7 @@
 import AboutMe from "@/components/about/about-me";
 import Service from "@/components/about/service";
 import Whatwedo from "@/components/about/what-we-do";
+import WorkTogether from "@/components/about/work-together";
 import PageHeadline from "@/components/shared/page-headline";
 import ParallaxHeroImage from "@/components/shared/parallax-hero-image";
 import TestimonialSection from "@/components/shared/testimonial-section";
@@ -17,7 +18,8 @@ export default function AboutPage() {
       <AboutMe />
       <Whatwedo />
       <Service />
-      <TestimonialSection/>
+      <TestimonialSection />
+      <WorkTogether />
     </div>
   );
 }

@@ -29,8 +29,8 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="">
-      <div className="container bg-foreground text-white rounded-xl py-5 md:py-8 lg:py-14 px-6">
+    <footer className="bg-black">
+      <div className="container text-white rounded-xl py-5 md:py-8 lg:py-14 px-6">
         {/* Top Section: Logo and Top Info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5 md:mb-8 lg:mb-12">
           <Link href="/" className="footer-fade">
@@ -70,8 +70,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
-        <hr className="border-gray-800 mb-5 md:mb-8 lg:mb-12" />
 
         {/* Middle Section: CTA and Links */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-5 md:mb-8 lg:mb-12">
