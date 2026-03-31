@@ -151,3 +151,34 @@ export interface ServiceContact {
     url: string;
   };
 }
+
+export interface CaseStudy {
+  caseStudyId: string;
+  slug: string;
+  metadata: {
+    title: string;
+    seoDescription: string;
+    publishDate: string;
+    readingTime: string;
+  };
+  hero: {
+    headline: string;
+    subHeadline: string;
+    mainImage: string;
+  };
+  problem: {
+    title: string;
+    summary: string;
+  };
+  solution: {
+    title: string;
+    approach: string;
+  };
+  metrics: {
+    kpis: Array<{
+      metric: string;
+      before: string;
+      after: string;
+    }>;
+  };
+}
