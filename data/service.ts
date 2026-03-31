@@ -6,7 +6,7 @@ export const SERVICES_DATA: Service[] = [
     slug: "web-application-development",
 
     meta: {
-      title: "Web Application Development | Scalable & Secure Solutions",
+      title: "Web Application Development",
       description:
         "We build high-performance, scalable web applications using modern technologies tailored to your business goals.",
       keywords: [

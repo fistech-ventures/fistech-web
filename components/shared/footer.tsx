@@ -35,9 +35,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5 md:mb-8 lg:mb-12">
           <Link href="/" className="footer-fade">
             <img
-              src="/logo.svg"
+              src="/logo.png"
               alt="Anio Agency"
-              className="h-10 w-auto mb-6 invert"
+              className="h-32 w-32 mb-6"
             />
           </Link>
 

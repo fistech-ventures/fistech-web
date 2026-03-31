@@ -24,6 +24,7 @@ import {
   Check,
   BarChart,
 } from "lucide-react";
+import Link from "next/link";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const IconMap: Record<string, any> = {
@@ -112,14 +113,14 @@ export default function WhatWeDo() {
         <div className="flex flex-col gap-5 max-w-7xl mx-auto">
           {SERVICES_DATA.map((service) => {
             const Icon = IconMap[service.features[0]?.icon] || Code;
-            const serviceLink = `/services/${service.slug}`;
+            const serviceLink = `/solutions/${service.slug}`;
 
             return (
               <div
                 key={service.id}
                 onMouseEnter={() => setHoveredId(service.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                className="bg-white px-8 py-10 md:px-16 md:py-14 rounded-3xl w-full flex flex-col transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] overflow-hidden cursor-pointer"
+                className="bg-white px-8 py-6 md:px-16 md:py-10 rounded-3xl w-full flex flex-col transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] overflow-hidden"
               >
                 {/* Fixed Header Layout */}
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
@@ -134,9 +135,12 @@ export default function WhatWeDo() {
 
                     <div className="flex flex-col gap-5">
                       <div className="flex flex-col gap-4">
-                        <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight">
+                        <Link
+                          href={serviceLink}
+                          className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight relative before:absolute before:bg-foreground before:-bottom-2 before:left-0 before:h-1 before:w-0 hover:before:w-full before:duration-500"
+                        >
                           {service.hero.title}
-                        </h3>
+                        </Link>
                         <div className="flex flex-wrap gap-2">
                           {service.overview.tags.map((tag) => (
                             <span
@@ -160,8 +164,8 @@ export default function WhatWeDo() {
                 <div
                   className={`details-${service.id} overflow-hidden h-0 opacity-0`}
                 >
-                  <div className="pt-12 md:pt-20 pb-4 flex flex-col items-center max-w-5xl mx-auto">
-                    <div className="reveal-item w-full mb-12">
+                  <div className="pt-5 pb-4 flex flex-col items-center max-w-4xl mx-auto">
+                    <div className="reveal-item w-full mb-6">
                       <p className="text-lg md:text-2xl text-gray-800 leading-relaxed max-w-4xl mx-auto">
                         {service.overview.description}
                       </p>
@@ -171,7 +175,7 @@ export default function WhatWeDo() {
                       {service.overview.media.map((item, i) => (
                         <div
                           key={i}
-                          className="group/img aspect-16/10 overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] bg-[#F5F5F5]"
+                          className="group/img aspect-16/10 overflow-hidden rounded-2xl bg-[#F5F5F5]"
                         >
                           <img
                             src={item.url}
