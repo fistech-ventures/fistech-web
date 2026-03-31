@@ -119,7 +119,7 @@ export default function WhatWeDo() {
                 key={service.id}
                 onMouseEnter={() => setHoveredId(service.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                className="bg-white px-8 py-10 md:px-16 md:py-14 rounded-[2rem] md:rounded-[3rem] w-full flex flex-col transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] overflow-hidden cursor-pointer"
+                className="bg-white px-8 py-10 md:px-16 md:py-14 rounded-3xl w-full flex flex-col transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] overflow-hidden cursor-pointer"
               >
                 {/* Fixed Header Layout */}
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
