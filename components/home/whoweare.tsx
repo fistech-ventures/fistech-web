@@ -53,7 +53,7 @@ export default function Whoweare() {
                   className="relative w-28 md:w-40 shrink-0 opacity-70 hover:opacity-100 transition-opacity"
                 >
                   <img
-                    src="/logo.svg"
+                    src="/logo.png"
                     alt="logo"
                     className="w-full h-auto object-contain"
                   />
