@@ -1,10 +1,24 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Play, X } from "lucide-react";
 
 const ProjectDiscovery = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+
+  // Lock background scrolling when the modal is open
+  useEffect(() => {
+    if (isVideoOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    
+    // Cleanup function to ensure scrolling is restored if component unmounts
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isVideoOpen]);
 
   return (
     <section className="py-24 bg-white text-gray-900 overflow-hidden font-sans">
@@ -24,7 +38,7 @@ const ProjectDiscovery = () => {
 
       {/* Main Grid */}
       <div className="container mx-auto px-4 ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="container grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Left Column - Masked Image with Play Button */}
           <div className="relative w-full aspect-[2/1]">
@@ -42,20 +56,22 @@ const ProjectDiscovery = () => {
             </svg>
 
             <div 
-              className="absolute inset-0 bg-gray-100 w-full h-full relative group cursor-pointer"
+              className="absolute inset-0 w-full h-full relative group"
               style={{ clipPath: "url(#do-shape-mask)", WebkitClipPath: "url(#do-shape-mask)" }}
-              onClick={() => setIsVideoOpen(true)}
             >
               {/* Static Background Image instead of video */}
               <img
                 src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
                 alt="People on benchmarking"
-                className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+                className="w-full h-full object-cover rounded-lg transition-transform duration-700 ease-in-out group-hover:scale-105"
               />
               
               {/* Play Button Overlay positioned exactly in the center of the right "O" shape */}
-              <div className="absolute top-1/2 left-[76%] -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-[#c6ff00] rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110">
-                <Play className="w-8 h-8 md:w-10 md:h-10 text-black fill-black ml-1" />
+              <div 
+                onClick={() => setIsVideoOpen(true)}
+                className="absolute top-1/2 left-[60%] -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-[#c6ff00] rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 ease-out hover:scale-110 cursor-pointer z-10"
+              >
+                <Play className="w-8 h-8 md:w-10 md:h-10 text-black fill-black ml-1 pointer-events-none" />
               </div>
             </div>
           </div>
@@ -120,7 +136,7 @@ const ProjectDiscovery = () => {
             onClick={() => setIsVideoOpen(false)}
           />
           
-          <div className="relative w-full max-w-5xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl z-10 animate-in fade-in zoom-in duration-300">
+          <div className="relative w-[90vw] h-[85vh] md:h-[90vh] bg-black overflow-hidden shadow-2xl z-10 animate-in fade-in zoom-in duration-300">
             {/* Close Button */}
             <button 
               onClick={() => setIsVideoOpen(false)}
@@ -134,7 +150,7 @@ const ProjectDiscovery = () => {
               src="https://www.w3schools.com/html/mov_bbb.mp4"
               controls
               autoPlay
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>

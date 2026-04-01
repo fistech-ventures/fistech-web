@@ -15,12 +15,14 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       </div>
       <ProjectHero />
       <ProjectDiscovery />
-      <ProjectGallery />
+      <ProjectGallery
+        imageOneSrc="https://anio-wp.egenstheme.com/wp-content/uploads/2026/01/portfolio-dt-gallery-img5.webp"
+        imageTwoSrc="https://anio-wp.egenstheme.com/wp-content/uploads/2026/01/portfolio-dt-gallery-img6.webp"
+        mainImageSrc="https://anio-wp.egenstheme.com/wp-content/uploads/2026/01/portfolio-dt-gallery-img7.webp"
+        imageAlt="Project Gallery Image"
+      />
       <ProjectImpact />
-      <ParallaxHeroImage
-              imageSrc="/images/contact/contact-hero.webp"
-              imageAlt="Contact Image"
-            />
+
     </div>
   );
 }
