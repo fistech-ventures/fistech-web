@@ -139,7 +139,7 @@ export default function WhatWeDo() {
                           href={serviceLink}
                           className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight relative before:absolute before:bg-foreground before:-bottom-2 before:left-0 before:h-1 before:w-0 hover:before:w-full before:duration-500"
                         >
-                          {service.hero.title}
+                          {service.meta.title}
                         </Link>
                         <div className="flex flex-wrap gap-2">
                           {service.overview.tags.map((tag) => (

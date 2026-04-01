@@ -147,7 +147,7 @@ export const SERVICES_DATA: Service[] = [
     slug: "mobile-app-development",
 
     meta: {
-      title: "Mobile App Development | iOS & Android Apps",
+      title: "Mobile App Development",
       description:
         "We build high-quality mobile apps for iOS and Android with seamless performance and user experience.",
       keywords: [
@@ -267,7 +267,7 @@ export const SERVICES_DATA: Service[] = [
     slug: "ui-ux-design",
 
     meta: {
-      title: "UI/UX & Creative Design Services",
+      title: "UI/UX & Creative Design",
       description:
         "We craft visually stunning and user-friendly designs that elevate your brand.",
       keywords: ["ui ux design", "product design", "branding", "figma design"],
@@ -376,7 +376,7 @@ export const SERVICES_DATA: Service[] = [
     slug: "seo-optimization",
 
     meta: {
-      title: "SEO & Digital Growth Services",
+      title: "SEO & Digital Growth",
       description:
         "Boost your online visibility and rankings with our data-driven SEO strategies.",
       keywords: [
