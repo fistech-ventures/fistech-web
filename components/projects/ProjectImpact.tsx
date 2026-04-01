@@ -1,51 +1,90 @@
 import React from 'react';
-import Link from 'next/link'; // For when you integrate real routing
+import Link from 'next/link';
 
-const ProjectImpact = () => {
+interface Feature {
+  title: string;
+  desc: string;
+}
+
+interface Stat {
+  label: string;
+  value: string;
+}
+
+interface ProjectImpactProps {
+  solutionData?: {
+    header: string;
+    bodyText: string;
+    features: Feature[];
+  };
+  metricsData?: {
+    header: string;
+    bodyText: string;
+    stats: Stat[];
+  };
+}
+
+const ProjectImpact = ({ solutionData, metricsData }: ProjectImpactProps) => {
   return (
     <section className="py-24 bg-white text-gray-900 font-sans">
       <div className="container mx-auto px-4 max-w-6xl">
         
-        {/* Top Text Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-32">
-          
-          {/* Left Column */}
-          <div className="space-y-6">
-            <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-black">
-              Typography
-            </h3>
-            <div className="space-y-6 text-gray-700 font-medium leading-relaxed">
-              <p>
-                Typography sets the tone of your brand. Bold, modern fonts
-                create impact for headings, while clean, readable fonts keep
-                body text clear and professional.
-              </p>
-              <p>
-                Bold and modern typefaces for headings help create strong
-                impact and capture attention instantly.
-              </p>
-            </div>
+        {/* Solution Section Header */}
+        {solutionData && (
+          <div className="max-w-4xl mb-16">
+            <h2 className="text-4xl md:text-5xl font-semibold mb-6 tracking-tight text-black">
+              {solutionData.header}
+            </h2>
+            <p className="text-xl md:text-2xl font-medium text-gray-800 opacity-90">
+              {solutionData.bodyText}
+            </p>
           </div>
+        )}
 
-          {/* Right Column */}
-          <div className="space-y-6">
-            <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-black">
-              Visual Content
-            </h3>
-            <div className="space-y-6 text-gray-700 font-medium leading-relaxed">
-              <p>
-                Visual hierarchy guides the eye through size, weight, color, and
-                spacing — ensuring the most important content gets noticed
-                first and builds user trust.
-              </p>
-              <p>
-                Proper hierarchy avoids clutter, improves readability, and creates
-                a logical flow that keeps users engaged.
+        {/* Top Text Grid (Features) */}
+        {solutionData?.features && solutionData.features.length > 0 && (
+          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-32">
+            {solutionData.features.map((feature, idx) => (
+              <div key={idx} className="space-y-6 px-4 md:px-8 lg:px-16 py-5">
+                <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-black">
+                  {feature.title}
+                </h3>
+                <div className="space-y-6 text-gray-700 font-medium leading-relaxed">
+                  <p>{feature.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Metrics Section */}
+        {metricsData && (
+          <div className="mb-32">
+            <div className="max-w-4xl mb-16">
+              <h2 className="text-4xl md:text-5xl font-semibold mb-6 tracking-tight text-black">
+                {metricsData.header}
+              </h2>
+              <p className="text-xl md:text-2xl font-medium text-gray-800 opacity-90">
+                {metricsData.bodyText}
               </p>
             </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {metricsData.stats.map((stat, idx) => (
+                <div key={idx} className="flex flex-col space-y-4 px-4 py-6 border-l-2 border-[#c6ff00]">
+                  <div className="text-3xl md:text-4xl font-semibold tracking-tight text-gray-900 leading-tight">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm font-bold uppercase tracking-wider text-gray-600">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          
-        </div>
+        )}
+
+        <div className="w-full h-[2px] bg-gray-100 mx-auto mb-20" />
 
         {/* Project Navigation Footer */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-8 mt-16 pt-8">

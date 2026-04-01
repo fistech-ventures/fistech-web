@@ -16,9 +16,10 @@ export const projects: Project[] = [
     // --- 2. MEDIA ASSETS ---
     heroImage: "/images/projects/portfolio1.webp",
     gallery: [
-      "/images/projects/portflio1.webp",
-      "/images/projects/portflio1.webp",
-      "/images/projects/portflio1.webp",
+      "https://anio-wp.egenstheme.com/wp-content/uploads/2026/01/portfolio-dt-gallery-img5.webp",
+      "https://anio-wp.egenstheme.com/wp-content/uploads/2026/01/portfolio-dt-gallery-img6.webp",
+      "https://anio-wp.egenstheme.com/wp-content/uploads/2026/01/portfolio-dt-gallery-img7.webp",
+      "https://anio-wp.egenstheme.com/wp-content/uploads/2026/01/portfolio-dt-info-video-area-img.webp",
       "/images/projects/portflio1.webp",
     ],
 

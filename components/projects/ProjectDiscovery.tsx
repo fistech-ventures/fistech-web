@@ -3,7 +3,19 @@
 import React, { useState, useEffect } from "react";
 import { Play, X } from "lucide-react";
 
-const ProjectDiscovery = () => {
+interface VisionData {
+  header: string;
+  shortSummary: string;
+  fullDescription: string;
+  servicesProvided: string[];
+}
+
+interface ProjectDiscoveryProps {
+  visionData: VisionData;
+  imageSrc?: string;
+}
+
+const ProjectDiscovery = ({ visionData, imageSrc = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" }: ProjectDiscoveryProps) => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   // Lock background scrolling when the modal is open
@@ -20,16 +32,18 @@ const ProjectDiscovery = () => {
     };
   }, [isVideoOpen]);
 
+  if (!visionData) return null;
+
   return (
     <section className="py-24 bg-white text-gray-900 overflow-hidden font-sans">
       {/* Header Block */}
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold mb-6 tracking-tight text-black">
-            Design is a Matters
+            {visionData.header}
           </h2>
           <p className="text-xl md:text-2xl font-medium text-gray-800 italic opacity-90">
-            &ldquo; Lume Studio approached us with a need to modernize their identity and connect with a younger audience.&rdquo;
+            &ldquo; {visionData.shortSummary} &rdquo;
           </p>
         </div>
       </div>
@@ -38,7 +52,7 @@ const ProjectDiscovery = () => {
 
       {/* Main Grid */}
       <div className="container mx-auto px-4 ">
-        <div className="container grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           
           {/* Left Column - Masked Image with Play Button */}
           <div className="relative w-full aspect-[2/1]">
@@ -61,8 +75,8 @@ const ProjectDiscovery = () => {
             >
               {/* Static Background Image instead of video */}
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop"
-                alt="People on benchmarking"
+                src={imageSrc}
+                alt={visionData.header}
                 className="w-full h-full object-cover rounded-lg transition-transform duration-700 ease-in-out group-hover:scale-105"
               />
               
@@ -79,50 +93,17 @@ const ProjectDiscovery = () => {
           {/* Right Column - Content */}
           <div className="space-y-12">
             <p className="text-lg md:text-xl leading-relaxed text-gray-700 font-medium">
-              Lume Studio approached us with a need to modernize their identity and connect with a younger audience. Our team crafted a bold branding strategy, digital design, and launch campaign that brought their vision.
+              {visionData.fullDescription}
             </p>
 
             <ul className="space-y-4 text-base md:text-lg font-bold text-gray-900 tracking-wide">
-              <li className="flex items-center gap-3">
-                <span className="text-xl leading-none">+</span> Brand Strategy
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-xl leading-none">+</span> Logo Design & Identity
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-xl leading-none">+</span> Typography & Color Palette
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-xl leading-none">+</span> Creative Storytelling
-              </li>
-              <li className="flex items-center gap-3">
-                <span className="text-xl leading-none">+</span> Art direction
-              </li>
+              {visionData.servicesProvided?.map((service, idx) => (
+                <li key={idx} className="flex items-center gap-3">
+                  <span className="text-xl leading-none">+</span> {service}
+                </li>
+              ))}
             </ul>
 
-            <div className="flex flex-col sm:flex-row gap-12 pt-8">
-              {/* Stat 1 */}
-              <div className="flex items-start gap-3">
-                <div className="flex items-start tracking-tighter text-gray-950 font-semibold" style={{ fontSize: '5rem', lineHeight: '0.9' }}>
-                  96
-                  <span className="text-3xl font-bold mt-2 ml-1">%</span>
-                </div>
-                <div className="text-xs font-bold uppercase tracking-wider text-gray-900 max-w-[100px] mt-2">
-                  SEO Optimized<br />Content
-                </div>
-              </div>
-
-              {/* Stat 2 */}
-              <div className="flex items-start gap-3">
-                <div className="flex items-start tracking-tighter text-gray-950 font-semibold" style={{ fontSize: '5rem', lineHeight: '0.9' }}>
-                  98
-                  <span className="text-3xl font-bold mt-2 ml-1">%</span>
-                </div>
-                <div className="text-xs font-bold uppercase tracking-wider text-gray-900 max-w-[100px] mt-2">
-                  Customer<br />Retention Rate
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
