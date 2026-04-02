@@ -160,11 +160,18 @@ export interface CaseStudy {
     seoDescription: string;
     publishDate: string;
     readingTime: string;
+    category?: string;
+    contentType?: string;
   };
   hero: {
     headline: string;
     subHeadline: string;
     mainImage: string;
+  };
+  author?: {
+    name: string;
+    role?: string;
+    avatar?: string;
   };
   problem: {
     title: string;
@@ -174,6 +181,15 @@ export interface CaseStudy {
     title: string;
     approach: string;
   };
+  sections?: Array<
+    (
+      | { type: "paragraph"; content: string }
+      | { type: "heading"; level: number; text: string }
+      | { type: "list"; title?: string; items: string[] }
+      | { type: "quote"; text: string; author?: string }
+      | { type: "image"; url: string; alt: string; caption?: string }
+    ) & { id: string }
+  >;
   metrics: {
     kpis: Array<{
       metric: string;
