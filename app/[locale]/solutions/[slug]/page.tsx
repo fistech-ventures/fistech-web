@@ -1,6 +1,7 @@
 import PageHeadline from "@/components/shared/page-headline";
-import SolutionHeading from "@/components/solution/solution-heading";
-import { SERVICES_DATA } from "@/data/service";
+import SolutionHero from "@/components/solution/solution-hero";
+import WhyChooseUs from "@/components/solution/why-choose-us";
+import { solutions } from "@/data/service";
 import React from "react";
 
 export default async function SolutionDetails({
@@ -10,12 +11,16 @@ export default async function SolutionDetails({
 }) {
   const { slug } = await params;
 
-  const solution = SERVICES_DATA.find((item) => item.slug === slug);
+  const solution = solutions.find((item) => item.slug === slug);
 
   return (
     <>
-      <PageHeadline isSolution headline={solution?.meta.title || "Solution Details"} />
-      {/* <SolutionHeading headline={solution?.meta.title || "Solution Details"} /> */}
+      <PageHeadline
+        isSolution
+        headline={solution?.title || "Solution Details"}
+      />
+      <SolutionHero hero={solution?.hero} />
+      <WhyChooseUs whyChooseUs={solution?.whyChooseUs} />
     </>
   );
 }

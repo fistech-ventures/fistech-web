@@ -4,7 +4,6 @@ import { useGSAP } from "@gsap/react";
 import CTAButton from "../shared/cta";
 import React, { useState, useRef } from "react";
 import SectionTag from "../shared/section-tag";
-import { SERVICES_DATA } from "@/data/service";
 import {
   Search,
   Layers,
@@ -13,18 +12,20 @@ import {
   Smartphone,
   Heart,
   Shield,
-  TrendingUp,
   Users,
   Palette,
   Layout,
-  PenTool,
   Briefcase,
-  FileText,
   User,
   Check,
   BarChart,
+  AppWindow,
+  TabletSmartphone,
+  Paintbrush,
 } from "lucide-react";
 import Link from "next/link";
+import { solutions } from "@/data/service";
+import { Solution } from "@/types";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const IconMap: Record<string, any> = {
@@ -35,16 +36,16 @@ const IconMap: Record<string, any> = {
   smartphone: Smartphone,
   heart: Heart,
   shield: Shield,
-  "trending-up": TrendingUp,
+  web: AppWindow,
   users: Users,
   palette: Palette,
   layout: Layout,
-  "pen-tool": PenTool,
+  mobile: TabletSmartphone,
   tool: Briefcase,
-  "file-text": FileText,
+  design: Paintbrush,
   user: User,
   check: Check,
-  "bar-chart": BarChart,
+  seo: BarChart,
 };
 
 export default function WhatWeDo() {
@@ -53,7 +54,7 @@ export default function WhatWeDo() {
 
   useGSAP(
     () => {
-      SERVICES_DATA.forEach((service) => {
+      solutions.forEach((service: Solution) => {
         const content = containerRef.current?.querySelector(
           `.details-${service.id}`,
         );
@@ -111,8 +112,8 @@ export default function WhatWeDo() {
         </h2>
 
         <div className="flex flex-col gap-5 max-w-7xl mx-auto">
-          {SERVICES_DATA.map((service) => {
-            const Icon = IconMap[service.features[0]?.icon] || Code;
+          {solutions.map((service: Solution) => {
+            const Icon = IconMap[service.icon.name] || Code;
             const serviceLink = `/solutions/${service.slug}`;
 
             return (
@@ -139,15 +140,15 @@ export default function WhatWeDo() {
                           href={serviceLink}
                           className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight relative before:absolute before:bg-foreground before:-bottom-2 before:left-0 before:h-1 before:w-0 hover:before:w-full before:duration-500"
                         >
-                          {service.meta.title}
+                          {service.title}
                         </Link>
                         <div className="flex flex-wrap gap-2">
-                          {service.overview.tags.map((tag) => (
+                          {service.keywords.map((keyword: string) => (
                             <span
-                              key={tag}
+                              key={keyword}
                               className="px-4 py-1.5 rounded-full border border-black/10 text-sm font-medium"
                             >
-                              {tag}
+                              {keyword}
                             </span>
                           ))}
                         </div>
@@ -167,19 +168,19 @@ export default function WhatWeDo() {
                   <div className="pt-5 pb-4 flex flex-col items-center max-w-4xl mx-auto">
                     <div className="reveal-item w-full mb-6">
                       <p className="text-lg md:text-2xl text-gray-800 leading-relaxed max-w-4xl mx-auto">
-                        {service.overview.description}
+                        {service.shortDescription}
                       </p>
                     </div>
 
                     <div className="reveal-item grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full">
-                      {service.overview.media.map((item, i) => (
+                      {service.images.map((image, i) => (
                         <div
                           key={i}
                           className="group/img aspect-16/10 overflow-hidden rounded-2xl bg-[#F5F5F5]"
                         >
                           <img
-                            src={item.url}
-                            alt={item.alt}
+                            src={image}
+                            alt={`Service image ${i + 1}`}
                             className="h-full w-full object-cover  transition-all duration-1000 ease-out group-hover/img:scale-110"
                           />
                         </div>
