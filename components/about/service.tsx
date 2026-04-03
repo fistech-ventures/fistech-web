@@ -11,22 +11,22 @@ import {
   Smartphone,
   Heart,
   Shield,
-  TrendingUp,
   Users,
   Palette,
   Layout,
-  PenTool,
   Briefcase,
-  FileText,
   User,
   Check,
   BarChart,
-  LucideIcon,
+  TabletSmartphone,
+  AppWindow,
+  Paintbrush,
 } from "lucide-react";
-import { Service as ServiceType } from "@/types";
-import { SERVICES_DATA } from "@/data/service";
+import { solutions } from "@/data/service";
+import { Solution } from "@/types";
 
-const IconMap: Record<string, LucideIcon> = {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const IconMap: Record<string, any> = {
   search: Search,
   layers: Layers,
   code: Code,
@@ -34,16 +34,16 @@ const IconMap: Record<string, LucideIcon> = {
   smartphone: Smartphone,
   heart: Heart,
   shield: Shield,
-  "trending-up": TrendingUp,
+  web: AppWindow,
   users: Users,
   palette: Palette,
   layout: Layout,
-  "pen-tool": PenTool,
+  mobile: TabletSmartphone,
   tool: Briefcase,
-  "file-text": FileText,
+  design: Paintbrush,
   user: User,
   check: Check,
-  "bar-chart": BarChart,
+  seo: BarChart,
 };
 
 export default function Service() {
@@ -51,7 +51,7 @@ export default function Service() {
 
   return (
     <section className="bg-white">
-      {SERVICES_DATA.map((service, index) => (
+      {solutions.map((service, index) => (
         <ServiceItem
           key={service.id}
           service={service}
@@ -64,7 +64,7 @@ export default function Service() {
 }
 
 interface ServiceItemProps {
-  service: ServiceType;
+  service: Solution;
   isOpen: boolean;
   onClick: () => void;
 }
@@ -75,7 +75,7 @@ function ServiceItem({ service, isOpen, onClick }: ServiceItemProps) {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
 
-  const iconKey = service.features[0]?.icon || "code";
+  const iconKey = service.icon.name || "code";
   const Icon = IconMap[iconKey] || Code;
 
   useGSAP(() => {
@@ -133,17 +133,17 @@ function ServiceItem({ service, isOpen, onClick }: ServiceItemProps) {
                 ref={titleRef}
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tighter text-black transition-colors duration-300"
               >
-                {service.hero.title}
+                {service.title}
               </h3>
 
-              <div className="relative min-h-[30px] md:min-h-[40px] flex items-center">
+              <div className="relative min-h-7.5 md:min-h-10 flex items-center">
                 {isOpen ? (
                   <p className="text-base md:text-lg lg:text-xl text-white/70 max-w-2xl animate-in fade-in slide-in-from-top-2 duration-500">
-                    {service.overview.description}
+                    {service.shortDescription}
                   </p>
                 ) : (
                   <div className="flex flex-wrap gap-2 animate-in fade-in duration-500">
-                    {service.overview.tags.map((tag: string) => (
+                    {service.keywords.map((tag: string) => (
                       <span
                         key={tag}
                         className="px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-black/10 text-[10px] md:text-xs font-bold uppercase tracking-widest text-black/50 group-hover:text-white/40 group-hover:border-white/10 transition-colors"
