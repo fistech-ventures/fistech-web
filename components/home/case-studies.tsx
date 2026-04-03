@@ -4,6 +4,7 @@ import SectionTag from "../shared/section-tag";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { CASE_STUDIES } from "@/data/case-studies";
+import CTAButton from "../shared/cta";
 
 export default function CaseStudies() {
   return (
@@ -17,7 +18,7 @@ export default function CaseStudies() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {CASE_STUDIES.map((study) => (
+          {CASE_STUDIES.slice(0, 2).map((study) => (
             <Link key={study.caseStudyId} href={`/case-studies/${study.slug}`}>
               <article className="group cursor-pointer">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-gray-100">
@@ -54,6 +55,9 @@ export default function CaseStudies() {
               </article>
             </Link>
           ))}
+        </div>
+        <div className="flex justify-center mt-20">
+          <CTAButton btnText="Read All Case Studies" href="/case-studies" />
         </div>
       </div>
     </section>
