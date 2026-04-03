@@ -1,6 +1,3 @@
-import { LucideIcon } from "lucide-react";
-import { ElementType } from "react";
-
 export interface ProjectFeature {
   title: string;
   desc: string;

@@ -34,14 +34,10 @@ export default function Footer() {
         {/* Top Section: Logo and Top Info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5 md:mb-8 lg:mb-12">
           <Link href="/" className="footer-fade">
-            <img
-              src="/logo.png"
-              alt="Anio Agency"
-              className="h-32 w-32 mb-6"
-            />
+            <img src="/logo.png" alt="Anio Agency" className="h-32 w-32 mb-6" />
           </Link>
 
-          <div className="footer-fade">
+          <div className="footer-fade flex flex-col items-center text-center">
             <h4 className="text-gray-500 uppercase text-xs font-bold tracking-widest mb-4">
               Office Location
             </h4>
@@ -50,7 +46,7 @@ export default function Footer() {
             </address>
           </div>
 
-          <div className="footer-fade">
+          <div className="footer-fade flex flex-col items-end">
             <h4 className="text-gray-500 uppercase text-xs font-bold tracking-widest mb-4">
               Contact Info
             </h4>
@@ -61,19 +57,13 @@ export default function Footer() {
               >
                 info@fistech.org
               </Link>
-              <Link
-                href="tel:+9902577576980"
-                className="text-lg md:text-xl font-medium hover:text-gray-400 transition-colors"
-              >
-                +99 (0) 257 757 6980
-              </Link>
             </div>
           </div>
         </div>
 
         {/* Middle Section: CTA and Links */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-5 md:mb-8 lg:mb-12">
-          <div className="lg:col-span-6 footer-fade">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-5 md:mb-8 lg:mb-12">
+          <div className="footer-fade">
             <h2 className="text-3xl md:text-4xl font-bold leading-tight max-w-md">
               Starting a new project or want to collaborate with us?{" "}
               <Link
@@ -103,7 +93,7 @@ export default function Footer() {
           {footerNav.map((section) => (
             <div
               key={section.title}
-              className="lg:col-span-3 grid grid-cols-1 gap-3 footer-fade self-start"
+              className="grid grid-cols-1 gap-3 footer-fade self-start nth-[2]:text-center last:text-end"
             >
               {section.links.map((link) => (
                 <Link
