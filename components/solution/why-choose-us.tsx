@@ -15,20 +15,23 @@ export default function WhyChooseUs({
 }: {
   whyChooseUs?: Solution["whyChooseUs"];
 }) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const cardsWrapperRef = useRef<HTMLDivElement>(null);
   const marqueeRef = useRef<HTMLDivElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
     const cardsWrapper = cardsWrapperRef.current;
+    const wrapper = wrapperRef.current;
 
-    if (!section || !cardsWrapper) return;
+    if (!section || !cardsWrapper || !wrapper) return;
 
     const ctx = gsap.context(() => {
-      // ── Responsive: only animate on tablet+ (768px+) ──────────────────
       ScrollTrigger.matchMedia({
         "(min-width: 768px)": function () {
           const cards = gsap.utils.toArray<HTMLElement>(
@@ -36,7 +39,6 @@ export default function WhyChooseUs({
           );
           if (cards.length === 0) return;
 
-          // Initial state
           gsap.set(cards, {
             opacity: 0,
             y: 60,
@@ -44,7 +46,6 @@ export default function WhyChooseUs({
             transformOrigin: "center bottom",
           });
 
-          // ── Phase 1: entrance animation ──────────────────────────────
           const entranceTl = gsap.timeline({
             scrollTrigger: {
               trigger: section,
@@ -62,20 +63,12 @@ export default function WhyChooseUs({
             ease: "power2.out",
           });
 
-          // ── Phase 2: pinned scroll — stop when last card centers ─────
-          //
-          // Target: last card's top aligns with 50vh.
-          // Distance to travel = (cardsWrapper top relative to section top)
-          //   + last card offsetTop within wrapper
-          //   - (50vh - last card height / 2)
-          //
           const lastCard = cards[cards.length - 1];
-          const wrapperOffsetTop = cardsWrapper.offsetTop; // wrapper top relative to section
-          const lastCardOffsetTop = lastCard.offsetTop; // last card top in wrapper
+          const wrapperOffsetTop = cardsWrapper.offsetTop;
+          const lastCardOffsetTop = lastCard.offsetTop;
           const lastCardHeight = lastCard.offsetHeight;
           const viewportCenter = window.innerHeight / 2;
 
-          // Total upward travel = distance until last card center == viewport center
           const scrollDistance =
             wrapperOffsetTop +
             lastCardOffsetTop +
@@ -87,7 +80,7 @@ export default function WhyChooseUs({
               trigger: section,
               start: "top top",
               end: () => `+=${Math.max(scrollDistance, 200)}`,
-              pin: true,
+              pin: wrapper,
               pinSpacing: true,
               scrub: 0.8,
               anticipatePin: 1,
@@ -100,14 +93,12 @@ export default function WhyChooseUs({
             ease: "none",
           });
 
-          // Marquee + description fade at 60% progress
           scrollTl.to(
             [marqueeRef.current, descRef.current],
             { opacity: 0, y: -24, ease: "power1.in" },
             0.6,
           );
 
-          // CTA fades at 40% progress
           scrollTl.to(
             ctaRef.current,
             { opacity: 0, y: 20, ease: "power1.in" },
@@ -115,7 +106,6 @@ export default function WhyChooseUs({
           );
         },
 
-        // ── Mobile: no animation, reset any inline styles ──────────────
         "(max-width: 767px)": function () {
           const cards = gsap.utils.toArray<HTMLElement>(
             cardsWrapper.querySelectorAll(".why-card"),
@@ -129,28 +119,41 @@ export default function WhyChooseUs({
   }, [whyChooseUs]);
 
   return (
-    // overflow-x-hidden here + on a parent wrapper stops horizontal scrollbar
-    // without clipping the pin spacer that ScrollTrigger injects
-    <div className="overflow-x-hidden">
-      <section ref={sectionRef} className="relative w-full h-screen py-10">
-        {/* ── Background video ── */}
-        <video
-          src="/solution-video.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover hidden md:block"
-        />
+    <div ref={wrapperRef} className="relative w-full h-screen overflow-hidden">
+      <video
+        ref={videoRef}
+        src="/solution-video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        style={{ zIndex: 0 }}
+      />
 
-        {/* ── Marquee ── */}
-        <div ref={marqueeRef} className="relative z-10">
+      <div
+        ref={overlayRef}
+        className="absolute inset-0 bg-black/50 hidden md:block"
+        style={{ zIndex: 1 }}
+      />
+
+      {/* ── Mobile fallback ── */}
+      <div
+        className="absolute inset-0 bg-gray-900 md:hidden"
+        style={{ zIndex: 0 }}
+      />
+
+      <section
+        ref={sectionRef}
+        className="relative w-full h-full"
+        style={{ zIndex: 2 }}
+      >
+        <div ref={marqueeRef} className="relative pt-10">
           <Marquee
             className="main-headline text-white! xl:pt-12 lg:pt-10 md:pt-8 pt-6"
             speed={100}
             gradient={false}
           >
-            {/* Consistent gap via margin on each item */}
             <span className="mx-4">Why Choose Us</span>
             <Flower className="mx-4 shrink-0" />
             <span className="mx-4">Why We Different</span>
@@ -161,9 +164,11 @@ export default function WhyChooseUs({
             <Flower className="mx-4 shrink-0" />
           </Marquee>
         </div>
+        <div ref={ctaRef} className="flex justify-center mt-20 pb-10 z-50">
+          <CTAButton btnText="Contact Us" href="/contact" isDark />
+        </div>
 
-        {/* ── Main content ── */}
-        <div className="relative max-w-6xl mx-auto px-4 z-10">
+        <div className="relative max-w-6xl mx-auto px-4">
           <p
             ref={descRef}
             className="max-w-lg description ms-auto pt-12 lg:pt-16 xl:pt-20 text-white/60"
@@ -178,19 +183,17 @@ export default function WhyChooseUs({
             {whyChooseUs?.content.map((item, index: number) => (
               <div
                 key={index}
-                className="why-card bg-white flex-1 px-5 xl:px-10 py-10 xl:py-20 lg:even:mt-40 will-change-transform"
+                className="why-card bg-white flex-1 px-5 xl:px-10 py-10 xl:py-20 lg:even:mt-40 will-change-transform rounded-xl shadow-2xl"
               >
-                <PocketKnife size={70} className="mb-20" />
+                <PocketKnife size={70} className="mb-20 text-black" />
                 <div className="space-y-4">
-                  <h3 className="item-title">{item.title}</h3>
-                  <p className="description">{item.description}</p>
+                  <h3 className="item-title text-black">{item.title}</h3>
+                  <p className="description text-gray-600">
+                    {item.description}
+                  </p>
                 </div>
               </div>
             ))}
-          </div>
-
-          <div ref={ctaRef} className="flex justify-center mt-10">
-            <CTAButton btnText="Contact Us" href="/contact" />
           </div>
         </div>
       </section>
