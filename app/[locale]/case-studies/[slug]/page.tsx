@@ -31,12 +31,6 @@ export default async function Page({
 
   return (
     <>
-      <div className="">
-        <div className="container mx-auto py-20">
-          <h1 className="text-3xl font-bold">Case Study: {slug}</h1>
-        </div>
-      </div>
-
       <main className="min-h-screen bg-white">
         {/* Header Info */}
         <section className="pt-20 md:pt-32 lg:pt-40 pb-10 text-center px-4">
@@ -109,7 +103,7 @@ export default async function Page({
         </section>
 
         {/* Content Section */}
-        <section className="container mx-auto px-4 md:px-6 max-w-6xl pb-20 md:pb-24">
+        <section className="max-w-6xl mx-auto px-4 md:px-6 pb-20 md:pb-24">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
             <div className="w-full lg:w-2/3 prose prose-gray max-w-none prose-h2:text-gray-900 prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:font-bold">
               {/* Problem Section using .description */}
