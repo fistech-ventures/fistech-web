@@ -29,10 +29,10 @@ export default function Whoweare() {
                 For More Inquiry
               </h4>
               <Link
-                href="tel:+9902577576980"
-                className="text-lg md:text-xl font-medium text-foreground underline decoration-1 underline-offset-4"
+                href="mailto:hello@anioagency.com"
+                className="text-lg md:text-xl font-medium hover:text-gray-400 transition-colors"
               >
-                +99 (0) 257 757 6980
+                info@fistech.org
               </Link>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function Whoweare() {
                   className="relative w-28 md:w-40 shrink-0 opacity-70 hover:opacity-100 transition-opacity"
                 >
                   <img
-                    src="/logo.svg"
+                    src="/logo.png"
                     alt="logo"
                     className="w-full h-auto object-contain"
                   />

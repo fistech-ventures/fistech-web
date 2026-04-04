@@ -16,7 +16,7 @@ export default function ProjectsSection() {
           ))}
         </div>
         <div className="flex justify-center  mt-5 md:my-10 lg:mt-20">
-          <CTAButton  btnText="Discover All Projects" href="/projects"/>
+          <CTAButton  btnText="Discover All Projects" href={`/projects/${projects[0].slug}`}/>
         </div>
       </div>
     </section>

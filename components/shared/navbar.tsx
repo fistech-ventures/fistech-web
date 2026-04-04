@@ -14,12 +14,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const pathname = usePathname();
 
   const navRef = useRef(null);
   const menuRef = useRef(null);
   const menuItemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
-
-  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -98,7 +97,7 @@ export default function Navbar() {
           <div className="flex items-center gap-x-16 pl-3">
             <Link href="/">
               <div className="flex flex-col leading-none cursor-pointer">
-                <img src="/logo.svg" alt="Fistech Logo" />
+                <img src="/logo.png" alt="Fistech Logo" className="w-20 h-20" />
               </div>
             </Link>
 
@@ -117,7 +116,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsOpen(true)}
-              className={`p-3 border ${pathname === "/en" ? "text-white" : "text-foreground"} rounded-full hover:rotate-90 duration-500 ease-in-out cursor-pointer hover:bg-secondary hover:text-foreground`}
+              className={`p-3 border ${pathname == "/en" ? "text-white" : "text-foreground"} rounded-full hover:rotate-90 duration-500 ease-in-out cursor-pointer hover:bg-secondary hover:text-foreground`}
             >
               <Menu size={20} />
             </button>

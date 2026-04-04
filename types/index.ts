@@ -1,6 +1,3 @@
-import { LucideIcon } from "lucide-react";
-import { ElementType } from "react";
-
 export interface ProjectFeature {
   title: string;
   desc: string;
@@ -47,107 +44,91 @@ export interface Testimonial {
   profileImage?: string;
 }
 
-// Services
-export interface Service {
+// Solution/service
+export interface Solution {
   id: string;
+  title: string;
   slug: string;
-  meta: ServiceMeta;
-  hero: ServiceHero;
-  overview: ServiceOverview;
-  content: ServiceContentItem[];
-  process: ServiceProcess;
-  features: ServiceFeature[];
-  cta: ServiceMainCTA;
-  contact: ServiceContact;
-  status: "published" | "draft" | "archived";
-  created_at: string;
-  updated_at: string;
-}
-
-export interface ServiceMeta {
-  title: string;
-  description: string;
   keywords: string[];
-  canonical_url: string;
-}
+  shortDescription: string;
+  images: string[];
 
-export interface ServiceHero {
-  title: string;
-  subtitle: string;
-  badge: string;
-  background_image: string;
-  breadcrumb: BreadcrumbItem[];
-}
-
-export interface BreadcrumbItem {
-  label: string;
-  url: string;
-}
-
-export interface ServiceOverview {
-  title: string;
-  description: string;
-  tags: string[];
-  cta: {
-    label: string;
-    url: string;
+  icon: {
+    name: string;
   };
-  media: ServiceMedia[];
-  layout: {
-    type: "split" | "full" | string;
-    media_position: "left" | "right";
+
+  hero: {
+    coverImage: string;
+    subtitle: string;
+    description: string;
+    features: string[];
   };
-}
 
-export interface ServiceMedia {
-  type: "image" | "video";
-  url: string;
-  alt: string;
-  order: number;
-}
 
-// Discriminated Union for flexible content blocks
-export type ServiceContentItem =
-  | { type: "text_block"; title: string; content: string }
-  | { type: "list_block"; title: string; items: string[] };
+  whyChooseUs: {
+    description: string;
 
-export interface ServiceProcess {
-  title: string;
-  steps: ServiceProcessStep[];
-}
-
-export interface ServiceProcessStep {
-  step: number;
-  title: string;
-  description: string;
-  icon: string;
-}
-
-export interface ServiceFeature {
-  title: string;
-  description: string;
-  icon: string;
-}
-
-export interface ServiceMainCTA {
-  title: string;
-  description: string;
-  primary: {
-    label: string;
-    url: string;
+    content: {
+      title: string;
+      description: string;
+    }[];
   };
-  secondary: {
-    label: string;
-    url: string;
-  };
+  
+  process: {
+    id: number;
+    title: string;
+    description: string;
+    features: string[];
+    image: {
+      url: string;
+      alt: string;
+    };
+  }[];
 }
 
-export interface ServiceContact {
-  title: string;
-  phone: string;
-  email: string;
-  cta: {
-    label: string;
-    url: string;
+export interface CaseStudy {
+  caseStudyId: string;
+  slug: string;
+  metadata: {
+    title: string;
+    seoDescription: string;
+    publishDate: string;
+    readingTime: string;
+    category?: string;
+    contentType?: string;
+  };
+  hero: {
+    headline: string;
+    subHeadline: string;
+    mainImage: string;
+  };
+  author?: {
+    name: string;
+    role?: string;
+    avatar?: string;
+  };
+  problem: {
+    title: string;
+    summary: string;
+  };
+  solution: {
+    title: string;
+    approach: string;
+  };
+  sections?: Array<
+    (
+      | { type: "paragraph"; content: string }
+      | { type: "heading"; level: number; text: string }
+      | { type: "list"; title?: string; items: string[] }
+      | { type: "quote"; text: string; author?: string }
+      | { type: "image"; url: string; alt: string; caption?: string }
+    ) & { id: string }
+  >;
+  metrics: {
+    kpis: Array<{
+      metric: string;
+      before: string;
+      after: string;
+    }>;
   };
 }

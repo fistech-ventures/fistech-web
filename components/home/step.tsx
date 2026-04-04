@@ -1,4 +1,3 @@
-import { Phone } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -14,11 +13,10 @@ export default function Step() {
           </h4>
 
           <Link
-            href="tel:+9902577576980"
-            className="text-sm md:text-base font-medium text-foreground underline decoration-1 underline-offset-4 flex items-center gap-2 whitespace-nowrap hover:opacity-70 transition-opacity"
+            href="mailto:hello@anioagency.com"
+            className="text-lg md:text-xl font-medium hover:text-gray-400 transition-colors"
           >
-            <Phone size={16} className="text-foreground/70" />
-            +99 (0) 257 757 6980
+            info@fistech.org
           </Link>
         </div>
 

@@ -1,4 +1,5 @@
 import Banner from "@/components/home/banner";
+import CaseStudies from "@/components/home/case-studies";
 import ProjectsSection from "@/components/home/projects-section";
 import Step from "@/components/home/step";
 import WhatWeDo from "@/components/home/what-we-do";
@@ -20,6 +21,7 @@ export default function Home() {
       <Step />
       <WhatWeDo />
       <TestimonialSection />
+      <CaseStudies />
     </>
   );
 }

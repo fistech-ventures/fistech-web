@@ -4,7 +4,6 @@ import { useGSAP } from "@gsap/react";
 import CTAButton from "../shared/cta";
 import React, { useState, useRef } from "react";
 import SectionTag from "../shared/section-tag";
-import { SERVICES_DATA } from "@/data/service";
 import {
   Search,
   Layers,
@@ -13,17 +12,20 @@ import {
   Smartphone,
   Heart,
   Shield,
-  TrendingUp,
   Users,
   Palette,
   Layout,
-  PenTool,
   Briefcase,
-  FileText,
   User,
   Check,
   BarChart,
+  AppWindow,
+  TabletSmartphone,
+  Paintbrush,
 } from "lucide-react";
+import Link from "next/link";
+import { solutions } from "@/data/service";
+import { Solution } from "@/types";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const IconMap: Record<string, any> = {
@@ -34,16 +36,16 @@ const IconMap: Record<string, any> = {
   smartphone: Smartphone,
   heart: Heart,
   shield: Shield,
-  "trending-up": TrendingUp,
+  web: AppWindow,
   users: Users,
   palette: Palette,
   layout: Layout,
-  "pen-tool": PenTool,
+  mobile: TabletSmartphone,
   tool: Briefcase,
-  "file-text": FileText,
+  design: Paintbrush,
   user: User,
   check: Check,
-  "bar-chart": BarChart,
+  seo: BarChart,
 };
 
 export default function WhatWeDo() {
@@ -52,7 +54,7 @@ export default function WhatWeDo() {
 
   useGSAP(
     () => {
-      SERVICES_DATA.forEach((service) => {
+      solutions.forEach((service: Solution) => {
         const content = containerRef.current?.querySelector(
           `.details-${service.id}`,
         );
@@ -110,16 +112,16 @@ export default function WhatWeDo() {
         </h2>
 
         <div className="flex flex-col gap-5 max-w-7xl mx-auto">
-          {SERVICES_DATA.map((service) => {
-            const Icon = IconMap[service.features[0]?.icon] || Code;
-            const serviceLink = `/services/${service.slug}`;
+          {solutions.map((service: Solution) => {
+            const Icon = IconMap[service.icon.name] || Code;
+            const serviceLink = `/solutions/${service.slug}`;
 
             return (
               <div
                 key={service.id}
                 onMouseEnter={() => setHoveredId(service.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                className="bg-white px-8 py-10 md:px-16 md:py-14 rounded-[2rem] md:rounded-[3rem] w-full flex flex-col transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] overflow-hidden cursor-pointer"
+                className="bg-white px-8 py-6 md:px-16 md:py-10 rounded-3xl w-full flex flex-col transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] overflow-hidden"
               >
                 {/* Fixed Header Layout */}
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
@@ -134,16 +136,19 @@ export default function WhatWeDo() {
 
                     <div className="flex flex-col gap-5">
                       <div className="flex flex-col gap-4">
-                        <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                          {service.hero.title}
-                        </h3>
+                        <Link
+                          href={serviceLink}
+                          className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight relative before:absolute before:bg-foreground before:-bottom-2 before:left-0 before:h-1 before:w-0 hover:before:w-full before:duration-500"
+                        >
+                          {service.title}
+                        </Link>
                         <div className="flex flex-wrap gap-2">
-                          {service.overview.tags.map((tag) => (
+                          {service.keywords.map((keyword: string) => (
                             <span
-                              key={tag}
+                              key={keyword}
                               className="px-4 py-1.5 rounded-full border border-black/10 text-sm font-medium"
                             >
-                              {tag}
+                              {keyword}
                             </span>
                           ))}
                         </div>
@@ -160,23 +165,23 @@ export default function WhatWeDo() {
                 <div
                   className={`details-${service.id} overflow-hidden h-0 opacity-0`}
                 >
-                  <div className="pt-12 md:pt-20 pb-4 flex flex-col items-center max-w-5xl mx-auto">
-                    <div className="reveal-item w-full mb-12">
+                  <div className="pt-5 pb-4 flex flex-col items-center max-w-4xl mx-auto">
+                    <div className="reveal-item w-full mb-6">
                       <p className="text-lg md:text-2xl text-gray-800 leading-relaxed max-w-4xl mx-auto">
-                        {service.overview.description}
+                        {service.shortDescription}
                       </p>
                     </div>
 
                     <div className="reveal-item grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full">
-                      {service.overview.media.map((item, i) => (
+                      {service.images.map((image, i) => (
                         <div
                           key={i}
-                          className="group/img aspect-16/10 overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] bg-[#F5F5F5]"
+                          className="group/img aspect-16/10 overflow-hidden rounded-2xl bg-[#F5F5F5]"
                         >
                           <img
-                            src={item.url}
-                            alt={item.alt}
-                            className="h-full w-full object-cover grayscale transition-all duration-1000 ease-out group-hover/img:scale-110 group-hover/img:grayscale-0"
+                            src={image}
+                            alt={`Service image ${i + 1}`}
+                            className="h-full w-full object-cover  transition-all duration-1000 ease-out group-hover/img:scale-110"
                           />
                         </div>
                       ))}
