@@ -28,6 +28,27 @@ export default async function Page({
     (s) => s.type === "metrics",
   ) as any;
 
+  let nextProjectIdx = projects.findIndex((p) => p.slug === slug) + 1;
+  let prevProjectIdx = projects.findIndex((p) => p.slug === slug) - 1;
+
+  if (prevProjectIdx < 0) prevProjectIdx = projects.length - 1;
+
+  if (nextProjectIdx >= projects.length) nextProjectIdx = 0;
+
+  const nextProjectTitle =
+    projects.find((p) => p.slug === projects[nextProjectIdx]?.slug)?.title ||
+    "Next Project";
+  const prevProjectTitle =
+    projects.find((p) => p.slug === projects[prevProjectIdx]?.slug)?.title ||
+    "Previous Project";
+
+  const nextProjectSlug =
+    projects.find((p) => p.slug === projects[nextProjectIdx]?.slug)?.slug ||
+    "next-project";
+  const prevProjectSlug =
+    projects.find((p) => p.slug === projects[prevProjectIdx]?.slug)?.slug ||
+    "previous-project";
+
   return (
     <div className="">
       <ProjectHero
@@ -61,6 +82,10 @@ export default async function Page({
       <ProjectImpact
         solutionData={solutionSection}
         metricsData={metricsSection}
+        nextProjectSlug={nextProjectSlug}
+        prevProjectSlug={prevProjectSlug}
+        nextProjectTitle={nextProjectTitle}
+        prevProjectTitle={prevProjectTitle}
       />
     </div>
   );

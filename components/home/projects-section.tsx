@@ -11,12 +11,15 @@ export default function ProjectsSection() {
       <div className="container">
         <ProjectHeadline />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project: Project) => (
+          {projects.slice(0, 4).map((project: Project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>
         <div className="flex justify-center  mt-5 md:my-10 lg:mt-20">
-          <CTAButton  btnText="Discover All Projects" href={`/projects/${projects[0].slug}`}/>
+          <CTAButton
+            btnText="Discover All Projects"
+            href={`/projects/${projects[0].slug}`}
+          />
         </div>
       </div>
     </section>

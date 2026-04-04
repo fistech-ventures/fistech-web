@@ -51,9 +51,8 @@ export default function ProjectGallery({
   );
 
   return (
-    <section ref={sectionRef} className="w-full flex flex-col pt-10 pb-16">
-      <div className="px-2 py-3 sm:px-4 sm:py-5 lg:p-5">
-        
+    <section ref={sectionRef} className="w-full flex flex-col section-gap">
+      <div className="px-2 sm:px-4">
         {/* Top Row: 2 Images (Single column on mobile/tablet, side-by-side on desktop) with Parallax */}
         <div className="flex flex-col lg:flex-row w-full lg:h-[40vh] xl:h-[60vh]">
           {/* Image 1 Box */}

@@ -16,7 +16,7 @@ export default function SolutionHero({ hero }: { hero?: Solution["hero"] }) {
             <h4 className="description font-bold">{hero?.subtitle}</h4>
           </div>
           <div className="flex-1 xl:space-y-6 lg:space-y-5 md:space-y-4 space-y-3 text-base lg:text-xl font-medium">
-            <p className="">{hero?.description}</p>
+            <p className="description">{hero?.description}</p>
             <ul className="list-none! xl:space-y-3">
               {hero?.features.map((item: string) => (
                 <li key={item} className="flex items-center gap-2 capitalize">
