@@ -29,7 +29,7 @@ export default function Banner() {
                 development for startups ready to grow fast.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
-                <CTAButton btnText="Get Your Free Consultation" href="/" />
+                <CTAButton btnText="Get Your Free Consultation" href="/contact" />
               </div>
               <div className="flex gap-4 mt-10 lg:justify-start justify-center">
                 {socialLinks.map((social, i) => (
