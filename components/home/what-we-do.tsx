@@ -167,7 +167,7 @@ export default function WhatWeDo() {
                 >
                   <div className="pt-5 pb-4 flex flex-col items-center max-w-4xl mx-auto">
                     <div className="reveal-item w-full mb-6">
-                      <p className="text-lg md:text-2xl text-gray-800 leading-relaxed max-w-4xl mx-auto">
+                      <p className="description max-w-4xl mx-auto">
                         {service.shortDescription}
                       </p>
                     </div>
