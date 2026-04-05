@@ -1,8 +1,3 @@
-"use client";
-
-import React from "react";
-import { usePathname } from "next/navigation";
-import { useLocale } from "next-intl";
 import SmoothScrollProvider from "./smooth-scroll.provider";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
@@ -12,20 +7,12 @@ export default function AppProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-  const currentLocale = useLocale();
-
-  const hideNavAndFooter = [
-    `/${currentLocale}/auth/login`,
-    `/${currentLocale}/auth/signup`,
-  ];
-
   return (
     <>
       <SmoothScrollProvider>
-        {!hideNavAndFooter.includes(pathname) && <Navbar />}
+        <Navbar />
         {children}
-        {!hideNavAndFooter.includes(pathname) && <Footer />}
+        <Footer />
       </SmoothScrollProvider>
     </>
   );

@@ -146,7 +146,7 @@ export default function WhatWeDo() {
                           {service.keywords.map((keyword: string) => (
                             <span
                               key={keyword}
-                              className="px-4 py-1.5 rounded-full border border-black/10 text-sm font-medium"
+                              className="tag"
                             >
                               {keyword}
                             </span>

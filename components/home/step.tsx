@@ -13,7 +13,7 @@ export default function Step() {
           </h4>
 
           <Link
-            href="mailto:hello@anioagency.com"
+            href="mailto:info@fistech.org"
             className="text-lg md:text-xl font-medium hover:text-gray-400 transition-colors"
           >
             info@fistech.org
