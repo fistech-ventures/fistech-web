@@ -4,6 +4,7 @@ import SectionTag from "../shared/section-tag";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { solutions } from "@/data/service";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -15,14 +16,7 @@ export default function AboutMe() {
   const tickerLeftRef = useRef<HTMLDivElement>(null);
   const tickerRightRef = useRef<HTMLDivElement>(null);
 
-  const tickerItems = [
-    "MARKETING",
-    "USER EXPERIENCE",
-    "BRANDING DESIGN",
-    "UI/UX DESIGN",
-    "DIGITAL EXPERIENCES",
-    "PROFESSIONAL",
-  ];
+  const tickerItems = solutions.map((item) => item.title);
 
   useGSAP(() => {
     // Counter

@@ -33,21 +33,23 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
             className="inline-block align-middle h-[1em] w-auto mx-2"
           />
           startup journey.
-        </h2> 
+        </h2>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 mt-10 lg:mt-15">
           <CTAButton btnText="Discover Us" href="/" />
 
           <div className="flex gap-4 items-center">
             <div className="bg-secondary w-12 h-12 md:w-15 md:h-15 rounded-full flex justify-center items-center cursor-pointer">
-              <Send size={20} className="animate-bounce" />
+              <Link href="mailto:info@fistech.org">
+                <Send className="w-6 h-6 md:w-8 md:h-8" />
+              </Link>
             </div>
             <div className="flex flex-col">
               <h4 className="text-[#999999] text-sm md:text-base font-medium">
                 For More Inquiry
               </h4>
               <Link
-                href="mailto:hello@anioagency.com"
+                href="mailto:info@fistech.org"
                 className="text-lg md:text-xl font-medium hover:text-gray-400 transition-colors"
               >
                 info@fistech.org
@@ -58,7 +60,7 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
 
         <div className="mt-8 lg:mt-15">
           <h3 className="text-lg md:text-[22px] font-medium text-foreground text-center">
-            We&apos;ve 12K+ Trusted Clients Worldwide
+            We&apos;ve 100+ Trusted Clients Worldwide
           </h3>
         </div>
 

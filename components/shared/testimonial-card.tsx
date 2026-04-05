@@ -9,15 +9,13 @@ interface TestimonialCardProps {
 
 export default function TestimonialCard({ item, index }: TestimonialCardProps) {
   return (
-    // Added 'group' and 'relative' for the popup positioning
     <div
-      className={`relative group shrink-0 w-full rounded-xl p-4 md:p-6 flex flex-col h-full shadow-sm border border-transparent hover:border-gray-200 transition-colors ${index % 2 === 0 ? "bg-[#E9E9E9]" : "bg-white"}`}
+      className={`relative group shrink-0 w-full rounded-xl p-4 md:p-6 flex flex-col h-full shadow-sm border border-secondary hover:border-gray-200 transition-colors ${index % 2 === 0 ? "bg-[#E9E9E9]" : "bg-white"}`}
     >
-      {/* Full Description Popup */}
-      <div className="absolute inset-x-0 bottom-full mb-2 hidden group-hover:block z-50 animate-in fade-in slide-in-from-bottom-2 duration-200">
-        <div className="bg-gray-900 text-white text-sm p-4 rounded-lg shadow-xl border border-gray-700 mx-2">
+      {/* Full Description Popup — overlays the card from the top */}
+      <div className="absolute inset-x-0 top-0 hidden group-hover:flex z-50 animate-in fade-in duration-200 rounded-xl overflow-hidden">
+        <div className="w-full rounded-xl p-5 text-black text-base border-2 border-secondary text-justify leading-relaxed backdrop-blur-xl bg-white/30 overflow-y-auto">
           {item.description}
-          <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-gray-900 rotate-45"></div>
         </div>
       </div>
 
@@ -25,7 +23,7 @@ export default function TestimonialCard({ item, index }: TestimonialCardProps) {
         <Quote size={48} fill="currentColor" className="opacity-70" />
       </div>
 
-      <p className="description leading-normal lg:mb-10 mb-5 grow text-justify line-clamp-6">
+      <p className="lg:text-xl leading-normal lg:mb-10 mb-5 grow text-justify line-clamp-6">
         {item.description}
       </p>
 
