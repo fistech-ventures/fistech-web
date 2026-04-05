@@ -36,8 +36,8 @@ export default function TestimonialSection() {
       <div className="embla cursor-grab active:cursor-grabbing" ref={emblaRef}>
         <div className="embla__container flex gap-5">
           {testimonials.map((item: Testimonial, index: number) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="embla__slide flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
             >
               <TestimonialCard item={item} index={index} />
@@ -50,7 +50,7 @@ export default function TestimonialSection() {
       <div className="flex items-center justify-center gap-6 mt-12">
         <div className="flex gap-4 items-center">
           {/* Previous Button */}
-          <button 
+          <button
             onClick={scrollPrev}
             className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95"
             aria-label="Previous slide"
@@ -66,12 +66,12 @@ export default function TestimonialSection() {
               ))}
             </div>
             <span className="text-[10px] font-extrabold uppercase text-black">
-              50 Reviews
+              {testimonials.length} Reviews
             </span>
           </div>
 
           {/* Next Button */}
-          <button 
+          <button
             onClick={scrollNext}
             className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95"
             aria-label="Next slide"

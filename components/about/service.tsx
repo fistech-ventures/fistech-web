@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { solutions } from "@/data/service";
 import { Solution } from "@/types";
+import Link from "next/link";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const IconMap: Record<string, any> = {
@@ -113,7 +114,7 @@ function ServiceItem({ service, isOpen, onClick }: ServiceItemProps) {
       />
 
       <div className="relative z-10 py-8 md:py-12 lg:py-16 px-4 sm:px-8 md:px-12 lg:px-20">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-10">
           {/* Content Block */}
           <div className="flex flex-col sm:flex-row items-start gap-5 md:gap-10 lg:gap-20 flex-1">
             {/* Responsive Icon Size */}
@@ -129,12 +130,14 @@ function ServiceItem({ service, isOpen, onClick }: ServiceItemProps) {
 
             <div className="flex flex-col gap-3 md:gap-5 w-full">
               {/* Responsive Text Sizes */}
-              <h3
-                ref={titleRef}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tighter text-black transition-colors duration-300"
-              >
-                {service.title}
-              </h3>
+              <Link href={`/solutions/${service.slug}`}>
+                <h3
+                  ref={titleRef}
+                  className="inline text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tighter text-foreground duration-300 relative before:absolute before:bg-secondary before:-bottom-2 before:left-0 before:h-1 before:w-0 hover:before:w-full before:duration-500"
+                >
+                  {service.title}
+                </h3>
+              </Link>
 
               <div className="relative min-h-7.5 md:min-h-10 flex items-center">
                 {isOpen ? (
@@ -146,7 +149,7 @@ function ServiceItem({ service, isOpen, onClick }: ServiceItemProps) {
                     {service.keywords.map((tag: string) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-black/10 text-[10px] md:text-xs font-bold uppercase tracking-widest text-black/50 group-hover:text-white/40 group-hover:border-white/10 transition-colors"
+                        className="tag group-hover:text-white/40 group-hover:border-secondary/30 transition-colors"
                       >
                         {tag}
                       </span>

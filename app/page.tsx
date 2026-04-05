@@ -6,6 +6,8 @@ import WhatWeDo from "@/components/home/what-we-do";
 import Whoweare from "@/components/home/whoweare";
 import TestimonialSection from "@/components/shared/testimonial-section";
 import { Metadata } from "next";
+import fs from "fs";
+import path from "path";
 
 export const metadata: Metadata = {
   title: "Fistech Ventures",
@@ -13,10 +15,15 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const dir = path.join(process.cwd(), "public/images/clients");
+  const logos = fs
+    .readdirSync(dir)
+    .filter((f) => /\.(png|jpe?g|svg|webp)$/i.test(f));
+
   return (
     <>
       <Banner />
-      <Whoweare />
+      <Whoweare logos={logos} />
       <ProjectsSection />
       <Step />
       <WhatWeDo />

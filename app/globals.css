@@ -83,7 +83,7 @@
 
 @layer components {
   .main-headline {
-    @apply text-3xl md:text-5xl lg:text-6xl xl:text-[68px] font-bold text-foreground leading-[1.01] rounded-2xl;
+    @apply text-4xl md:text-5xl lg:text-6xl xl:text-[68px] font-bold text-foreground leading-[1.01] rounded-2xl;
   }
   .description {
     @apply text-base md:text-lg lg:text-xl xl:text-2xl text-justify md:text-start font-normal; font-family: var(--font-kanit);
