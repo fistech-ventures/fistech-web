@@ -4,7 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-
 @theme inline {
   --color-primary: var(--primary);
   --color-primary-foreground: #fff;
@@ -46,6 +45,7 @@
 :root {
   /* Font */
   --font-archivo: "Archivo", sans-serif;
+  --font-kanit: "Kanit", sans-serif;
 
   /* Colors */
   --primary: rgb(37, 48, 203);
@@ -83,10 +83,10 @@
 
 @layer components {
   .main-headline {
-    @apply text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] rounded-2xl;
+    @apply text-3xl md:text-5xl lg:text-6xl xl:text-[68px] font-bold text-foreground leading-[1.01] rounded-2xl;
   }
   .description {
-    @apply text-base md:text-lg lg:text-xl xl:text-2xl text-justify md:text-start;
+    @apply text-base md:text-lg lg:text-xl xl:text-2xl text-justify md:text-start font-normal; font-family: var(--font-kanit);
   }
   .section-tag {
     @apply text-xs md:text-sm lg:text-base font-medium text-center text-foreground relative before:absolute before:-left-3 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:bg-foreground/60 before:rounded-full before:content-[""];
@@ -101,7 +101,7 @@
     @apply text-5xl md:text-7xl lg:text-8xl xl:text-[100px] text-foreground font-medium leading-normal;
   }
   .tag {
-    @apply text-xs md:text-sm font-semibold capitalize text-foreground py-1 px-2 lg:px-5 rounded-full border border-foreground/10;
+    @apply text-xs md:text-sm font-normal capitalize text-foreground py-1 px-2 lg:px-5 rounded-full border border-foreground/10; font-family: var(--font-kanit);
   }
   .section-gap {
     @apply my-5 md:my-8 lg:my-12 xl:my-16;

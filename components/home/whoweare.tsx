@@ -11,10 +11,24 @@ export default function Whoweare() {
       <div className="container mx-auto px-4">
         <SectionTag sectiontag="Who We Are" />
 
-        <h2 className="section-title text-center max-w-6xl mx-auto">
-          We are not just an agency—we are your strategic partner, creative
-          collaborator, & technology guide on your heading-image startup
-          journey.
+        <h2 className="section-title text-center max-w-6xl mx-auto leading-tight">
+          We’re not just an agency—we’re your strategic partner{" "}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="inline-block align-middle h-[1em] w-auto rounded-full mx-2"
+          >
+            <source src="/who-are.mp4" type="video/mp4" />
+          </video>
+          creative collaborator, & technology guide on your{" "}
+          <img
+            src="/whoare.webp"
+            alt="Demo"
+            className="inline-block align-middle h-[1em] w-auto mx-2"
+          />
+          startup journey.
         </h2>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 mt-10 lg:mt-15">
