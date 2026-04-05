@@ -5,7 +5,11 @@ import Link from "next/link";
 import { Send } from "lucide-react";
 import Marquee from "react-fast-marquee";
 
-export default function Whoweare() {
+interface WhoweareProps {
+  logos: string[];
+}
+
+export default function Whoweare({ logos = [] }: WhoweareProps) {
   return (
     <section className="lg:pt-20 pt-10 border-b border-[#020202]/30 pb-16 lg:pb-20">
       <div className="container mx-auto px-4">
@@ -29,7 +33,7 @@ export default function Whoweare() {
             className="inline-block align-middle h-[1em] w-auto mx-2"
           />
           startup journey.
-        </h2>
+        </h2> 
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 mt-10 lg:mt-15">
           <CTAButton btnText="Discover Us" href="/" />
@@ -54,22 +58,27 @@ export default function Whoweare() {
 
         <div className="mt-8 lg:mt-15">
           <h3 className="text-lg md:text-[22px] font-medium text-foreground text-center">
-            We’ve 12K+ Trusted Clients Worldwide
+            We&apos;ve 12K+ Trusted Clients Worldwide
           </h3>
         </div>
 
         <div className="mt-8 lg:mt-15 overflow-hidden">
-          <Marquee speed={40} gradient={false} pauseOnHover={true}>
-            <div className="flex items-center gap-12 md:gap-20 pr-12 md:pr-20">
-              {[...Array(10)].map((_, i) => (
+          <Marquee
+            speed={90}
+            gradient={false}
+            pauseOnHover={true}
+            direction="right"
+          >
+            <div className="flex items-center gap-5 md:gap-16 pr-12 md:pr-20">
+              {logos.map((file) => (
                 <div
-                  key={i}
-                  className="relative w-28 md:w-40 shrink-0 opacity-70 hover:opacity-100 transition-opacity"
+                  key={file}
+                  className="relative w-20 md:w-28 h-14 md:h-18 p-2 shrink-0 border rounded-sm border-secondary"
                 >
                   <img
-                    src="/logo.png"
-                    alt="logo"
-                    className="w-full h-auto object-contain"
+                    src={`/images/clients/${file}`}
+                    alt={file.replace(/\.[^.]+$/, "").replace(/[-_]/g, " ")}
+                    className="w-full h-full object-contain"
                   />
                 </div>
               ))}
