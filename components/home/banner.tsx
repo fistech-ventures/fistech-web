@@ -11,23 +11,23 @@ export default function Banner() {
     { Icon: Youtube, path: "https://youtube.com/fistech" },
   ];
   return (
-    <section className="lg:max-h-[calc(100vh-50px)] flex items-center overflow-hidden my-4 px-4">
+    <section className="lg:max-h-[calc(100vh-50px)] flex items-center my-4 px-4">
       <div
         className="container mx-auto rounded-3xl overflow-visible"
         style={{
           background: `radial-gradient(circle at 15% 90%, rgba(168, 85, 247, 0.25) 0%, rgba(229, 231, 235, 0) 50%), #F3F4F6`,
         }}
       >
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-0">
-          <div className="w-full lg:w-3/5 pl-14 py-12 lg:py-20 text-center lg:text-left order-2 lg:order-1">
-            <div className="max-w-xl mx-aut lg:mt-20 mt-0">
-              <h1 className="main-headline flex flex-wrap items-center gap-2">
+        <div className="flex flex-col lg:flex-row">
+          <div className="w-full lg:w-3/5 lg:pl-14 pb-6 md:pb-8 lg:pb-20 lg:text-left pt-24 md:pt-32 lg:pt-12 px-3 lg:px-0">
+            <div className="max-w-xl lg:mt-20 mt-0">
+              <h1 className="main-headline flex flex-wrap items-center gap-2 pr-12 lg:pr-0">
                 <span>Design &</span>
                 <video
                   autoPlay
                   loop
                   muted
-                  className="inline-block w-36 h-16 object-cover rounded-full"
+                  className="inline-block w-24 md:w-36 h-12 md:h-16 object-cover rounded-full"
                 >
                   <source src="/banner-video.mp4" type="video/mp4" />
                 </video>
@@ -37,21 +37,21 @@ export default function Banner() {
                 We provide tailored strategies, creative design, and rapid
                 development for startups ready to grow fast.
               </p>
-              <div className="flex items-center gap-5 lg:mt-12">
-                <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
+              <div className="flex flex-col md:flex-row gap-5 lg:mt-12">
+                <div className="flex flex-col sm:flex-row gap-4 lg:items-center justify-center lg:justify-start">
                   <CTAButton
                     btnText="Get Your Free Consultation"
                     href="/contact"
                   />
                 </div>
-                <div className="flex gap-4 items-center lg:justify-start justify-center">
+                <div className="flex gap-4 items-center">
                   {socialLinks.map((social, i) => (
                     <Link
                       key={i}
                       href={social.path}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-full border-2 border-foreground flex items-center justify-center hover:bg-secondary hover:text-black transition-all"
+                      className="w-10 md:w-12 h-10 md:h-12 rounded-full border-2 border-foreground flex items-center justify-center hover:bg-secondary hover:text-black transition-all"
                     >
                       <social.Icon size={18} />
                     </Link>
@@ -61,7 +61,7 @@ export default function Banner() {
             </div>
           </div>
 
-          <div className="w-full lg:w-2/5 relative order-1 lg:order-2">
+          <div className="w-full lg:w-2/5 relative">
             <img
               src="/images/home/homebanner.png"
               alt="homebanner"

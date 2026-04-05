@@ -116,7 +116,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsOpen(true)}
-              className={`p-3 border ${pathname == "/" ? "text-white" : "text-foreground"} rounded-full hover:rotate-90 duration-500 ease-in-out cursor-pointer hover:bg-secondary hover:text-foreground`}
+              className={`p-3 border ${pathname == "/" ? "lg:text-white" : "lg:text-foreground"} rounded-full hover:rotate-90 duration-500 ease-in-out cursor-pointer hover:bg-secondary hover:text-foreground`}
             >
               <Menu size={20} />
             </button>

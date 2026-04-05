@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function WorkTogether() {
@@ -11,9 +12,9 @@ export default function WorkTogether() {
           Work Togather
         </h2>
         <div className="flex justify-center">
-          <button className="py-5 px-10 rounded-full bg-[#1e1e1e] text-white text-2xl font-medium hover:bg-secondary hover:text-black duration-300 ease-in-out cursor-pointer">
-            infor@fistech.org
-          </button>
+          <Link href="mailto:info@fistech.org" className="py-5 px-10 rounded-full bg-[#1e1e1e] text-white text-2xl font-medium hover:bg-secondary hover:text-black duration-300 ease-in-out cursor-pointer">
+            info@fistech.org
+          </Link>
         </div>
       </div>
     </section>

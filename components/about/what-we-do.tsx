@@ -6,7 +6,10 @@ export default function Whatwedo() {
     <section className="py-10 ">
       <div className="container mx-auto relative">
         <SectionTag sectiontag="What We Do" />
-        <h2 className="section-title max-w-4xl mx-auto py-10 font-medium text-center">
+        <h2
+          className="section-title max-w-4xl mx-auto py-10 font-medium text-center"
+          style={{ fontFamily: "var(--font-kanit)" }}
+        >
           Strategy & design to content & technology — I turn also your vision
           into reality.
         </h2>
