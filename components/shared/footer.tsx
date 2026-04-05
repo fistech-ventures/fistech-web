@@ -32,12 +32,12 @@ export default function Footer() {
     <footer className="bg-black">
       <div className="container mx-auto text-white rounded-xl py-5 md:py-8 lg:py-14 px-6">
         {/* Top Section: Logo and Top Info */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5 md:mb-8 lg:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-5 md:mb-8 lg:mb-12">
           <Link href="/" className="footer-fade">
             <img src="/logo.png" alt="Anio Agency" className="h-32 w-32 mb-6" />
           </Link>
 
-          <div className="footer-fade flex flex-col items-center text-center">
+          <div className="footer-fade flex flex-col md:items-center text-start md:text-center">
             <h4 className="text-gray-500 uppercase text-xs font-bold tracking-widest mb-4">
               Office Location
             </h4>
@@ -46,7 +46,7 @@ export default function Footer() {
             </address>
           </div>
 
-          <div className="footer-fade flex flex-col items-end">
+          <div className="footer-fade flex flex-col md:items-end">
             <h4 className="text-gray-500 uppercase text-xs font-bold tracking-widest mb-4">
               Contact Info
             </h4>
@@ -93,7 +93,7 @@ export default function Footer() {
           {footerNav.map((section) => (
             <div
               key={section.title}
-              className="grid grid-cols-1 gap-3 footer-fade self-start nth-[2]:text-center last:text-end"
+              className="grid grid-cols-1 gap-3 footer-fade self-start lg:nth-[2]:text-center lg:last:text-end"
             >
               {section.links.map((link) => (
                 <Link
