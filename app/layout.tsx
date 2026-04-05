@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
+import AppProvider from "@/provider/app-provider";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -20,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning>
-      <body className={`${archivo.className} antialiased`}>{children}</body>
+      <body className={`${archivo.className} antialiased`}>
+        <AppProvider>{children}</AppProvider>
+      </body>
     </html>
   );
 }

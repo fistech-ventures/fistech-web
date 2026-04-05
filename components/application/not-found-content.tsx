@@ -1,13 +1,9 @@
-
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { useTranslations } from "next-intl";
 
 export default function NotFoundContent() {
-  const t = useTranslations("notFound");
-
   return (
     <div className="bg-[#F8F9FE] min-h-screen relative overflow-hidden">
       <div className="container">
@@ -30,10 +26,12 @@ export default function NotFoundContent() {
             {/* Text Content */}
             <div className="space-y-4">
               <h2 className="text-2xl font-extrabold tracking-tight text-[#1A1A1D] sm:text-4xl">
-                {t("title")}
+                Whoops! Looks Like This Page Went on Vacation!
               </h2>
               <p className="mx-auto max-w-125 text-sm text-muted-foreground sm:text-base">
-                {t("description")}
+                Uh oh! Our little cartoon friends might have accidentally
+                scribbled out this address. We can&apos;t seem to find the page
+                you&apos;re looking for.
               </p>
             </div>
 
@@ -45,7 +43,7 @@ export default function NotFoundContent() {
               className="rounded-full border-[#5E627B]/20 px-8 py-6 text-[#1A1A1D] hover:bg-[#F0F2F9] gap-2"
             >
               <Link href="/">
-                {t("button")}
+                Return to Base Camp
                 <ArrowRight className="h-4 w-4 text-[#5E627B]" />
               </Link>
             </Button>
@@ -53,5 +51,5 @@ export default function NotFoundContent() {
         </div>
       </div>
     </div>
-  )
+  );
 }
