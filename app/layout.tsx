@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Archivo } from "next/font/google";
+import { Archivo, Kanit } from "next/font/google";
 import "./globals.css";
 import AppProvider from "@/provider/app-provider";
 
 const archivo = Archivo({
   subsets: ["latin"],
   variable: "--font-archivo",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const kanit = Kanit({
+  subsets: ["latin"],
+  variable: "--font-kanit",
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
@@ -21,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning>
-      <body className={`${archivo.className} antialiased`}>
+      <body className={`${archivo.className} ${kanit.variable} antialiased`}>
         <AppProvider>{children}</AppProvider>
       </body>
     </html>

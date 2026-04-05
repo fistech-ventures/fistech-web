@@ -11,7 +11,7 @@ export default function Banner() {
     { Icon: Youtube, path: "https://youtube.com/fistech" },
   ];
   return (
-    <section className="lg:max-h-[calc(100vh-64px)] flex items-center overflow-hidden my-4 px-4">
+    <section className="lg:max-h-[calc(100vh-50px)] flex items-center overflow-hidden my-4 px-4">
       <div
         className="container mx-auto rounded-3xl overflow-visible"
         style={{
@@ -19,30 +19,44 @@ export default function Banner() {
         }}
       >
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-0">
-          <div className="w-full lg:w-3/5 px-6 py-12 lg:py-20 text-center lg:text-left order-2 lg:order-1">
+          <div className="w-full lg:w-3/5 pl-14 py-12 lg:py-20 text-center lg:text-left order-2 lg:order-1">
             <div className="max-w-xl mx-aut lg:mt-20 mt-0">
-              <h1 className="main-headline text-3xl md:text-5xl lg:text-6xl font-bold">
-                Design & Development for Startup.
+              <h1 className="main-headline flex flex-wrap items-center gap-2">
+                <span>Design &</span>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  className="inline-block w-36 h-16 object-cover rounded-full"
+                >
+                  <source src="/banner-video.mp4" type="video/mp4" />
+                </video>
+                <span>Development for Startup.</span>
               </h1>
               <p className="description lg:py-8 py-6">
                 We provide tailored strategies, creative design, and rapid
                 development for startups ready to grow fast.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
-                <CTAButton btnText="Get Your Free Consultation" href="/contact" />
-              </div>
-              <div className="flex gap-4 mt-10 lg:justify-start justify-center">
-                {socialLinks.map((social, i) => (
-                  <Link
-                    key={i}
-                    href={social.path}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full border-2 border-gray-700 flex items-center justify-center hover:bg-secondary hover:text-black transition-all"
-                  >
-                    <social.Icon size={18} />
-                  </Link>
-                ))}
+              <div className="flex items-center gap-5 lg:mt-12">
+                <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
+                  <CTAButton
+                    btnText="Get Your Free Consultation"
+                    href="/contact"
+                  />
+                </div>
+                <div className="flex gap-4 items-center lg:justify-start justify-center">
+                  {socialLinks.map((social, i) => (
+                    <Link
+                      key={i}
+                      href={social.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 rounded-full border-2 border-foreground flex items-center justify-center hover:bg-secondary hover:text-black transition-all"
+                    >
+                      <social.Icon size={18} />
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -74,7 +88,7 @@ export default function Banner() {
                   </defs>
                   <text className="text-[10px] uppercase font-bold tracking-[0.22em] fill-black">
                     <textPath xlinkHref="#circlePath">
-                      Fistech Ventures Estd 2026
+                      -Fistech Ventures - Estd:2026
                     </textPath>
                   </text>
                 </svg>

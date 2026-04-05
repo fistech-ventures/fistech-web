@@ -85,7 +85,7 @@ export const projects: Project[] = [
     title: "Sketch Lab",
     categories: ["Generative AI", "SaaS Platform", "MERN Stack"],
     location: "Global (Western Focus)",
-    client: "Confidential (Entertainment/Educational)",
+    client: "Michael",
     date: "2026-03-29",
     websiteUrl: "https://sktchlabs.com/", // Mapping based on initial analysis
 

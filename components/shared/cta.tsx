@@ -13,7 +13,7 @@ export default function CTAButton({
   isDark?: boolean;
 }) {
   const base =
-    "text-xs lg:text-sm font-semibold uppercase tracking-wider cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out border-none";
+    "text-xs lg:text-sm font-bold uppercase tracking-wider cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out border-none";
 
   const variant = isDark
     ? "py-3.5 px-4 md:py-4 md:px-5 lg:py-4 lg:px-6 xl:py-5 xl:px-8 bg-transparent text-white ring-2 ring-white"

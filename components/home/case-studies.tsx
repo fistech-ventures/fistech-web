@@ -10,10 +10,10 @@ export default function CaseStudies() {
   return (
     <section className="py-12 md:py-20 lg:py-32 bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center mb-12 lg:mb-20 text-center">
+        <div className="flex flex-col items-center mb-12 lg:mb-10 text-center">
           <SectionTag sectiontag="Case Studies" />
-          <h2 className="section-title max-w-4xl mx-auto py-10 font-medium text-center">
-            Recent work and case studies that highlight our expertise.
+          <h2 className="section-title max-w-4xl mx-auto py-5 font-medium text-center">
+            Recent work and case studies that highlight our expertise
           </h2>
         </div>
 
@@ -21,7 +21,7 @@ export default function CaseStudies() {
           {CASE_STUDIES.slice(0, 2).map((study) => (
             <Link key={study.caseStudyId} href={`/case-studies/${study.slug}`}>
               <article className="group cursor-pointer">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-gray-100">
+                <div className="relative aspect-16/10 overflow-hidden rounded-[2rem] md:rounded-[3rem] bg-gray-100">
                   <img
                     src={study.hero.mainImage}
                     alt={study.metadata.title}
