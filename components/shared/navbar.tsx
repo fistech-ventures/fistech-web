@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Mail, Phone, X, Menu, Asterisk, ChevronRight } from "lucide-react";
+import { Mail, X, Menu, Asterisk, ChevronRight } from "lucide-react";
 import CTAButton from "./cta";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -168,18 +168,12 @@ export default function Navbar() {
             Contact Info
           </p>
           <div className="space-y-6">
-            <div className="flex items-center gap-4 group cursor-pointer">
+            <Link href="mailto:info@fistech.org" className="flex items-center gap-4 group cursor-pointer">
               <div className="bg-black p-3 rounded-full text-white group-hover:bg-[#D4FF70] group-hover:text-black transition-all">
                 <Mail size={18} />
               </div>
-              <span className="text-[15px] font-bold">info@example.com</span>
-            </div>
-            <div className="flex items-center gap-4 group cursor-pointer">
-              <div className="bg-black p-3 rounded-full text-white group-hover:bg-[#D4FF70] group-hover:text-black transition-all">
-                <Phone size={18} />
-              </div>
-              <span className="text-[15px] font-bold">+99–763 684 4568</span>
-            </div>
+              <span className="text-[15px] font-bold">info@fistech.org</span>
+            </Link>
           </div>
         </div>
       </div>

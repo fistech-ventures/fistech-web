@@ -4,7 +4,7 @@ export default function MapSection() {
   // Replace this encoded string with your actual location or a Google Maps Embed API Key
   // This URL is for Mirpur, Dhaka based on your screenshot
   const mapSrc =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.19102739418057!2d90.40795527479936!3d23.781004499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7a62be3b341%3A0xf1871769b859d8a3!2sEGC%20Limited!5e0!3m2!1sen!2sbd!4v1774768463424!5m2!1sen!2sbd";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d912.7792229600426!2d90.40751679919738!3d23.7788515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c776c10f1711%3A0x46d9550f6cee3a14!2sQCH5%2BGFR%2C%20Rd%20No%2019%2C%20Dhaka%201212!5e0!3m2!1sen!2sbd!4v1775475239802!5m2!1sen!2sbd";
 
   return (
     <section className="w-full pt-12 md:pt-20 bg-white">
