@@ -27,7 +27,7 @@ export default function TestimonialSection() {
     <section className="max-w-7xl px-4 mx-auto section-gap overflow-x-hidden">
       <div className="text-center max-w-xl mx-auto space-y-4 mb-10 md:mb-16">
         <h2 className="section-title">Testimonials</h2>
-        <p className="description text-gray-600">
+        <p className="description text-center text-gray-600">
           We helped us focus on what mattered, and their ideas consistently
           pushed our business forward.
         </p>
@@ -52,7 +52,7 @@ export default function TestimonialSection() {
           {/* Previous Button */}
           <button
             onClick={scrollPrev}
-            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95"
+            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95 cursor-pointer"
             aria-label="Previous slide"
           >
             <ChevronLeft size={20} />
@@ -73,7 +73,7 @@ export default function TestimonialSection() {
           {/* Next Button */}
           <button
             onClick={scrollNext}
-            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95"
+            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95 cursor-pointer"
             aria-label="Next slide"
           >
             <ChevronRight size={20} />
