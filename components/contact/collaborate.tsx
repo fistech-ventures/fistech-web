@@ -6,21 +6,21 @@ export default function CollaborateSection() {
     {
       id: 1,
       title: "WhatsApp Number",
-      value: "+1 (234) 567-890",
-      href: "https://wa.me/1234567890", // Direct WhatsApp link
+      value: "+880 1609 302239",
+      href: "https://wa.me/+8801609302239",
       icon: Phone,
     },
     {
       id: 2,
       title: "Email Address",
-      value: "info@anioexample.com",
-      href: "mailto:info@anioexample.com",
+      value: "info@fistech.org",
+      href: "mailto:info@fistech.org",
       icon: Send,
     },
     {
       id: 3,
       title: "",
-      value: "123 Innovation Street, New York, USA",
+      value: "Cha 192, TB Gate, Mohakhali, Dhaka 1212, Bangladesh",
       href: "https://maps.google.com",
       icon: MapPin,
     },
