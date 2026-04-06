@@ -101,9 +101,12 @@ export default function Navbar() {
               </div>
             </Link>
 
-            <div className="hidden md:flex items-center gap-2 text-foreground/60 text-[13px] font-medium uppercase tracking-wider">
+            <div
+              className="hidden md:flex items-center gap-2 text-foreground/60 text-[13px] font-medium uppercase tracking-wider"
+              style={{ fontFamily: "var(--font-kanit)" }}
+            >
               <Asterisk size={14} className="text-black" />
-              <span>Based on California, USA.</span>
+              <span>Based on Europe, USA & UK</span>
             </div>
           </div>
 
