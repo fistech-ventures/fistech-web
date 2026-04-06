@@ -98,8 +98,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       </Link>
 
       {/* Project Metadata */}
-      <div className="flex flex-col gap-2 px-2">
-        <h3 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold tracking-tight">
+      <div className="flex flex-col gap-2 px-2 pt-2">
+        <h3 className="item-title">
           {project.title}
         </h3>
 

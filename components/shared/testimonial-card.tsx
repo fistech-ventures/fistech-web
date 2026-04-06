@@ -27,11 +27,11 @@ export default function TestimonialCard({ item, index }: TestimonialCardProps) {
         {item.description}
       </p>
 
-      <div className="mb-8 pt-8 border-t border-gray-300/60">
+      <div className="mb-4 pt-4 border-t border-gray-300/60">
         <img
           src={item.businessLogo}
           alt="Logo"
-          className="h-7 w-auto object-contain"
+          className="w-20 md:w-28 h-14 md:h-18 object-contain"
         />
       </div>
 

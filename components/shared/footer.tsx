@@ -8,7 +8,7 @@ export default function Footer() {
       title: "Company",
       links: [
         { name: "Company", path: "/about" },
-        { name: "Our Work", path: "/work" },
+        { name: "Our Work", path: "/projects" },
         { name: "Contact Us", path: "/contact" },
       ],
     },
@@ -42,7 +42,7 @@ export default function Footer() {
               Office Location
             </h4>
             <address className="not-italic text-lg md:text-xl font-medium leading-snug underline decoration-gray-600 underline-offset-4">
-              308 Crescent Avenue, Level 3, Los <br /> Angeles, CA 90012, USA
+              Cha 192, TB Gate, Mohakhali, <br /> Dhaka, 1212, Bangladesh
             </address>
           </div>
 
