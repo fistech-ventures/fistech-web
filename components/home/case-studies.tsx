@@ -12,7 +12,7 @@ export default function CaseStudies() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-12 lg:mb-10 text-center">
           <SectionTag sectiontag="Case Studies" />
-          <h2 className="section-title max-w-4xl mx-auto py-5 font-medium text-center">
+          <h2 className="section-title max-w-4xl mx-auto py-5 text-center">
             Recent work and case studies that highlight our expertise
           </h2>
         </div>

@@ -8,6 +8,7 @@ import TestimonialSection from "@/components/shared/testimonial-section";
 import { Metadata } from "next";
 import fs from "fs";
 import path from "path";
+import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Fistech Ventures",
@@ -24,7 +25,7 @@ export default function Home() {
     <>
       <Banner />
       <Whoweare logos={logos} />
-      <ProjectsSection />
+      <ProjectsSection projects={projects.slice(0, 4)} />
       <Step />
       <WhatWeDo />
       <TestimonialSection />

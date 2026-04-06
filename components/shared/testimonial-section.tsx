@@ -52,7 +52,7 @@ export default function TestimonialSection() {
           {/* Previous Button */}
           <button
             onClick={scrollPrev}
-            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95"
+            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95 cursor-pointer"
             aria-label="Previous slide"
           >
             <ChevronLeft size={20} />
@@ -73,7 +73,7 @@ export default function TestimonialSection() {
           {/* Next Button */}
           <button
             onClick={scrollNext}
-            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95"
+            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95 cursor-pointer"
             aria-label="Next slide"
           >
             <ChevronRight size={20} />

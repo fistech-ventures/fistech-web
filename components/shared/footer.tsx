@@ -8,7 +8,7 @@ export default function Footer() {
       title: "Company",
       links: [
         { name: "Company", path: "/about" },
-        { name: "Our Work", path: "/work" },
+        { name: "Our Work", path: "/projects" },
         { name: "Contact Us", path: "/contact" },
       ],
     },
