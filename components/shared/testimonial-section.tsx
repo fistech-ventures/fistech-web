@@ -27,7 +27,7 @@ export default function TestimonialSection() {
     <section className="max-w-7xl px-4 mx-auto section-gap overflow-x-hidden">
       <div className="text-center max-w-xl mx-auto space-y-4 mb-10 md:mb-16">
         <h2 className="section-title">Testimonials</h2>
-        <p className="description text-gray-600">
+        <p className="description text-center text-gray-600">
           We helped us focus on what mattered, and their ideas consistently
           pushed our business forward.
         </p>

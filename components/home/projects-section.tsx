@@ -10,7 +10,7 @@ export default function ProjectsSection() {
     <section className="py-6 md:py-8 lg:py-10 xl:py-16">
       <div className="container">
         <ProjectHeadline />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-14">
           {projects.slice(0, 4).map((project: Project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
