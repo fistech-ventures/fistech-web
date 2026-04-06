@@ -303,11 +303,11 @@ export const projects: Project[] = [
           },
           {
             label: "Error Reduction",
-            value: "85% أقل Manual Errors",
+            value: "85% Lower Error",
           },
           {
             label: "Revenue Growth",
-            value: "+40% YoY Increase",
+            value: "40% YoY Increase",
           },
         ],
       },

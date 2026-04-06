@@ -27,15 +27,15 @@ export default function ProjectGallery({
   useGSAP(
     () => {
       // Find all elements marked as parallax containers
-      const containers = gsap.utils.toArray<HTMLElement>('.parallax-container');
-      
+      const containers = gsap.utils.toArray<HTMLElement>(".parallax-container");
+
       containers.forEach((container) => {
         // The image to scrub is defined inside the container
-        const img = container.querySelector('.parallax-img');
-        
+        const img = container.querySelector(".parallax-img");
+
         if (img) {
           gsap.to(img, {
-            yPercent: 30, // Distance traveled 
+            yPercent: 30,
             ease: "none",
             scrollTrigger: {
               trigger: container,
@@ -47,7 +47,7 @@ export default function ProjectGallery({
         }
       });
     },
-    { scope: sectionRef }
+    { scope: sectionRef },
   );
 
   return (
@@ -67,7 +67,7 @@ export default function ProjectGallery({
               </div>
             </div>
           </div>
-          
+
           {/* Image 2 Box */}
           <div className="w-full lg:w-1/2 h-[40vh] sm:h-[50vh] lg:h-full p-1 sm:p-2 lg:p-3">
             <div className="relative w-full h-full overflow-hidden parallax-container">
@@ -85,7 +85,7 @@ export default function ProjectGallery({
         {/* Bottom Row: 1 Full-Width Parallax Image */}
         <div className="w-full h-[60vh] md:h-[80vh] xl:h-[90vh] p-1 sm:p-2 lg:p-3">
           <div className="relative w-full h-full overflow-hidden parallax-container">
-            <div className="absolute -top-[20%] left-0 h-[140%] w-full parallax-img">
+            <div className="absolute -top-[40%] left-0 h-[140%] w-full parallax-img">
               <img
                 src={mainImageSrc}
                 alt={`${imageAlt} Main`}
@@ -94,7 +94,6 @@ export default function ProjectGallery({
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );
