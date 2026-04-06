@@ -48,8 +48,7 @@ const ProjectDiscovery = ({
         className="absolute inset-0 cursor-pointer"
         onClick={() => setIsVideoOpen(false)}
       />
-
-      <div className="relative w-[90vw] h-[85vh] md:h-[90vh] bg-black overflow-hidden shadow-2xl z-10">
+      <div className="relative w-[90vw] max-w-5xl bg-black overflow-hidden shadow-2xl z-10 rounded-lg">
         {/* Close Button */}
         <button
           onClick={() => setIsVideoOpen(false)}
@@ -58,13 +57,8 @@ const ProjectDiscovery = ({
           <X className="w-6 h-6" />
         </button>
 
-        {/* Video */}
-        <video
-          src={videoSrc}
-          controls
-          autoPlay
-          className="w-full h-full object-cover"
-        />
+        {/* Video — natural aspect ratio, no cropping */}
+        <video src={videoSrc} controls autoPlay className="w-full h-auto" />
       </div>
     </div>
   );
@@ -81,19 +75,19 @@ const ProjectDiscovery = ({
 
       {/* Main Grid */}
       <div className="container mx-auto">
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-24 items-center">
-          <div className="relative w-full aspect-2/1">
-            <div className="w-full h-full group">
-              <img
-                src={imageSrc}
-                alt={visionData.header}
-                className="w-full h-full object-cover rounded-lg transition-transform duration-700 ease-in-out group-hover:scale-105"
-              />
-
-              <div
-                onClick={() => setIsVideoOpen(true)}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-[#c6ff00] rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 ease-out hover:scale-110 cursor-pointer z-10"
-              >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-24 items-center">
+          {/* Left Column - Image with Play Button */}
+          <div className="relative w-full group overflow-hidden rounded-lg">
+            <img
+              src={imageSrc}
+              alt={visionData.header}
+              className="w-full h-auto object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+            />
+            <div
+              onClick={() => setIsVideoOpen(true)}
+              className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"
+            >
+              <div className="w-16 h-16 md:w-20 md:h-20 bg-[#c6ff00] rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 ease-out hover:scale-110">
                 <Play className="w-8 h-8 md:w-10 md:h-10 text-black fill-black ml-1 pointer-events-none" />
               </div>
             </div>

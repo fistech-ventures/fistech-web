@@ -5,6 +5,7 @@ import ProjectGallery from "@/components/projects/ProjectGallery";
 import ProjectHero from "@/components/projects/ProjectHero";
 import ProjectImpact from "@/components/projects/ProjectImpact";
 import { notFound } from "next/navigation";
+import PageHeadline from "@/components/shared/page-headline";
 
 export default async function Page({
   params,
@@ -51,6 +52,7 @@ export default async function Page({
 
   return (
     <div className="">
+      <PageHeadline headline={project.title} isProject={true} />
       <ProjectHero
         title={project.title}
         categories={project.categories || []}
