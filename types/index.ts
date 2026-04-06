@@ -39,6 +39,7 @@ export interface Testimonial {
   title: string;
   name: string;
   description: string;
+  rating: number;
   country: string;
   businessLogo: string;
   profileImage?: string;
