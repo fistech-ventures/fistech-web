@@ -1,14 +1,17 @@
 import { Solution } from "@/types";
 import { Plus } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 export default function SolutionHero({ hero }: { hero?: Solution["hero"] }) {
   return (
     <>
       <section className="max-w-6xl mx-auto px-2 aspect-8/3 mb-7 md:mb-9 lg:mb-12 xl:mb-20 flex flex-col gap-5 lg:gap-10 xl:gap-14">
-        <img
-          src={hero?.coverImage}
-          alt={hero?.subtitle}
+        <Image
+          width={2000}
+          height={1000}
+          src={hero?.coverImage || ""}
+          alt={hero?.subtitle || ""}
           className="w-full h-full object-cover"
         />
         <div className="flex flex-col lg:flex-row items-start gap-4 md:gap-6 lg:gap-7 xl:gap-12 justify-between">

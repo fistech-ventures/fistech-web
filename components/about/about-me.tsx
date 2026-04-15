@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { solutions } from "@/data/service";
+import Image from "next/image";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -18,56 +19,56 @@ export default function AboutMe() {
 
   const tickerItems = solutions.map((item) => item.title);
 
-  useGSAP(() => {
-    // Counter
-    gsap.from(counterRef.current, {
-      innerText: 0,
-      duration: 2,
-      snap: { innerText: 1 },
-      scrollTrigger: {
-        trigger: counterRef.current,
-        start: "top 85%",
-      },
-    });
-
-    const initMarquee = (
-      el: HTMLDivElement | null,
-      direction: number 
-    ) => {
-      if (!el) return;
-
-      const rollWidth = el.scrollWidth / 3;
-
-      const animation = gsap.to(el, {
-        x: -rollWidth,
-        duration: 30,
-        repeat: -1,
-        ease: "none",
-      });
-
-      animation.timeScale(direction);
-
-      ScrollTrigger.create({
-        trigger: containerRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        onUpdate: (self) => {
-          const velocity = Math.abs(self.getVelocity() / 100);
-          const scrollDir = self.direction; 
-
-          gsap.to(animation, {
-            timeScale: direction * scrollDir * (1 + velocity),
-            duration: 1,
-            ease: "power2.out",
-          });
+  useGSAP(
+    () => {
+      // Counter
+      gsap.from(counterRef.current, {
+        innerText: 0,
+        duration: 2,
+        snap: { innerText: 1 },
+        scrollTrigger: {
+          trigger: counterRef.current,
+          start: "top 85%",
         },
       });
-    };
 
-    initMarquee(tickerLeftRef.current, 1);
+      const initMarquee = (el: HTMLDivElement | null, direction: number) => {
+        if (!el) return;
 
-    initMarquee(tickerRightRef.current, -1);
-  }, { scope: containerRef });
+        const rollWidth = el.scrollWidth / 3;
+
+        const animation = gsap.to(el, {
+          x: -rollWidth,
+          duration: 30,
+          repeat: -1,
+          ease: "none",
+        });
+
+        animation.timeScale(direction);
+
+        ScrollTrigger.create({
+          trigger: containerRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          onUpdate: (self) => {
+            const velocity = Math.abs(self.getVelocity() / 100);
+            const scrollDir = self.direction;
+
+            gsap.to(animation, {
+              timeScale: direction * scrollDir * (1 + velocity),
+              duration: 1,
+              ease: "power2.out",
+            });
+          },
+        });
+      };
+
+      initMarquee(tickerLeftRef.current, 1);
+
+      initMarquee(tickerRightRef.current, -1);
+    },
+    { scope: containerRef },
+  );
 
   return (
     <section
@@ -82,14 +83,18 @@ export default function AboutMe() {
           My focus is on UX, UI, and design systems that scale.
         </h2>
 
-        <img
+        <Image
           src="/images/about/signature.png"
           alt="signature"
+          width={100}
+          height={100}
           className="mx-auto mb-16 h-12 md:h-20 object-contain"
         />
 
-        <div className="w-72 h-96 md:w-[320px] md:h-105 border border-foreground
-         rounded-full mx-auto flex flex-col justify-center items-center  backdrop-blur-sm shadow-xl">
+        <div
+          className="w-72 h-96 md:w-[320px] md:h-105 border border-foreground
+         rounded-full mx-auto flex flex-col justify-center items-center  backdrop-blur-sm shadow-xl"
+        >
           <h3 className="text-9xl md:text-[160px] font-bold text-black flex items-start leading-none">
             <span ref={counterRef}>5</span>
             <span className="text-4xl md:text-5xl mt-6">+</span>
@@ -107,18 +112,14 @@ export default function AboutMe() {
             ref={tickerLeftRef}
             className="flex whitespace-nowrap gap-16 items-center w-max"
           >
-            {[...tickerItems, ...tickerItems, ...tickerItems].map(
-              (item, i) => (
-                <React.Fragment key={`bl-${i}`}>
-                  <span className="text-white text-3xl font-black uppercase tracking-tighter">
-                    {item}
-                  </span>
-                  <span className="text-gray-600 text-5xl font-light">
-                    ✦
-                  </span>
-                </React.Fragment>
-              )
-            )}
+            {[...tickerItems, ...tickerItems, ...tickerItems].map((item, i) => (
+              <React.Fragment key={`bl-${i}`}>
+                <span className="text-white text-3xl font-black uppercase tracking-tighter">
+                  {item}
+                </span>
+                <span className="text-gray-600 text-5xl font-light">✦</span>
+              </React.Fragment>
+            ))}
           </div>
         </div>
 
@@ -128,18 +129,14 @@ export default function AboutMe() {
             ref={tickerRightRef}
             className="flex whitespace-nowrap gap-16 items-center w-max"
           >
-            {[...tickerItems, ...tickerItems, ...tickerItems].map(
-              (item, i) => (
-                <React.Fragment key={`wh-${i}`}>
-                  <span className="text-black text-3xl font-black uppercase tracking-tighter">
-                    {item}
-                  </span>
-                  <span className="text-gray-300 text-5xl font-light">
-                    ✦
-                  </span>
-                </React.Fragment>
-              )
-            )}
+            {[...tickerItems, ...tickerItems, ...tickerItems].map((item, i) => (
+              <React.Fragment key={`wh-${i}`}>
+                <span className="text-black text-3xl font-black uppercase tracking-tighter">
+                  {item}
+                </span>
+                <span className="text-gray-300 text-5xl font-light">✦</span>
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </div>

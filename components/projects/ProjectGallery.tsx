@@ -4,6 +4,8 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ImgWaterMark from "../shared/image-watermark";
+import Image from "next/image";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -26,11 +28,9 @@ export default function ProjectGallery({
 
   useGSAP(
     () => {
-      // Find all elements marked as parallax containers
       const containers = gsap.utils.toArray<HTMLElement>(".parallax-container");
 
       containers.forEach((container) => {
-        // The image to scrub is defined inside the container
         const img = container.querySelector(".parallax-img");
 
         if (img) {
@@ -53,18 +53,21 @@ export default function ProjectGallery({
   return (
     <section ref={sectionRef} className="w-full flex flex-col section-gap">
       <div className="px-2 sm:px-4">
-        {/* Top Row: 2 Images (Single column on mobile/tablet, side-by-side on desktop) with Parallax */}
-        <div className="flex flex-col lg:flex-row w-full lg:h-[40vh] xl:h-[60vh]">
-          {/* Image 1 Box */}
+        <div className="flex flex-col lg:flex-row w-full aspect-4/1.5">
           <div className="w-full lg:w-1/2 h-[40vh] sm:h-[50vh] lg:h-full p-1 sm:p-2 lg:p-3">
             <div className="relative w-full h-full overflow-hidden parallax-container">
               <div className="absolute -top-[20%] left-0 h-[140%] w-full parallax-img">
-                <img
-                  src={imageOneSrc}
-                  alt={`${imageAlt} Side 1`}
-                  className="object-cover w-full h-full"
-                />
+                <div className="w-full h-full">
+                  <Image
+                    width={1000}
+                    height={1000}
+                    src={imageOneSrc}
+                    alt={`${imageAlt} Side 1`}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
               </div>
+              <ImgWaterMark />
             </div>
           </div>
 
@@ -72,12 +75,15 @@ export default function ProjectGallery({
           <div className="w-full lg:w-1/2 h-[40vh] sm:h-[50vh] lg:h-full p-1 sm:p-2 lg:p-3">
             <div className="relative w-full h-full overflow-hidden parallax-container">
               <div className="absolute -top-[20%] left-0 h-[140%] w-full parallax-img">
-                <img
+                <Image
+                  width={1000}
+                  height={1000}
                   src={imageTwoSrc}
                   alt={`${imageAlt} Side 2`}
                   className="object-cover w-full h-full"
                 />
               </div>
+              <ImgWaterMark />
             </div>
           </div>
         </div>
@@ -86,12 +92,15 @@ export default function ProjectGallery({
         <div className="w-full h-[60vh] md:h-[80vh] xl:h-[90vh] p-1 sm:p-2 lg:p-3">
           <div className="relative w-full h-full overflow-hidden parallax-container">
             <div className="absolute -top-[40%] left-0 h-[140%] w-full parallax-img">
-              <img
+              <Image
+                width={3000}
+                height={1000}
                 src={mainImageSrc}
                 alt={`${imageAlt} Main`}
                 className="object-cover w-full h-full"
               />
             </div>
+            <ImgWaterMark />
           </div>
         </div>
       </div>

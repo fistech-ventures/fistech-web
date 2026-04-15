@@ -1,5 +1,6 @@
 import React from "react";
 import SectionTag from "../shared/section-tag";
+import Image from "next/image";
 
 export default function Whatwedo() {
   return (
@@ -14,7 +15,7 @@ export default function Whatwedo() {
           into reality.
         </h2>
         <div className="absolute top-35 left-50">
-          <img src="/images/about/ball.png" alt="ball" />
+          <Image width={150} height={150} src="/images/about/ball.png" alt="ball" />
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import React from "react";
 import CTAButton from "../shared/cta";
 import { Facebook, Linkedin, MoveDown, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Banner() {
   const socialLinks = [
@@ -19,7 +20,7 @@ export default function Banner() {
         }}
       >
         <div className="flex flex-col lg:flex-row">
-          <div className="w-full lg:w-3/5 lg:pl-14 pb-6 md:pb-8 lg:pb-20 lg:text-left pt-24 md:pt-32 lg:pt-12 px-3 lg:px-0">
+          <div className="w-full lg:w-3/5 lg:pl-14 pb-6 md:pb-8 lg:pb-20 lg:text-left pt-24 md:pt-32 lg:pt-28 px-3 lg:px-0">
             <div className="max-w-xl lg:mt-20 mt-0">
               <h1 className="main-headline flex flex-wrap items-center gap-2 pr-12 lg:pr-0">
                 <span>Design &</span>
@@ -62,7 +63,9 @@ export default function Banner() {
           </div>
 
           <div className="w-full lg:w-2/5 relative">
-            <img
+            <Image
+              width={1000}
+              height={1000}
               src="/images/home/homebanner.png"
               alt="homebanner"
               className="rounded-2xl w-full object-cover min-h-62.5 h-full"
