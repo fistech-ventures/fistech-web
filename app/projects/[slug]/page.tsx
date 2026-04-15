@@ -64,21 +64,12 @@ export default async function Page({
       />
       <ProjectDiscovery
         visionData={visionSection}
-        imageSrc={project.gallery?.[0] || project.heroImage}
+        imageSrc={project.gallery?.[3] || project.heroImage}
       />
       <ProjectGallery
-        imageOneSrc={
-          project.gallery?.[1] ||
-          "https://anio-wp.egenstheme.com/wp-content/uploads/2026/01/portfolio-dt-gallery-img5.webp"
-        }
-        imageTwoSrc={
-          project.gallery?.[2] ||
-          "https://anio-wp.egenstheme.com/wp-content/uploads/2026/01/portfolio-dt-gallery-img6.webp"
-        }
-        mainImageSrc={
-          project.gallery?.[3] ||
-          "https://anio-wp.egenstheme.com/wp-content/uploads/2026/01/portfolio-dt-gallery-img7.webp"
-        }
+        imageOneSrc={project.gallery?.[4]}
+        imageTwoSrc={project.gallery?.[5]}
+        mainImageSrc={project.gallery?.[6]}
         imageAlt={`${project.title} Gallery Images`}
       />
       <ProjectImpact

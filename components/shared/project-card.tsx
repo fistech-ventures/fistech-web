@@ -78,7 +78,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <Link
         href={`/projects/${project.slug}`}
         ref={containerRef}
-        className="relative block aspect-4/5 md:aspect-[1.1/1] overflow-hidden rounded-2xl cursor-none group"
+        className="relative block aspect-4/2.6 overflow-hidden rounded-2xl cursor-none group"
       >
         <img
           src={project.heroImage}

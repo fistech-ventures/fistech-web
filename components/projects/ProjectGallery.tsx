@@ -26,11 +26,9 @@ export default function ProjectGallery({
 
   useGSAP(
     () => {
-      // Find all elements marked as parallax containers
       const containers = gsap.utils.toArray<HTMLElement>(".parallax-container");
 
       containers.forEach((container) => {
-        // The image to scrub is defined inside the container
         const img = container.querySelector(".parallax-img");
 
         if (img) {
@@ -53,9 +51,7 @@ export default function ProjectGallery({
   return (
     <section ref={sectionRef} className="w-full flex flex-col section-gap">
       <div className="px-2 sm:px-4">
-        {/* Top Row: 2 Images (Single column on mobile/tablet, side-by-side on desktop) with Parallax */}
-        <div className="flex flex-col lg:flex-row w-full lg:h-[40vh] xl:h-[60vh]">
-          {/* Image 1 Box */}
+        <div className="flex flex-col lg:flex-row w-full aspect-4/1.5">
           <div className="w-full lg:w-1/2 h-[40vh] sm:h-[50vh] lg:h-full p-1 sm:p-2 lg:p-3">
             <div className="relative w-full h-full overflow-hidden parallax-container">
               <div className="absolute -top-[20%] left-0 h-[140%] w-full parallax-img">

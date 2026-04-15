@@ -12,17 +12,20 @@ export const projects: Project[] = [
       "Digital Transformation",
     ],
     location: "Graafwater, South Africa (International Export Market)",
-    client: "Witklip Farm (Commercial Agriculture)",
+    client: "Cohen Van Der Berg",
     date: "2026-03-30",
     websiteUrl: "https://witklipfarm.com/",
 
     // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/projects/witklip/hero-agri-heritage.jpg",
+    heroImage: "/images/projects/witklipfarm.webp",
     gallery: [
-      "/images/projects/witklip/soil-suitability-matrix.jpg",
-      "/images/projects/witklip/heritage-visual-narrative.jpg",
-      "/images/projects/witklip/compliance-authority-ui.jpg",
-      "/images/projects/witklip/expansion-potential-table.jpg",
+      "/images/projects/witklipfarm-1.webp",
+      "/images/projects/witklipfarm-2.webp",
+      "/images/projects/witklipfarm-3.webp",
+      "/images/projects/witklipfarm-4.webp",
+      "/images/projects/witklipfarm-5.webp",
+      "/images/projects/witklipfarm-2.webp",
+      "/images/projects/witklipfarm-6.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---
