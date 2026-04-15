@@ -26,6 +26,7 @@ import {
 import Link from "next/link";
 import { solutions } from "@/data/service";
 import { Solution } from "@/types";
+import Image from "next/image";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const IconMap: Record<string, any> = {
@@ -175,7 +176,9 @@ export default function WhatWeDo() {
                           key={i}
                           className="group/img aspect-16/10 overflow-hidden rounded-2xl bg-[#F5F5F5]"
                         >
-                          <img
+                          <Image
+                            width={1000}
+                            height={1000}
                             src={image}
                             alt={`Service image ${i + 1}`}
                             className="h-full w-full object-cover  transition-all duration-1000 ease-out group-hover/img:scale-110"

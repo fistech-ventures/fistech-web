@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 type CasecaseStudyCardProps = {
   caseStudy: {
@@ -23,7 +24,9 @@ export default function CasecaseStudyCard({
     <Link href={`/case-studies/${caseStudy.slug}`}>
       <article className="group cursor-pointer">
         <div className="relative aspect-16/10 overflow-hidden rounded-xl bg-gray-100">
-          <img
+          <Image
+            width={2000}
+            height={1000}
             src={caseStudy.hero.mainImage}
             alt={caseStudy.metadata.title}
             className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"

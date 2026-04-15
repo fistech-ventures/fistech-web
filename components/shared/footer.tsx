@@ -1,6 +1,7 @@
 import React from "react";
 import { Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const footerNav = [
@@ -34,7 +35,7 @@ export default function Footer() {
         {/* Top Section: Logo and Top Info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-5 md:mb-8 lg:mb-12">
           <Link href="/" className="footer-fade">
-            <img src="/logo.png" alt="Anio Agency" className="h-32 w-32 mb-6" />
+            <Image width={300} height={100} src="/logo-s.png" alt="Anio Agency" className="h-20 w-40 mb-6 object-contain" />
           </Link>
 
           <div className="footer-fade flex flex-col md:items-center text-start md:text-center">

@@ -4,6 +4,7 @@ import CTAButton from "../shared/cta";
 import Link from "next/link";
 import { Send } from "lucide-react";
 import Marquee from "react-fast-marquee";
+import Image from "next/image";
 
 interface WhoweareProps {
   logos: string[];
@@ -27,7 +28,9 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
             <source src="/who-are.mp4" type="video/mp4" />
           </video>
           creative collaborator, & technology guide on your{" "}
-          <img
+          <Image
+            width={1000}
+            height={1000}
             src="/whoare.webp"
             alt="Demo"
             className="inline-block align-middle h-[1em] w-auto mx-2"
@@ -77,7 +80,9 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
                   key={file}
                   className="relative w-20 md:w-28 h-14 md:h-18 p-2 shrink-0 border rounded-sm border-secondary"
                 >
-                  <img
+                  <Image
+                    width={1000}
+                    height={1000}
                     src={`/images/clients/${file}`}
                     alt={file.replace(/\.[^.]+$/, "").replace(/[-_]/g, " ")}
                     className="w-full h-full object-contain"
