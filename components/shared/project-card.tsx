@@ -1,10 +1,12 @@
-"use client"
+"use client";
 
 import React, { useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Project } from "@/types"; // Import your existing interface
+import ImgWaterMark from "./image-watermark";
+import Image from "next/image";
 
 interface ProjectCardProps {
   project: Project;
@@ -78,13 +80,19 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <Link
         href={`/projects/${project.slug}`}
         ref={containerRef}
-        className="relative block aspect-4/2.6 overflow-hidden rounded-2xl cursor-none group"
+        className="relative block aspect-[4/2.7] overflow-hidden rounded-2xl cursor-none group"
       >
-        <img
-          src={project.heroImage}
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        />
+        <div className="w-full h-full">
+          <Image
+            width={2000}
+            height={1000}
+            priority
+            src={project.heroImage}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <ImgWaterMark />
+        </div>
 
         {/* Floating "View Details" follows cursor */}
         <div
@@ -99,16 +107,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Project Metadata */}
       <div className="flex flex-col gap-2 px-2 pt-2">
-        <h3 className="item-title">
-          {project.title}
-        </h3>
+        <h3 className="item-title">{project.title}</h3>
 
         <div className="flex flex-wrap gap-2">
           {project.categories.slice(0, 2).map((cat) => (
-            <span
-              key={cat}
-              className="tag"
-            >
+            <span key={cat} className="tag">
               {cat}
             </span>
           ))}

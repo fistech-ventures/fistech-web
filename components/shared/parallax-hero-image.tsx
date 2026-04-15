@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -14,10 +15,7 @@ interface IProps {
   imageAlt: string;
 }
 
-export default function ParallaxHeroImage({
-  imageSrc,
-  imageAlt,
-}: IProps) {
+export default function ParallaxHeroImage({ imageSrc, imageAlt }: IProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
 
@@ -49,7 +47,9 @@ export default function ParallaxHeroImage({
         */
         className="absolute -top-[20%] left-0 h-[140%] w-full"
       >
-        <img
+        <Image
+          width={3000}
+          height={2000}
           src={imageSrc}
           alt={imageAlt}
           className="object-cover h-[60vh] w-full"

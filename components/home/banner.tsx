@@ -2,6 +2,7 @@ import React from "react";
 import CTAButton from "../shared/cta";
 import { Facebook, Linkedin, MoveDown, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Banner() {
   const socialLinks = [
@@ -62,7 +63,9 @@ export default function Banner() {
           </div>
 
           <div className="w-full lg:w-2/5 relative">
-            <img
+            <Image
+              width={1000}
+              height={1000}
               src="/images/home/homebanner.png"
               alt="homebanner"
               className="rounded-2xl w-full object-cover min-h-62.5 h-full"

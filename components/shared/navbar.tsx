@@ -7,6 +7,7 @@ import { Mail, X, Menu, Asterisk, ChevronRight } from "lucide-react";
 import CTAButton from "./cta";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 gsap.registerPlugin(useGSAP);
 
@@ -97,7 +98,13 @@ export default function Navbar() {
           <div className="flex items-center gap-x-16 pl-10">
             <Link href="/">
               <div className="flex flex-col leading-none cursor-pointer">
-                <img src="/logo-p.png" alt="Fistech Logo" className="w-40 h-20 object-contain" />
+                <Image
+                  width={300}
+                  height={100}
+                  src="/logo-p.png"
+                  alt="Fistech Logo"
+                  className="w-40 h-20 object-contain"
+                />
               </div>
             </Link>
 
@@ -168,7 +175,10 @@ export default function Navbar() {
             Contact Info
           </p>
           <div className="space-y-6">
-            <Link href="mailto:info@fistech.org" className="flex items-center gap-4 group cursor-pointer">
+            <Link
+              href="mailto:info@fistech.org"
+              className="flex items-center gap-4 group cursor-pointer"
+            >
               <div className="bg-black p-3 rounded-full text-white group-hover:bg-[#D4FF70] group-hover:text-black transition-all">
                 <Mail size={18} />
               </div>

@@ -99,12 +99,15 @@ export const projects: Project[] = [
     websiteUrl: "https://smshome.ae/",
 
     // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/projects/smshome/hero-luxury-services.jpg",
+    heroImage: "/images/projects/sms-home.webp",
     gallery: [
-      "/images/projects/smshome/parametric-booking-interface.jpg",
-      "/images/projects/smshome/mobile-conversion-optimized.jpg",
-      "/images/projects/smshome/trust-centric-ui-elements.jpg",
-      "/images/projects/smshome/service-category-visuals.jpg",
+      "/images/projects/sms-home-1.webp",
+      "/images/projects/sms-home-2.webp",
+      "/images/projects/sms-home-3.webp",
+      "/images/projects/sms-home-4.webp",
+      "/images/projects/sms-home-5.webp",
+      "/images/projects/sms-home-2.webp",
+      "/images/projects/sms-home-6.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---
@@ -177,12 +180,14 @@ export const projects: Project[] = [
     websiteUrl: "https://test.instrufix.com/",
 
     // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/projects/instrufix/hero-directory.jpg",
+    heroImage: "/images/projects/instrufix-1.webp",
     gallery: [
-      "/images/projects/instrufix/parametric-search-interface.jpg",
-      "/images/projects/instrufix/business-claim-workflow.jpg",
-      "/images/projects/instrufix/instrument-taxonomy-navigation.jpg",
-      "/images/projects/instrufix/mobile-responsive-directory.jpg",
+      "/images/projects/instrufix-2.webp",
+      "/images/projects/instrufix-3.webp",
+      "/images/projects/instrufix-4.webp",
+      "/images/projects/instrufix-5.webp",
+      "/images/projects/instrufix-6.webp",
+      "/images/projects/instrufix-7.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---
@@ -248,19 +253,22 @@ export const projects: Project[] = [
     id: "p13", // Sequential ID following Graphodio
     slug: "royalhousecheck-security-saas",
     title: "Royal House Check",
-    categories: ["PropTech", "SaaS Architecture", "AWS Infrastructure"],
+    categories: ["Security", "SaaS Architecture", "AWS Infrastructure"],
     location: "North Carolina, USA (Western Market)",
-    client: "RoyalHouseCheck (Residential Asset Protection)",
+    client: "Leah Harris",
     date: "2026-03-30",
     websiteUrl: "https://royalhousecheck.com/",
 
     // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/projects/royalhousecheck/hero-security.jpg",
+    heroImage: "/images/projects/royal-house-check.webp",
     gallery: [
-      "/images/projects/royalhousecheck/booking-engine-interface.jpg",
-      "/images/projects/royalhousecheck/real-time-telemetry-dashboard.jpg",
-      "/images/projects/royalhousecheck/mobile-optimized-patrol-reports.jpg",
-      "/images/projects/royalhousecheck/encrypted-client-portal.jpg",
+      "/images/projects/royal-house-check.webp",
+      "/images/projects/royal-house-check.webp",
+      "/images/projects/royal-house-check.webp",
+      "/images/projects/royal-house-check.webp",
+      "/images/projects/royal-house-check.webp",
+      "/images/projects/royal-house-check.webp",
+      "/images/projects/royal-house-check.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---
@@ -321,178 +329,172 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    // --- 1. CORE IDENTITY ---
-    id: "p12", // Incremental ID for Fistech Portfolio
-    slug: "graphodio-authority-engine",
-    title: "Graphodio",
-    categories: [
-      "Full-Stack Architecture",
-      "MERN Ecosystem",
-      "Global Branding",
-    ],
-    location: "Global (Western Market Focus)",
-    client: "Graphodio (Creative Digital Agency)",
-    date: "2026-03-30",
-    websiteUrl: "https://graphodio.com/",
+  // {
+  //   id: "p12",
+  //   slug: "graphodio-authority-engine",
+  //   title: "Graphodio",
+  //   categories: [
+  //     "Full-Stack Architecture",
+  //     "MERN Ecosystem",
+  //     "Global Branding",
+  //   ],
+  //   location: "Global (Western Market Focus)",
+  //   client: "Graphodio (Creative Digital Agency)",
+  //   date: "2026-03-30",
+  //   websiteUrl: "https://graphodio.com/",
 
-    // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/projects/graphodio/hero-prestige.jpg",
-    gallery: [
-      "/images/projects/graphodio/performance-first-aesthetic.jpg",
-      "/images/projects/graphodio/modular-service-navigation.jpg",
-      "/images/projects/graphodio/technical-validation-layer.jpg",
-      "/images/projects/graphodio/asset-light-visual-depth.jpg",
-    ],
+  //   heroImage: "/images/projects/graphodio/hero-prestige.jpg",
+  //   gallery: [
+  //     "/images/projects/graphodio/performance-first-aesthetic.jpg",
+  //     "/images/projects/graphodio/modular-service-navigation.jpg",
+  //     "/images/projects/graphodio/technical-validation-layer.jpg",
+  //     "/images/projects/graphodio/asset-light-visual-depth.jpg",
+  //   ],
 
-    // --- 3. DYNAMIC SECTIONS ---
-    sections: [
-      {
-        id: "section-vision",
-        type: "vision",
-        header: "Architecture of Digital Prestige",
-        shortSummary:
-          "Architecting a high-performance digital headquarters that transforms a diverse creative portfolio into a scalable, ROI-driven lead generation machine.",
-        fullDescription:
-          "Graphodio required more than a portfolio; they needed a technical validation layer. To capture high-ticket Western contracts, they faced a critical friction point: Perception vs. Performance. We re-engineered their digital presence to bridge the gap between immersive, 'Dark Mode' storytelling and the rigid technical SEO requirements of the global enterprise market. By moving away from legacy freelance aesthetics toward an 'Architect-level' infrastructure, we empowered them to validate their authority to C-suite leads instantly.",
-        servicesProvided: [
-          "Digital Transformation Strategy",
-          "Next.js SSR Optimization",
-          "MERN Stack Architecture",
-          "Parametric Motion Logic",
-          "AWS Edge Orchestration",
-        ],
-      },
-      {
-        id: "section-solution",
-        type: "solution",
-        header: "The Fistech Engineering Solution: 'Architecture for ROI'",
-        bodyText:
-          "We moved beyond traditional development to engineer a Decoupled Digital Ecosystem. Our objective was to ensure that a heavy, visual-dominant aesthetic served as a driver for conversion rather than a bottleneck for performance.",
-        features: [
-          {
-            title: "Next.js SSR & Hybrid ISR",
-            desc: "Implemented Server-Side Rendering and Incremental Static Regeneration to ensure near-zero latency and instant SEO indexing for diverse service verticals.",
-          },
-          {
-            title: "Precision Asset Orchestration",
-            desc: "Parametric image-loading strategy utilizing next/image and WebP compression to deliver retina-ready clarity without the LCP (Largest Contentful Paint) penalty.",
-          },
-          {
-            title: "Code-Split Motion Logic",
-            desc: "Utilizing Dynamic Imports for heavy animation libraries (Framer Motion), ensuring a premium interactive feel while maintaining a strictly low Total Blocking Time (TBT).",
-          },
-          {
-            title: "Decoupled MERN Foundation",
-            desc: "A modular Node.js/Express backend that allows the agency to scale new service verticals and case studies independently without technical debt.",
-          },
-        ],
-      },
-      {
-        id: "section-metrics",
-        type: "metrics",
-        header: "Strategic ROI & Results",
-        bodyText:
-          "By delivering a high-performance digital hub, we successfully positioned Graphodio as a bridge between high-end design and technical execution for the international market.",
-        stats: [
-          { label: "SEO Efficiency", value: "96% Optimization Score" },
-          { label: "User Retention", value: "40% Reduction in Bounce Rate" },
-          { label: "Lead Quality", value: "High-Trust C-Suite Engagement" },
-          { label: "Performance", value: "90+ Lighthouse Core Web Vitals" },
-        ],
-      },
-    ],
-  },
-  {
-    // --- 1. CORE IDENTITY ---
-    id: "p11", // Incremental ID based on your portfolio sequence
-    slug: "prime-tv-velocity-engine",
-    title: "Prime TV",
-    categories: ["Media & News", "Digital Transformation", "Next.js & Vercel"],
-    location: "Dhaka, Bangladesh (Global Reach)",
-    client: "Prime TV (Media Organization)",
-    date: "2026-03-30",
-    websiteUrl: "https://prime-tv-web-stg.vercel.app/",
+  //   sections: [
+  //     {
+  //       id: "section-vision",
+  //       type: "vision",
+  //       header: "Architecture of Digital Prestige",
+  //       shortSummary:
+  //         "Architecting a high-performance digital headquarters that transforms a diverse creative portfolio into a scalable, ROI-driven lead generation machine.",
+  //       fullDescription:
+  //         "Graphodio required more than a portfolio; they needed a technical validation layer. To capture high-ticket Western contracts, they faced a critical friction point: Perception vs. Performance. We re-engineered their digital presence to bridge the gap between immersive, 'Dark Mode' storytelling and the rigid technical SEO requirements of the global enterprise market. By moving away from legacy freelance aesthetics toward an 'Architect-level' infrastructure, we empowered them to validate their authority to C-suite leads instantly.",
+  //       servicesProvided: [
+  //         "Digital Transformation Strategy",
+  //         "Next.js SSR Optimization",
+  //         "MERN Stack Architecture",
+  //         "Parametric Motion Logic",
+  //         "AWS Edge Orchestration",
+  //       ],
+  //     },
+  //     {
+  //       id: "section-solution",
+  //       type: "solution",
+  //       header: "The Fistech Engineering Solution: 'Architecture for ROI'",
+  //       bodyText:
+  //         "We moved beyond traditional development to engineer a Decoupled Digital Ecosystem. Our objective was to ensure that a heavy, visual-dominant aesthetic served as a driver for conversion rather than a bottleneck for performance.",
+  //       features: [
+  //         {
+  //           title: "Next.js SSR & Hybrid ISR",
+  //           desc: "Implemented Server-Side Rendering and Incremental Static Regeneration to ensure near-zero latency and instant SEO indexing for diverse service verticals.",
+  //         },
+  //         {
+  //           title: "Precision Asset Orchestration",
+  //           desc: "Parametric image-loading strategy utilizing next/image and WebP compression to deliver retina-ready clarity without the LCP (Largest Contentful Paint) penalty.",
+  //         },
+  //         {
+  //           title: "Code-Split Motion Logic",
+  //           desc: "Utilizing Dynamic Imports for heavy animation libraries (Framer Motion), ensuring a premium interactive feel while maintaining a strictly low Total Blocking Time (TBT).",
+  //         },
+  //         {
+  //           title: "Decoupled MERN Foundation",
+  //           desc: "A modular Node.js/Express backend that allows the agency to scale new service verticals and case studies independently without technical debt.",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: "section-metrics",
+  //       type: "metrics",
+  //       header: "Strategic ROI & Results",
+  //       bodyText:
+  //         "By delivering a high-performance digital hub, we successfully positioned Graphodio as a bridge between high-end design and technical execution for the international market.",
+  //       stats: [
+  //         { label: "SEO Efficiency", value: "96% Optimization Score" },
+  //         { label: "User Retention", value: "40% Reduction in Bounce Rate" },
+  //         { label: "Lead Quality", value: "High-Trust C-Suite Engagement" },
+  //         { label: "Performance", value: "90+ Lighthouse Core Web Vitals" },
+  //       ],
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "p11",
+  //   slug: "prime-tv-velocity-engine",
+  //   title: "Prime TV",
+  //   categories: ["Media & News", "Digital Transformation", "Next.js & Vercel"],
+  //   location: "Dhaka, Bangladesh (Global Reach)",
+  //   client: "Prime TV (Media Organization)",
+  //   date: "2026-03-30",
+  //   websiteUrl: "https://prime-tv-web-stg.vercel.app/",
 
-    // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/projects/prime-tv/hero-high-velocity.jpg",
-    gallery: [
-      "/images/projects/prime-tv/dynamic-grid-architecture.jpg",
-      "/images/projects/prime-tv/real-time-utility-integration.jpg",
-      "/images/projects/prime-tv/sorasori-live-portal.jpg",
-      "/images/projects/prime-tv/mobile-first-news-logic.jpg",
-    ],
+  //   heroImage: "/images/projects/prime-tv/hero-high-velocity.jpg",
+  //   gallery: [
+  //     "/images/projects/prime-tv/dynamic-grid-architecture.jpg",
+  //     "/images/projects/prime-tv/real-time-utility-integration.jpg",
+  //     "/images/projects/prime-tv/sorasori-live-portal.jpg",
+  //     "/images/projects/prime-tv/mobile-first-news-logic.jpg",
+  //   ],
 
-    // --- 3. DYNAMIC SECTIONS ---
-    sections: [
-      {
-        id: "section-vision",
-        type: "vision",
-        header: "Engineering Content Velocity",
-        shortSummary:
-          "Architecting a lightning-fast, SEO-dominant news ecosystem that transforms traditional broadcasting into a high-concurrency digital powerhouse.",
-        fullDescription:
-          "To dominate the modern news cycle, latency is the enemy. Prime TV faced a critical bottleneck: a legacy infrastructure that struggled to maintain performance during volatile traffic spikes. We re-engineered their digital presence to ensure that breaking stories reach the audience—and the search engines—in milliseconds. By moving from a 'broadcast-only' mindset to a 'web-first' architecture, we empowered them to capture search engine traffic and social media shares effectively, turning digital visibility into a measurable business asset.",
-        servicesProvided: [
-          "Digital Transformation Strategy",
-          "Next.js SEO Architecture",
-          "Real-time API Orchestration",
-          "High-Concurrency Live Streaming",
-          "Mobile-First Performance Engineering",
-        ],
-      },
-      {
-        id: "section-solution",
-        type: "solution",
-        header: "The Fistech Solution: 'Performance-First Architecture'",
-        bodyText:
-          "We approached this project as a High-Velocity Media Engine rather than a standard portal. Our objective was to ensure that technical scalability served as the direct foundation for business ROI and market authority.",
-        features: [
-          {
-            title: "SEO-Dominant SSR & ISR",
-            desc: "Leveraging Next.js Server-Side Rendering and Incremental Static Regeneration to ensure news snippets appear in search results within minutes of publication.",
-          },
-          {
-            title: "Parametric Data Integration",
-            desc: "Custom hooks to ingest non-blocking API feeds for live gold prices and weather, transforming the site into a high-retention daily utility.",
-          },
-          {
-            title: "Latency-Optimized Video Pipeline",
-            desc: "Dedicated 'Sorasori' portal with neural media pipelines for immersive live broadcasting without the typical script-heavy overhead.",
-          },
-          {
-            title: "Edge-Deployed Resilience",
-            desc: "Deployment via Vercel Edge functions to guarantee 99.9% uptime and sub-second delivery during massive global news spikes.",
-          },
-        ],
-      },
-      {
-        id: "section-metrics",
-        type: "metrics",
-        header: "Strategic ROI & Results",
-        bodyText:
-          "By delivering a high-performance digital hub, we successfully transitioned Prime TV into a scalable media ecosystem with a clear focus on speed and audience retention.",
-        stats: [
-          {
-            label: "Performance Optimization",
-            value: "94+ Lighthouse Core Web Vitals",
-          },
-          {
-            label: "Search Indexing Speed",
-            value: "Sub-5 Minute Indexing for Breaking News",
-          },
-          {
-            label: "Mobile Growth",
-            value: "65% Increase in Fluid Breakpoint Reach",
-          },
-          {
-            label: "Content Management ROI",
-            value: "40% Reduction in Editorial Workflow Overhead",
-          },
-        ],
-      },
-    ],
-  },
+  //   sections: [
+  //     {
+  //       id: "section-vision",
+  //       type: "vision",
+  //       header: "Engineering Content Velocity",
+  //       shortSummary:
+  //         "Architecting a lightning-fast, SEO-dominant news ecosystem that transforms traditional broadcasting into a high-concurrency digital powerhouse.",
+  //       fullDescription:
+  //         "To dominate the modern news cycle, latency is the enemy. Prime TV faced a critical bottleneck: a legacy infrastructure that struggled to maintain performance during volatile traffic spikes. We re-engineered their digital presence to ensure that breaking stories reach the audience—and the search engines—in milliseconds. By moving from a 'broadcast-only' mindset to a 'web-first' architecture, we empowered them to capture search engine traffic and social media shares effectively, turning digital visibility into a measurable business asset.",
+  //       servicesProvided: [
+  //         "Digital Transformation Strategy",
+  //         "Next.js SEO Architecture",
+  //         "Real-time API Orchestration",
+  //         "High-Concurrency Live Streaming",
+  //         "Mobile-First Performance Engineering",
+  //       ],
+  //     },
+  //     {
+  //       id: "section-solution",
+  //       type: "solution",
+  //       header: "The Fistech Solution: 'Performance-First Architecture'",
+  //       bodyText:
+  //         "We approached this project as a High-Velocity Media Engine rather than a standard portal. Our objective was to ensure that technical scalability served as the direct foundation for business ROI and market authority.",
+  //       features: [
+  //         {
+  //           title: "SEO-Dominant SSR & ISR",
+  //           desc: "Leveraging Next.js Server-Side Rendering and Incremental Static Regeneration to ensure news snippets appear in search results within minutes of publication.",
+  //         },
+  //         {
+  //           title: "Parametric Data Integration",
+  //           desc: "Custom hooks to ingest non-blocking API feeds for live gold prices and weather, transforming the site into a high-retention daily utility.",
+  //         },
+  //         {
+  //           title: "Latency-Optimized Video Pipeline",
+  //           desc: "Dedicated 'Sorasori' portal with neural media pipelines for immersive live broadcasting without the typical script-heavy overhead.",
+  //         },
+  //         {
+  //           title: "Edge-Deployed Resilience",
+  //           desc: "Deployment via Vercel Edge functions to guarantee 99.9% uptime and sub-second delivery during massive global news spikes.",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: "section-metrics",
+  //       type: "metrics",
+  //       header: "Strategic ROI & Results",
+  //       bodyText:
+  //         "By delivering a high-performance digital hub, we successfully transitioned Prime TV into a scalable media ecosystem with a clear focus on speed and audience retention.",
+  //       stats: [
+  //         {
+  //           label: "Performance Optimization",
+  //           value: "94+ Lighthouse Core Web Vitals",
+  //         },
+  //         {
+  //           label: "Search Indexing Speed",
+  //           value: "Sub-5 Minute Indexing for Breaking News",
+  //         },
+  //         {
+  //           label: "Mobile Growth",
+  //           value: "65% Increase in Fluid Breakpoint Reach",
+  //         },
+  //         {
+  //           label: "Content Management ROI",
+  //           value: "40% Reduction in Editorial Workflow Overhead",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     // --- 1. CORE IDENTITY ---
     id: "p10",
@@ -500,17 +502,20 @@ export const projects: Project[] = [
     title: "Elevator Video Pitch",
     categories: ["HR-Tech", "SaaS Architecture", "Next.js & AWS"],
     location: "Global (Western Market Focus)",
-    client: "EVPITCH (Recruitment & Networking)",
+    client: "MD of Evpitch",
     date: "2026-03-30",
     websiteUrl: "https://evpitch.com/",
 
     // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/evpitch-hero-architecture.jpg",
+    heroImage: "/images/projects/evpitch.webp",
     gallery: [
-      "/images/integrated-media-dashboard.jpg",
-      "/images/latency-optimized-video-interface.jpg",
-      "/images/neural-recruitment-flow.jpg",
-      "/images/aws-infrastructure-diagram.jpg",
+      "/images/projects/evpitch-1.webp",
+      "/images/projects/evpitch-2.webp",
+      "/images/projects/evpitch-3.webp",
+      "/images/projects/evpitch-4.webp",
+      "/images/projects/evpitch-5.webp",
+      "/images/projects/evpitch-2.webp",
+      "/images/projects/evpitch-6.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---
@@ -585,12 +590,15 @@ export const projects: Project[] = [
     websiteUrl: "https://sktchlabs.com/", // Mapping based on initial analysis
 
     // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/coloring-books-hero.jpg",
+    heroImage: "/images/projects/sktch-labs.webp",
     gallery: [
-      "/images/ai-studio-interface.jpg",
-      "/images/aws-orchestration-flow.jpg",
-      "/images/conversion-ux-stripe.jpg",
-      "/images/final-pdf-preview.jpg",
+      "/images/projects/sktch-labs.webp",
+      "/images/projects/sktch-labs.webp",
+      "/images/projects/sktch-labs.webp",
+      "/images/projects/sktch-labs.webp",
+      "/images/projects/sktch-labs.webp",
+      "/images/projects/sktch-labs.webp",
+      "/images/projects/sktch-labs.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---
@@ -650,89 +658,86 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    // --- 1. CORE IDENTITY & METADATA ---
-    id: "p8", // Sequential ID based on your portfolio order
-    slug: "line-it-up-toledo",
-    title: "Line It Up to Ledo",
-    categories: ["Service-SaaS", "Conversion-Optimization", "Next.js"],
-    location: "Tri-State (OH, MI, IN)",
-    client: "Line It Up Line Striping, LLC",
-    date: "2026-03-29",
-    websiteUrl: "https://lineituptoledo.com/",
+  // {
+  //   id: "p8",
+  //   slug: "line-it-up-toledo",
+  //   title: "Line It Up to Ledo",
+  //   categories: ["Service-SaaS", "Conversion-Optimization", "Next.js"],
+  //   location: "Tri-State (OH, MI, IN)",
+  //   client: "Line It Up Line Striping, LLC",
+  //   date: "2026-03-29",
+  //   websiteUrl: "https://lineituptoledo.com/",
 
-    // --- 2. HIGH-FIDELITY MEDIA ASSETS ---
-    heroImage: "/images/lineituptoledo-hero.jpg",
-    gallery: [
-      "/images/performance-lead-interface.jpg",
-      "/images/localized-content-silos.jpg",
-      "/images/high-fidelity-asset-delivery.jpg",
-    ],
+  //   heroImage: "/images/lineituptoledo-hero.jpg",
+  //   gallery: [
+  //     "/images/performance-lead-interface.jpg",
+  //     "/images/localized-content-silos.jpg",
+  //     "/images/high-fidelity-asset-delivery.jpg",
+  //   ],
 
-    // --- 3. ARCHITECTURAL SECTIONS (ANIO THEME COMPATIBLE) ---
-    sections: [
-      {
-        id: "section-vision",
-        type: "vision",
-        header: "Engineering Industrial Authority via Neural-Lead Design",
-        shortSummary:
-          "Transforming a legacy industrial brochure into a high-velocity 'Validation Engine' that automates commercial lead qualification.",
-        fullDescription:
-          "The industrial service sector often suffers from the 'Legacy Perception Friction.' Fistech intervened to bridge the Trust-Velocity Gap by re-architecting Line It Up's digital infrastructure. We transitioned the client from a 'small local contractor' profile to a high-end regional authority, utilizing Next.js to provide the technical proof required for high-margin commercial contracts.",
-        servicesProvided: [
-          "Next.js SSR Optimization",
-          "Parametric Lead Logic",
-          "Localized SEO Silos",
-          "WCAG 2.1 Technical Compliance",
-          "Headless CMS Integration",
-        ],
-      },
-      {
-        id: "section-solution",
-        type: "solution",
-        header: "The Fistech Engineering Solution: 'Precision Execution'",
-        bodyText:
-          "We architected a 'one-stop' digital sales representative designed for technical scalability. Our solution focused on latency reduction and parametric data collection to ensure a premium UX for property managers in the field.",
-        features: [
-          {
-            title: "Next.js SSR & SEO Silos",
-            desc: "Dynamic, server-side rendered landing pages targeting specific regional municipalities to dominate local SERPs.",
-          },
-          {
-            title: "Parametric Lead Logic",
-            desc: "Custom React component utilizing conditional logic to pre-qualify commercial project scale and automate data capture.",
-          },
-          {
-            title: "Latency-Optimized Asset Delivery",
-            desc: "Automated WebP conversion and edge-caching to ensure sub-second load times on low-connectivity job sites.",
-          },
-          {
-            title: "Advanced JSON-LD Schema",
-            desc: "Hard-coded structured data to programmatically validate business authority and ADA compliance expertise for Google's Knowledge Graph.",
-          },
-        ],
-      },
-      {
-        id: "section-metrics",
-        type: "metrics",
-        header: "Strategic Results & ROI",
-        bodyText:
-          "By replacing static information with a dynamic lead engine, we moved the needle from a passive web presence to an ROI-positive business asset.",
-        stats: [
-          {
-            label: "Lighthouse Performance",
-            value: "99/100 (Sub-Second Load)",
-          },
-          {
-            label: "Sales Cycle Reduction",
-            value: "40% via Automated Qualification",
-          },
-          { label: "Search Visibility", value: "Tri-State Dominance" },
-          { label: "Technical Compliance", value: "98% Accessibility Rating" },
-        ],
-      },
-    ],
-  },
+  //   sections: [
+  //     {
+  //       id: "section-vision",
+  //       type: "vision",
+  //       header: "Engineering Industrial Authority via Neural-Lead Design",
+  //       shortSummary:
+  //         "Transforming a legacy industrial brochure into a high-velocity 'Validation Engine' that automates commercial lead qualification.",
+  //       fullDescription:
+  //         "The industrial service sector often suffers from the 'Legacy Perception Friction.' Fistech intervened to bridge the Trust-Velocity Gap by re-architecting Line It Up's digital infrastructure. We transitioned the client from a 'small local contractor' profile to a high-end regional authority, utilizing Next.js to provide the technical proof required for high-margin commercial contracts.",
+  //       servicesProvided: [
+  //         "Next.js SSR Optimization",
+  //         "Parametric Lead Logic",
+  //         "Localized SEO Silos",
+  //         "WCAG 2.1 Technical Compliance",
+  //         "Headless CMS Integration",
+  //       ],
+  //     },
+  //     {
+  //       id: "section-solution",
+  //       type: "solution",
+  //       header: "The Fistech Engineering Solution: 'Precision Execution'",
+  //       bodyText:
+  //         "We architected a 'one-stop' digital sales representative designed for technical scalability. Our solution focused on latency reduction and parametric data collection to ensure a premium UX for property managers in the field.",
+  //       features: [
+  //         {
+  //           title: "Next.js SSR & SEO Silos",
+  //           desc: "Dynamic, server-side rendered landing pages targeting specific regional municipalities to dominate local SERPs.",
+  //         },
+  //         {
+  //           title: "Parametric Lead Logic",
+  //           desc: "Custom React component utilizing conditional logic to pre-qualify commercial project scale and automate data capture.",
+  //         },
+  //         {
+  //           title: "Latency-Optimized Asset Delivery",
+  //           desc: "Automated WebP conversion and edge-caching to ensure sub-second load times on low-connectivity job sites.",
+  //         },
+  //         {
+  //           title: "Advanced JSON-LD Schema",
+  //           desc: "Hard-coded structured data to programmatically validate business authority and ADA compliance expertise for Google's Knowledge Graph.",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: "section-metrics",
+  //       type: "metrics",
+  //       header: "Strategic Results & ROI",
+  //       bodyText:
+  //         "By replacing static information with a dynamic lead engine, we moved the needle from a passive web presence to an ROI-positive business asset.",
+  //       stats: [
+  //         {
+  //           label: "Lighthouse Performance",
+  //           value: "99/100 (Sub-Second Load)",
+  //         },
+  //         {
+  //           label: "Sales Cycle Reduction",
+  //           value: "40% via Automated Qualification",
+  //         },
+  //         { label: "Search Visibility", value: "Tri-State Dominance" },
+  //         { label: "Technical Compliance", value: "98% Accessibility Rating" },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     // --- 1. CORE IDENTITY & METADATA ---
     id: "p7",
@@ -745,11 +750,15 @@ export const projects: Project[] = [
     websiteUrl: "https://buildastorytime.com/",
 
     // --- 2. HIGH-FIDELITY MEDIA ASSETS ---
-    heroImage: "/images/buildastorytime-hero.jpg",
+    heroImage: "/images/projects/build-a-story.webp",
     gallery: [
-      "/images/neural-interface-dashboard.jpg",
-      "/images/avatar-mapping-logic.jpg",
-      "/images/omnichannel-fulfillment.jpg",
+      "/images/projects/build-a-story-2.webp",
+      "/images/projects/build-a-story-3.webp",
+      "/images/projects/build-a-story-4.webp",
+      "/images/projects/build-a-story-5.webp",
+      "/images/projects/build-a-story-6.webp",
+      "/images/projects/build-a-story-3.webp",
+      "/images/projects/build-a-story-7.webp",
     ],
 
     // --- 3. ARCHITECTURAL SECTIONS (ANIO THEME COMPATIBLE) ---
@@ -822,11 +831,15 @@ export const projects: Project[] = [
     websiteUrl: "https://www.lolophysicaltherapy.com/",
 
     // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/lolo-hero.jpg",
+    heroImage: "/images/projects/lolophysicaltherapy.webp",
     gallery: [
-      "/images/precision-ui-layering.jpg",
-      "/images/seamless-service-architecture.jpg",
-      "/images/enterprise-ready-infrastructure.jpg",
+      "/images/projects/lolophysicaltherapy-1.webp",
+      "/images/projects/lolophysicaltherapy-2.webp",
+      "/images/projects/lolophysicaltherapy-3.webp",
+      "/images/projects/lolophysicaltherapy-4.webp",
+      "/images/projects/lolophysicaltherapy-5.webp",
+      "/images/projects/lolophysicaltherapy-2.webp",
+      "/images/projects/lolophysicaltherapy-6.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---
@@ -900,12 +913,15 @@ export const projects: Project[] = [
     websiteUrl: "https://hierroamedida.com/",
 
     // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/hierro-hero.jpg",
+    heroImage: "/images/projects/hierro-a-medida.webp",
     gallery: [
-      "/images/image1.jpg",
-      "/images/image2.jpg",
-      "/images/image3.jpg",
-      "/images/image4.jpg",
+      "/images/projects/hierro-a-medida-1.png",
+      "/images/projects/hierro-a-medida-2.png",
+      "/images/projects/hierro-a-medida-3.png",
+      "/images/projects/hierro-a-medida-4.png",
+      "/images/projects/hierro-a-medida-5.png",
+      "/images/projects/hierro-a-medida-6.png",
+      "/images/projects/hierro-a-medida.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---
@@ -973,11 +989,15 @@ export const projects: Project[] = [
     websiteUrl: "https://bragaexperience.com/",
 
     // --- 2. HIGH-FIDELITY MEDIA ASSETS ---
-    heroImage: "/images/braga-hero-interface.jpg",
+    heroImage: "/images/projects/lucashbragof.png",
     gallery: [
-      "/images/high-velocity-hero.jpg",
-      "/images/precision-lead-gen.jpg",
-      "/images/responsive-media-grid.jpg",
+      "/images/projects/lucashbragof-1.png",
+      "/images/projects/lucashbragof-2.png",
+      "/images/projects/lucashbragof-3.png",
+      "/images/projects/lucashbragof-4.png",
+      "/images/projects/lucashbragof-5.png",
+      "/images/projects/lucashbragof-6.png",
+      "/images/projects/lucashbragof-3.png",
     ],
 
     // --- 3. ARCHITECTURAL SECTIONS (ANIO THEME COMPATIBLE) ---
@@ -986,6 +1006,13 @@ export const projects: Project[] = [
         id: "section-vision",
         type: "vision",
         header: "Architecting Visual Authority",
+        servicesProvided: [
+          "UX Research",
+          "UI Design",
+          "Frontend Development",
+          "Contact Form Integration",
+          "Email System by Submitting Form",
+        ],
         shortSummary:
           "Eliminating the 'Performance-Quality Paradox' by bridging the gap between cinematic art and sub-second load times.",
         fullDescription:
@@ -1051,16 +1078,20 @@ export const projects: Project[] = [
     title: "Vivtex",
     categories: ["HealthTech", "Next.js Architecture", "Investor-Ready UI"],
     location: "USA (MIT Spin-off / Global)",
-    client: "Vivtex / Novo Nordisk Partner",
+    client: "Nicole Mendoza",
     date: "2026-03-31",
     websiteUrl: "https://vivtex.com/",
 
     // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/vivtex-hero.jpg",
+    heroImage: "/images/projects/vivtex.png",
     gallery: [
-      "/images/precision-engineered-navigation.jpg",
-      "/images/fluid-data-visualization.jpg",
-      "/images/global-performance-optimization.jpg",
+      "/images/projects/vivtex-1.webp",
+      "/images/projects/vivtex-2.webp",
+      "/images/projects/vivtex-3.webp",
+      "/images/projects/vivtex-4.webp",
+      "/images/projects/vivtex-5.webp",
+      "/images/projects/vivtex-3.webp",
+      "/images/projects/vivtex-6.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---
@@ -1125,83 +1156,80 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    // --- 1. CORE IDENTITY ---
-    id: "p2",
-    slug: "heritage-modernization-providing-dial-tone",
-    title: "Providing Dial Tone",
-    categories: ["AgTech Strategy", "MERN Stack", "Digital Transformation"],
-    location: "USA / Global",
-    client: "Legacy Agricultural Enterprise",
-    date: "2026-03-31",
-    websiteUrl: "https://providingdialtone.com/",
+  // {
+  //   id: "p2",
+  //   slug: "heritage-modernization-providing-dial-tone",
+  //   title: "Providing Dial Tone",
+  //   categories: ["AgTech Strategy", "MERN Stack", "Digital Transformation"],
+  //   location: "USA / Global",
+  //   client: "Legacy Agricultural Enterprise",
+  //   date: "2026-03-31",
+  //   websiteUrl: "https://providingdialtone.com/",
 
-    // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/providing-dial-tone-hero.jpg",
-    gallery: [
-      "/images/architectural-authority.jpg",
-      "/images/performance-engineering.jpg",
-      "/images/strategic-funneling.jpg",
-    ],
+  //   heroImage: "/images/providing-dial-tone-hero.jpg",
+  //   gallery: [
+  //     "/images/architectural-authority.jpg",
+  //     "/images/performance-engineering.jpg",
+  //     "/images/strategic-funneling.jpg",
+  //   ],
 
-    // --- 3. DYNAMIC SECTIONS ---
-    sections: [
-      {
-        id: "section-vision",
-        type: "vision",
-        header: "Heritage Modernization: From Nostalgia to Global Investment",
-        shortSummary:
-          "Architecting a high-performance bridge between legacy agricultural heritage and modern investment-grade scalability.",
-        fullDescription:
-          "The challenge was to resolve the 'Identity Friction' where a 160-year-old enterprise was digitally perceived as a hobbyist blog. Fistech engineered a total pivot, replacing anecdotal storytelling with a high-velocity digital platform. We architected a decoupled Next.js ecosystem that prioritizes commercial authority, ensuring the brand scales for Western investment markets while preserving its historical integrity.",
-        servicesProvided: [
-          "Next.js SSR Optimization",
-          "Decoupled MERN Architecture",
-          "SEO-Dominant Infrastructure",
-          "Parametric Lead Capture",
-          "Component-Based Scalability",
-        ],
-      },
-      {
-        id: "section-solution",
-        type: "solution",
-        header: "The Fistech Engineering Solution: 'Commercial Pivot'",
-        bodyText:
-          "Our execution focused on 'Asset Modernization'—transitioning a static digital presence into a dynamic, ROI-driven gateway for international stakeholders.",
-        features: [
-          {
-            title: "Next.js SSR Optimization",
-            desc: "Accelerated content delivery to sub-second speeds, eliminating bounce rates during high-stakes investor reviews.",
-          },
-          {
-            title: "SEO-Dominant Infrastructure",
-            desc: "Re-engineered metadata logic to pivot search visibility from personal nostalgia to investment-grade agricultural keywords.",
-          },
-          {
-            title: "Parametric Lead Capture",
-            desc: "Architected sophisticated database triggers to transform passive site traffic into a structured CRM pipeline for business development.",
-          },
-          {
-            title: "Component-Based Scalability",
-            desc: "Engineered a modular frontend that allows for rapid scaling of investment modules without incurring technical debt.",
-          },
-        ],
-      },
-      {
-        id: "section-metrics",
-        type: "metrics",
-        header: "Strategic Results & Business ROI",
-        bodyText:
-          "By re-engineering the digital value of the asset, we successfully positioned the enterprise for international capital engagement and commercial growth.",
-        stats: [
-          { label: "Load Velocity", value: "< 800ms LCP (Global Edge)" },
-          { label: "Brand Shift", value: "Hobbyist Blog to Investment Entity" },
-          { label: "Lead Logic", value: "Automated CRM Integration" },
-          { label: "Search Authority", value: "Commercial-Grade Indexing" },
-        ],
-      },
-    ],
-  },
+  //   sections: [
+  //     {
+  //       id: "section-vision",
+  //       type: "vision",
+  //       header: "Heritage Modernization: From Nostalgia to Global Investment",
+  //       shortSummary:
+  //         "Architecting a high-performance bridge between legacy agricultural heritage and modern investment-grade scalability.",
+  //       fullDescription:
+  //         "The challenge was to resolve the 'Identity Friction' where a 160-year-old enterprise was digitally perceived as a hobbyist blog. Fistech engineered a total pivot, replacing anecdotal storytelling with a high-velocity digital platform. We architected a decoupled Next.js ecosystem that prioritizes commercial authority, ensuring the brand scales for Western investment markets while preserving its historical integrity.",
+  //       servicesProvided: [
+  //         "Next.js SSR Optimization",
+  //         "Decoupled MERN Architecture",
+  //         "SEO-Dominant Infrastructure",
+  //         "Parametric Lead Capture",
+  //         "Component-Based Scalability",
+  //       ],
+  //     },
+  //     {
+  //       id: "section-solution",
+  //       type: "solution",
+  //       header: "The Fistech Engineering Solution: 'Commercial Pivot'",
+  //       bodyText:
+  //         "Our execution focused on 'Asset Modernization'—transitioning a static digital presence into a dynamic, ROI-driven gateway for international stakeholders.",
+  //       features: [
+  //         {
+  //           title: "Next.js SSR Optimization",
+  //           desc: "Accelerated content delivery to sub-second speeds, eliminating bounce rates during high-stakes investor reviews.",
+  //         },
+  //         {
+  //           title: "SEO-Dominant Infrastructure",
+  //           desc: "Re-engineered metadata logic to pivot search visibility from personal nostalgia to investment-grade agricultural keywords.",
+  //         },
+  //         {
+  //           title: "Parametric Lead Capture",
+  //           desc: "Architected sophisticated database triggers to transform passive site traffic into a structured CRM pipeline for business development.",
+  //         },
+  //         {
+  //           title: "Component-Based Scalability",
+  //           desc: "Engineered a modular frontend that allows for rapid scaling of investment modules without incurring technical debt.",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: "section-metrics",
+  //       type: "metrics",
+  //       header: "Strategic Results & Business ROI",
+  //       bodyText:
+  //         "By re-engineering the digital value of the asset, we successfully positioned the enterprise for international capital engagement and commercial growth.",
+  //       stats: [
+  //         { label: "Load Velocity", value: "< 800ms LCP (Global Edge)" },
+  //         { label: "Brand Shift", value: "Hobbyist Blog to Investment Entity" },
+  //         { label: "Lead Logic", value: "Automated CRM Integration" },
+  //         { label: "Search Authority", value: "Commercial-Grade Indexing" },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     // --- 1. CORE IDENTITY ---
     id: "p1",
@@ -1214,12 +1242,15 @@ export const projects: Project[] = [
     websiteUrl: "https://scubalife.net/",
 
     // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/scuba-life-hero.jpg",
+    heroImage: "/images/projects/scubalife.webp",
     gallery: [
-      "/images/underwater-visual-optimization.jpg",
-      "/images/tri-tier-navigation-logic.jpg",
-      "/images/mobile-responsive-booking.jpg",
-      "/images/seo-dominant-performance.jpg",
+      "/images/projects/scubalife-1.webp",
+      "/images/projects/scubalife-2.webp",
+      "/images/projects/scubalife-3.webp",
+      "/images/projects/scubalife-4.webp",
+      "/images/projects/scubalife-5.webp",
+      "/images/projects/scubalife-6.webp",
+      "/images/projects/scubalife-7.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---

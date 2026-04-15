@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Play, Plus, X } from "lucide-react";
+import ImgWaterMark from "../shared/image-watermark";
+import Image from "next/image";
 
 interface VisionData {
   header: string;
@@ -66,9 +68,9 @@ const ProjectDiscovery = ({
   return (
     <section className="section-gap text-foreground overflow-hidden">
       {/* Header Block */}
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-5xl mx-auto text-center">
         <h2 className="section-title">{visionData.header}</h2>
-        <p className="description">{visionData.shortSummary}</p>
+        <p className="description text-center">{visionData.shortSummary}</p>
       </div>
 
       <div className="w-full h-0.5 bg-gray-100 mx-auto section-gap" />
@@ -78,11 +80,16 @@ const ProjectDiscovery = ({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-24 items-center">
           {/* Left Column - Image with Play Button */}
           <div className="relative w-full group overflow-hidden rounded-lg">
-            <img
-              src={imageSrc}
-              alt={visionData.header}
-              className="w-full h-auto object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
-            />
+            <div className="w-full h-full">
+              <Image
+                width={1000}
+                height={1000}
+                src={imageSrc}
+                alt={visionData.header}
+                className="w-full aspect-4/3 object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
+              />
+              <ImgWaterMark />
+            </div>
             <div
               onClick={() => setIsVideoOpen(true)}
               className="absolute inset-0 flex items-center justify-center z-10 cursor-pointer"

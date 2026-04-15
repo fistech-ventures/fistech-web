@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { Project } from "@/types";
+import ImgWaterMark from "../shared/image-watermark";
+import Image from "next/image";
 
 type ProjectHeroProps = Pick<
   Project,
@@ -72,33 +74,53 @@ const ProjectHero = ({
       <div className="w-full overflow-hidden">
         <div className="flex flex-col md:hidden">
           <div className="w-full aspect-4/3 relative overflow-hidden bg-zinc-900">
-            <img
-              src={heroImage}
-              alt={`${title} Main`}
-              className="object-cover w-full h-full"
-            />
+            <div className="w-full h-full">
+              <Image
+                width={2000}
+                height={1000}
+                src={heroImage}
+                alt={`${title} Main`}
+                className="object-cover w-full h-full"
+              />
+              <ImgWaterMark />
+            </div>
           </div>
           <div className="w-full aspect-4/3 relative overflow-hidden bg-zinc-800">
-            <img
-              src={gallery[0]}
-              alt={`${title} Gallery 1`}
-              className="object-cover w-full h-full"
-            />
+            <div className="w-full h-full">
+              <Image
+                width={2000}
+                height={1000}
+                src={gallery[0]}
+                alt={`${title} Gallery 1`}
+                className="object-cover w-full h-full"
+              />
+              <ImgWaterMark />
+            </div>
           </div>
           <div className="flex w-full">
             <div className="w-1/2 aspect-square relative overflow-hidden bg-zinc-700">
-              <img
-                src={gallery[1]}
-                alt={`${title} Gallery 2`}
-                className="object-cover w-full h-full"
-              />
+              <div className="w-full h-full">
+                <Image
+                  width={2000}
+                  height={1000}
+                  src={gallery[1]}
+                  alt={`${title} Gallery 2`}
+                  className="object-cover w-full h-full"
+                />
+                <ImgWaterMark />
+              </div>
             </div>
             <div className="w-1/2 aspect-square relative overflow-hidden bg-zinc-600">
-              <img
-                src={gallery[2]}
-                alt={`${title} Gallery 3`}
-                className="object-cover w-full h-full"
-              />
+              <div className="w-full h-full">
+                <Image
+                  width={2000}
+                  height={1000}
+                  src={gallery[2]}
+                  alt={`${title} Gallery 3`}
+                  className="object-cover w-full h-full"
+                />
+                <ImgWaterMark />
+              </div>
             </div>
           </div>
         </div>
@@ -109,35 +131,55 @@ const ProjectHero = ({
           style={{ height: "clamp(320px, 55vw, 530px)" }}
         >
           <div className="w-1/2 h-full relative overflow-hidden bg-zinc-900 shrink-0 border border-white">
-            <img
-              src={heroImage}
-              alt={`${title} Main`}
-              className="object-cover w-full h-full"
-            />
+            <div className="w-full h-full">
+              <Image
+                width={2000}
+                height={1000}
+                src={heroImage}
+                alt={`${title} Main`}
+                className="object-cover w-full h-full"
+              />
+              <ImgWaterMark />
+            </div>
           </div>
 
           <div className="w-1/2 h-full flex flex-col shrink-0">
             <div className="w-full h-1/2 relative overflow-hidden bg-zinc-800 border border-white">
-              <img
-                src={gallery[0]}
-                alt={`${title} Gallery 1`}
-                className="object-cover w-full h-full"
-              />
+              <div className="w-full h-full">
+                <Image
+                  width={2000}
+                  height={1000}
+                  src={gallery[0]}
+                  alt={`${title} Gallery 1`}
+                  className="object-cover w-full h-full"
+                />
+                <ImgWaterMark />
+              </div>
             </div>
             <div className="w-full h-1/2 flex">
               <div className="w-1/2 h-full relative overflow-hidden bg-zinc-700 border border-white">
-                <img
-                  src={gallery[1]}
-                  alt={`${title} Gallery 2`}
-                  className="object-cover w-full h-full"
-                />
+                <div className="w-full h-full">
+                  <Image
+                    width={2000}
+                    height={1000}
+                    src={gallery[1]}
+                    alt={`${title} Gallery 2`}
+                    className="object-cover w-full h-full"
+                  />
+                  <ImgWaterMark />
+                </div>
               </div>
               <div className="w-1/2 h-full relative overflow-hidden bg-zinc-600 border border-white">
-                <img
-                  src={gallery[2]}
-                  alt={`${title} Gallery 3`}
-                  className="object-cover w-full h-full"
-                />
+                <div className="w-full h-full">
+                  <Image
+                    width={2000}
+                    height={1000}
+                    src={gallery[2]}
+                    alt={`${title} Gallery 2`}
+                    className="object-cover w-full h-full"
+                  />
+                  <ImgWaterMark />
+                </div>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Quote } from "lucide-react";
 import { Testimonial } from "@/types";
 import RatingStars from "./rating-stars";
+import Image from "next/image";
 
 interface TestimonialCardProps {
   item: Testimonial;
@@ -29,7 +30,9 @@ export default function TestimonialCard({ item, index }: TestimonialCardProps) {
       </p>
 
       <div className="mb-4 pt-4 border-t border-gray-300/60 flex items-center justify-between">
-        <img
+        <Image
+          width={300}
+          height={300}
           src={item.businessLogo}
           alt="Logo"
           className="w-20 md:w-28 h-14 md:h-18 object-contain"
@@ -38,8 +41,10 @@ export default function TestimonialCard({ item, index }: TestimonialCardProps) {
       </div>
 
       <div className="flex items-center gap-4">
-        <img
-          src={item.profileImage}
+        <Image
+          width={300}
+          height={300}
+          src={item.profileImage || ""}
           alt={item.name}
           className="w-14 h-14 rounded-full object-cover"
         />
