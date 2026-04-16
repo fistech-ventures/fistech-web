@@ -13,9 +13,9 @@ export default function FAQSection({
 }) {
   return (
     <section className="section-gap">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto px-4">
         {isShowTitle && (
-          <h2 className="section-title font-semibold max-w-4xl mx-auto py-5 text-center">
+          <h2 className="section-title font-semibold max-w-4xl mx-auto py-5 text-center ">
             Frequently Asked Questions
           </h2>
         )}
