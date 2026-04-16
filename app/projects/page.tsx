@@ -6,7 +6,7 @@ import React from "react";
 export default function ProjectsPage() {
   return (
     <main>
-      <PageHeadline headline="Global Projects" />
+      <PageHeadline headline="Global Projects" isProject={true} />
       <ProjectsSection projects={projects} showHeadline={false} />
     </main>
   );
