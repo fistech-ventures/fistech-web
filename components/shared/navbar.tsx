@@ -95,7 +95,7 @@ export default function Navbar() {
         className="fixed top-0 left-0 w-full z-40 bg-transparent transition-all duration-300 py-2 md:py-4 lg:py-6"
       >
         <div className="container flex items-center justify-between">
-          <div className="flex items-center gap-x-16 pl-10">
+          <div className="flex items-center gap-x-16 lg:pl-10 pl-5">
             <Link href="/">
               <div className="flex flex-col leading-none cursor-pointer">
                 <Image
@@ -103,7 +103,7 @@ export default function Navbar() {
                   height={100}
                   src="/logo-p.png"
                   alt="Fistech Logo"
-                  className="w-40 h-20 object-contain"
+                  className="lg:w-40 md:w-30 sm:w-25 w-18 h-20 object-contain"
                 />
               </div>
             </Link>

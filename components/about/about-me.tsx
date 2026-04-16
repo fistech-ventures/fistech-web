@@ -56,8 +56,8 @@ export default function AboutMe() {
 
             gsap.to(animation, {
               timeScale: direction * scrollDir * (1 + velocity),
-              duration: 1,
-              ease: "power2.out",
+              duration: 2,
+              ease: "power3.out",
             });
           },
         });
@@ -107,14 +107,14 @@ export default function AboutMe() {
 
       <div className="relative flex flex-col mt-40">
         {/* BLACK RIBBON */}
-        <div className="bg-black py-10 lg:-rotate-10 -rotate-30 w-[200%] -translate-x-[30%] z-20 shadow-2xl">
+        <div className="bg-black lg:py-10 py-5 lg:-rotate-10 -rotate-30 w-[200%] -translate-x-[30%] z-20 shadow-2xl">
           <div
             ref={tickerLeftRef}
             className="flex whitespace-nowrap gap-16 items-center w-max"
           >
             {[...tickerItems, ...tickerItems, ...tickerItems].map((item, i) => (
               <React.Fragment key={`bl-${i}`}>
-                <span className="text-white text-3xl font-black uppercase tracking-tighter">
+                <span className="text-white lg:text-3xl text-xl font-black uppercase tracking-tighter">
                   {item}
                 </span>
                 <span className="text-gray-600 text-5xl font-light">✦</span>
@@ -124,14 +124,14 @@ export default function AboutMe() {
         </div>
 
         {/* WHITE RIBBON */}
-        <div className="bg-white py-10 lg:rotate-15 rotate-40 w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
+        <div className="bg-white lg:py-10 py-5 lg:rotate-15 rotate-40 w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
           <div
             ref={tickerRightRef}
             className="flex whitespace-nowrap gap-16 items-center w-max"
           >
             {[...tickerItems, ...tickerItems, ...tickerItems].map((item, i) => (
               <React.Fragment key={`wh-${i}`}>
-                <span className="text-black text-3xl font-black uppercase tracking-tighter">
+                <span className="text-black lg:text-3xl text-xl font-black uppercase tracking-tighter">
                   {item}
                 </span>
                 <span className="text-gray-300 text-5xl font-light">✦</span>

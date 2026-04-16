@@ -22,7 +22,7 @@ export default function Banner() {
         <div className="flex flex-col lg:flex-row">
           <div className="w-full lg:w-3/5 lg:pl-14 pb-6 md:pb-8 lg:pb-20 lg:text-left pt-24 md:pt-32 lg:pt-28 px-3 lg:px-0">
             <div className="max-w-xl lg:mt-20 mt-0">
-              <h1 className="main-headline flex flex-wrap items-center gap-2 pr-12 lg:pr-0">
+              <h1 className="main-headline flex flex-wrap items-center gap-2 pr-5 lg:pr-0">
                 <span>Design &</span>
                 <video
                   autoPlay

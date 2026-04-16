@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning>
-      <body className={`${archivo.className} ${kanit.variable} antialiased`}>
+      <body className={`${archivo.className} ${kanit.variable} antialiased overflow-x-hidden` }>
         <AppProvider>{children}</AppProvider>
       </body>
     </html>
