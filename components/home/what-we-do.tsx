@@ -101,10 +101,10 @@ export default function WhatWeDo() {
 
   return (
     <section
-      className="py-12 md:py-20 lg:py-32 bg-[#E8E8E8]"
+      className="section-gap bg-[#E8E8E8] py-5 md:py-8 lg:py-12 xl:py-16"
       ref={containerRef}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto">
         <SectionTag sectiontag="What We Do" />
 
         <h2 className="section-title text-center max-w-5xl mx-auto mt-6 mb-12 lg:mb-20 text-3xl md:text-5xl font-bold leading-tight">
@@ -122,14 +122,14 @@ export default function WhatWeDo() {
                 key={service.id}
                 onMouseEnter={() => setHoveredId(service.id)}
                 onMouseLeave={() => setHoveredId(null)}
-                className="bg-white px-8 py-6 md:px-16 md:py-10 rounded-3xl w-full flex flex-col transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] overflow-hidden"
+                className="bg-white px-4 py-5 md:px-16 md:py-10 rounded-lg w-full flex flex-col transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] overflow-hidden"
               >
                 {/* Fixed Header Layout */}
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-                  <div className="flex flex-col md:flex-row items-start gap-8 lg:gap-20 flex-1">
+                  <div className="flex flex-col md:flex-row items-start gap-2 md:gap-8 lg:gap-20 flex-1">
                     <div className="shrink-0 p-1">
                       <Icon
-                        size={48}
+                        size={40}
                         className="text-black"
                         strokeWidth={1.2}
                       />
@@ -176,13 +176,15 @@ export default function WhatWeDo() {
                           key={i}
                           className="group/img aspect-16/10 overflow-hidden rounded-2xl bg-[#F5F5F5]"
                         >
-                          <Image
-                            width={1000}
-                            height={1000}
-                            src={image}
-                            alt={`Service image ${i + 1}`}
-                            className="h-full w-full object-cover  transition-all duration-1000 ease-out group-hover/img:scale-110"
-                          />
+                          <Link href={serviceLink}>
+                            <Image
+                              width={1000}
+                              height={1000}
+                              src={image}
+                              alt={`Service image ${i + 1}`}
+                              className="h-full w-full object-cover  transition-all duration-1000 ease-out group-hover/img:scale-110"
+                            />
+                          </Link>
                         </div>
                       ))}
                     </div>

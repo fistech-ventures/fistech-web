@@ -585,7 +585,7 @@ export const projects: Project[] = [
     title: "Sktch Labs",
     categories: ["Generative AI", "SaaS Architecture", "MERN Stack"],
     location: "Global (Western Focus)",
-    client: "Confidential (Entertainment/Educational)",
+    client: "Michael",
     date: "2026-03-29",
     websiteUrl: "https://sktchlabs.com/", // Mapping based on initial analysis
 
@@ -1237,7 +1237,7 @@ export const projects: Project[] = [
     title: "Scuba Life",
     categories: ["Next.js", "MERN Stack", "SaaS Architecture"],
     location: "Southern California (Western Market)",
-    client: "Steve Littlefield (Scuba SteveNar)",
+    client: "Stevenar Littlefield",
     date: "2026-03-31",
     websiteUrl: "https://scubalife.net/",
 

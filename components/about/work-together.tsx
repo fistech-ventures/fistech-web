@@ -55,7 +55,7 @@ export default function WorkTogether() {
               Let&apos;s Collaborate!
             </h4>
             <h2 className="font-medium text-white xl:text-9xl lg:text-7xl md:text-6xl text-5xl text-center">
-              Work Togather
+              Work Together
             </h2>
             <button
               className="py-5 px-10 rounded-full bg-[#1e1e1e] text-white text-2xl font-medium hover:bg-secondary hover:text-black duration-300 ease-in-out cursor-pointer"
