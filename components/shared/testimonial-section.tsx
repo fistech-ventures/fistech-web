@@ -4,7 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { testimonials } from "@/data/testimonials";
 import { Testimonial } from "@/types";
 import TestimonialCard from "./testimonial-card";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // Optional: for cleaner icons
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function TestimonialSection() {
   // 1. Get the emblaApi from the hook
@@ -14,7 +14,6 @@ export default function TestimonialSection() {
     dragFree: true,
   });
 
-  // 2. Define the click handlers using useCallback for performance
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -24,8 +23,8 @@ export default function TestimonialSection() {
   }, [emblaApi]);
 
   return (
-    <section className="max-w-7xl px-4 mx-auto section-gap overflow-x-hidden">
-      <div className="text-center max-w-xl mx-auto space-y-4 mb-10 md:mb-16">
+    <section className="max-w-7xl px-4 mx-auto section-gap overflow-hidden">
+      <div className="text-center max-w-xl mx-auto space-y-4 mb-1 md:mb-16">
         <h2 className="section-title">Testimonials</h2>
         <p className="description text-center text-gray-600">
           We helped us focus on what mattered, and their ideas consistently
@@ -33,12 +32,16 @@ export default function TestimonialSection() {
         </p>
       </div>
 
-      <div className="embla cursor-grab active:cursor-grabbing" ref={emblaRef}>
+      <div
+        className="embla cursor-grab active:cursor-grabbing"
+        ref={emblaRef}
+        style={{ touchAction: "pan-y" }}
+      >
         <div className="embla__container flex gap-5">
           {testimonials.map((item: Testimonial, index: number) => (
             <div
               key={index}
-              className="embla__slide flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%]"
+              className="embla__slide flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-h-0"
             >
               <TestimonialCard item={item} index={index} />
             </div>

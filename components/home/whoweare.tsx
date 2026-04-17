@@ -39,7 +39,7 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
         </h2>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 mt-10 lg:mt-15">
-          <CTAButton btnText="Discover Us" href="/" />
+          <CTAButton btnText="Discover Us" href="/about" />
 
           <div className="flex gap-4 items-center">
             <div className="bg-secondary w-12 h-12 md:w-15 md:h-15 rounded-full flex justify-center items-center cursor-pointer">

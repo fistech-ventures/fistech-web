@@ -113,20 +113,20 @@ export default function ContactForm() {
               )}
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 lg:gap-y-6">
               <FormField
                 control={form.control}
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg font-medium">
+                    <FormLabel className="text-sm md:text-lg font-medium">
                       Full Name
                     </FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Mr. Daniel Robert"
                         {...field}
-                        className="bg-[#F2F2F2] border-none h-14 rounded-xl px-6"
+                        className="bg-[#F2F2F2] border-none h-12 rounded-md px-3 lg:px-6"
                       />
                     </FormControl>
                     <FormMessage />
@@ -139,14 +139,14 @@ export default function ContactForm() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg font-medium">
+                    <FormLabel className="text-sm md:text-lg font-medium">
                       Email Address
                     </FormLabel>
                     <FormControl>
                       <Input
                         placeholder="info@example.com"
                         {...field}
-                        className="bg-[#F2F2F2] border-none h-14 rounded-xl px-6"
+                        className="bg-[#F2F2F2] border-none h-12 rounded-md px-3 lg:px-6"
                       />
                     </FormControl>
                     <FormMessage />
@@ -159,14 +159,14 @@ export default function ContactForm() {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg font-medium">
+                    <FormLabel className="text-sm md:text-lg font-medium">
                       Phone Number
                     </FormLabel>
                     <FormControl>
                       <Input
                         placeholder="+1 (234) 567-580"
                         {...field}
-                        className="bg-[#F2F2F2] border-none h-14 rounded-xl px-6"
+                        className="bg-[#F2F2F2] border-none h-12 rounded-md px-3 lg:px-6"
                       />
                     </FormControl>
                     <FormMessage />
@@ -179,14 +179,14 @@ export default function ContactForm() {
                 name="company"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg font-medium">
+                    <FormLabel className="text-sm md:text-lg font-medium">
                       Company
                     </FormLabel>
                     <FormControl>
                       <Input
-                        placeholder="Onetrack Express"
+                        placeholder="Onetrack Express (optional)"
                         {...field}
-                        className="bg-[#F2F2F2] border-none h-14 rounded-xl px-6"
+                        className="bg-[#F2F2F2] border-none h-12 rounded-md px-3 lg:px-6"
                       />
                     </FormControl>
                     <FormMessage />
@@ -199,14 +199,14 @@ export default function ContactForm() {
                 name="message"
                 render={({ field }) => (
                   <FormItem className="md:col-span-2">
-                    <FormLabel className="text-lg font-medium">
+                    <FormLabel className="text-sm md:text-lg font-medium">
                       Message
                     </FormLabel>
                     <FormControl>
                       <Textarea
                         placeholder="Write a short note"
                         {...field}
-                        className="bg-[#F2F2F2] border-none rounded-2xl px-6 py-4 min-h-37.5 resize-none"
+                        className="bg-[#F2F2F2] border-none rounded-md px-3 lg:px-6 py-2 lg:py-4 min-h-37.5 resize-none"
                       />
                     </FormControl>
                     <FormMessage />
@@ -218,7 +218,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={form.formState.isSubmitting}
-              className="bg-[#1A1A1A] text-white px-10 py-4 rounded-full font-bold hover:bg-gray-800 transition-all disabled:opacity-50 cursor-pointer"
+              className="bg-[#1A1A1A] text-white px-10 py-4 rounded-2xl font-bold hover:bg-gray-800 transition-all disabled:opacity-50 cursor-pointer"
             >
               {form.formState.isSubmitting ? "Sending..." : "Submit Inquiry"}
             </button>
