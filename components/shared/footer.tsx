@@ -48,9 +48,11 @@ export default function Footer() {
             <h4 className="text-gray-500 uppercase text-xs font-bold tracking-widest mb-4">
               Office Location
             </h4>
-            <address className="not-italic text-lg md:text-xl font-medium leading-snug underline decoration-gray-600 underline-offset-4">
-              Cha 192, TB Gate, Mohakhali, <br /> Dhaka, 1212, Bangladesh
-            </address>
+            <Link href="/contact">
+              <address className="not-italic text-lg md:text-xl font-medium leading-snug underline decoration-gray-600 underline-offset-4 cursor-pointer">
+                Cha 192, TB Gate, Mohakhali, <br /> Dhaka, 1212, Bangladesh
+              </address>
+            </Link>
           </div>
 
           <div className="footer-fade flex flex-col md:items-end">

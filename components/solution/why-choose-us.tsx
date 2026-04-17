@@ -66,7 +66,7 @@ export default function WhyChooseUs({
             </h2>
           </div>
 
-          <div className="flex flex-col items-start md:items-end gap-4 shrink-0">
+          <div className="flex flex-col items-start md:items-end gap-4">
             <p className="max-w-lg description text-white/50 md:text-right">
               {whyChooseUs?.description}
             </p>

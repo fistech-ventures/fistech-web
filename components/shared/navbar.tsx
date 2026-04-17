@@ -113,7 +113,7 @@ export default function Navbar() {
               style={{ fontFamily: "var(--font-kanit)" }}
             >
               <Asterisk size={14} className="text-black" />
-              <span>Based on Europe, USA & UK</span>
+              <span>Based on South East Asia</span>
             </div>
           </div>
 

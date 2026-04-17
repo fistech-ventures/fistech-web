@@ -1,5 +1,3 @@
-import { Star } from "lucide-react";
-
 export default function RatingStars({ rating }: { rating: number }) {
   const totalStars = 5;
 
@@ -10,7 +8,7 @@ export default function RatingStars({ rating }: { rating: number }) {
 
         return (
           <div key={i} className="relative">
-            <Star className="w-6 h-6 text-gray-300" />
+            <div className="text-orange-700">★</div>
             <div
               className="absolute top-0 left-0 overflow-hidden"
               style={{
@@ -22,7 +20,7 @@ export default function RatingStars({ rating }: { rating: number }) {
                       : "0%",
               }}
             >
-              <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+              {/* <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" /> */}
             </div>
           </div>
         );

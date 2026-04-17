@@ -23,10 +23,10 @@ export default async function Page({
   if (!data) notFound();
 
   const socialLinks = [
-    { Icon: Facebook, path: "https://facebook.com/fistech" },
-    { Icon: Twitter, path: "https://twitter.com/fistech" },
-    { Icon: Linkedin, path: "https://linkedin.com/company/fistech" },
-    { Icon: Youtube, path: "https://youtube.com/fistech" },
+    { Icon: Facebook, path: "https://facebook.com/fistechventures" },
+    { Icon: Twitter, path: "https://twitter.com/fistechventures" },
+    { Icon: Linkedin, path: "https://linkedin.com/company/fistechventures" },
+    { Icon: Youtube, path: "https://youtube.com/fistechventures" },
   ];
 
   return (

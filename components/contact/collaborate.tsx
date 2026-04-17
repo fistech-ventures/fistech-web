@@ -61,7 +61,7 @@ export default function CollaborateSection() {
                     {item.title}
                   </p>
                   {item.id === 3 ? (
-                    <p className="text-base lg:text-xl font-bold text-[#1A1A1A] leading-tight">
+                    <p className="text-base lg:text-xl font-bold text-[#1A1A1A] leading-tight text-start">
                       {item.value}
                     </p>
                   ) : (

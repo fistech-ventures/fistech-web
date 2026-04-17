@@ -10,7 +10,7 @@ export default function CaseStudies() {
   return (
     <section className="py-12 md:py-20 lg:py-32 bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center mb-12 lg:mb-10 text-center">
+        <div className="flex flex-col items-center mb-2 lg:mb-10 text-center">
           <SectionTag sectiontag="Case Studies" />
           <h2 className="section-title max-w-4xl mx-auto py-5 text-center">
             Recent work and case studies that highlight our expertise

@@ -6,13 +6,13 @@ import Image from "next/image";
 
 export default function Banner() {
   const socialLinks = [
-    { Icon: Facebook, path: "https://facebook.com/fistech" },
-    { Icon: Twitter, path: "https://twitter.com/fistech" },
-    { Icon: Linkedin, path: "https://linkedin.com/company/fistech" },
-    { Icon: Youtube, path: "https://youtube.com/fistech" },
+    { Icon: Facebook, path: "https://facebook.com/fistechventures" },
+    { Icon: Twitter, path: "https://twitter.com/fistechventures" },
+    { Icon: Linkedin, path: "https://linkedin.com/company/fistechventures" },
+    { Icon: Youtube, path: "https://youtube.com/fistechventures" },
   ];
   return (
-    <section className="lg:max-h-[calc(100vh-50px)] flex items-center my-4 px-4">
+    <section className="lg:max-h-[calc(100vh-50px)] flex items-center my-4">
       <div
         className="container mx-auto rounded-3xl overflow-visible"
         style={{
@@ -52,7 +52,7 @@ export default function Banner() {
                       href={social.path}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 md:w-12 h-10 md:h-12 rounded-full border-2 border-foreground flex items-center justify-center hover:bg-secondary hover:text-black transition-all"
+                      className="w-10 xl:w-12 h-10 xl:h-12 rounded-full border-2 border-foreground flex items-center justify-center hover:bg-secondary hover:text-black transition-all"
                     >
                       <social.Icon size={18} />
                     </Link>
@@ -71,8 +71,8 @@ export default function Banner() {
               className="rounded-2xl w-full object-cover min-h-62.5 h-full"
             />
 
-            <div className="absolute -bottom-8 right-8 lg:bottom-auto lg:right-auto lg:top-1/2 lg:-translate-y-1/2 lg:-left-20 z-20">
-              <div className="relative flex items-center justify-center w-24 h-24 md:w-32 lg:w-40 lg:h-40 group cursor-pointer">
+            <div className="absolute -bottom-8 right-8 lg:bottom-auto lg:right-auto lg:top-1/2 lg:-translate-y-1/2 lg:-left-20 z-20 shrink-0">
+              <div className="relative flex items-center justify-center w-24 h-24 md:w-32 md:h-32 xl:w-40 xl:h-40 group cursor-pointer shrink-0">
                 <div className="absolute inset-0 bg-secondary rounded-full flex items-center justify-center border-foreground border shadow-2xl">
                   <div className="text-black animate-bounce">
                     <MoveDown size={20} className="lg:w-6 lg:h-6" />
