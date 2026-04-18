@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
-import { Archivo, Kanit } from "next/font/google";
 import "./globals.css";
-import AppProvider from "@/provider/app-provider";
+import { Archivo, Kanit } from "next/font/google";
+import SmoothScrollProvider from "@/provider/smooth-scroll-provider";
+import Navbar from "@/components/shared/navbar";
+import Footer from "@/components/shared/footer";
+import { Metadata } from "next";
+import { generateHomeMetadata } from "@/lib/metadata";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -15,10 +18,7 @@ const kanit = Kanit({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-export const metadata: Metadata = {
-  title: "Fistech Ventures",
-  description: "Global IT and Digital Solutions",
-};
+export const metadata: Metadata = generateHomeMetadata();
 
 export default function RootLayout({
   children,
@@ -26,9 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning>
-      <body className={`${archivo.className} ${kanit.variable} antialiased overflow-x-hidden` }>
-        <AppProvider>{children}</AppProvider>
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body
+        className={`${archivo.className} ${kanit.variable} antialiased overflow-x-hidden`}
+      >
+        <SmoothScrollProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

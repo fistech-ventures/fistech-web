@@ -9,11 +9,9 @@ import { Metadata } from "next";
 import fs from "fs";
 import path from "path";
 import { projects } from "@/data/projects";
+import { generateHomeMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Fistech Ventures",
-  description: "Global IT and Digital Solutions",
-};
+export const metadata: Metadata = generateHomeMetadata();
 
 export default function Home() {
   const dir = path.join(process.cwd(), "public/images/clients");

@@ -4,12 +4,12 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Project } from "@/types"; // Import your existing interface
+import { IProject } from "@/types"; // Import your existing interface
 import ImgWaterMark from "./image-watermark";
 import Image from "next/image";
 
 interface ProjectCardProps {
-  project: Project;
+  project: IProject;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
