@@ -6,7 +6,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://fistech.org";
 const FALLBACK_IMAGE = "/logo-p.png";
 const SITE_TAGLINE = "Your Vision. Our Expertise. Global Impact.";
 const SITE_DESCRIPTION =
-  "Fistech Ventures is a full-service IT agency delivering world-class Graphics Design, UI/UX Design, Web & App Development, Search Engine Optimization, Social Media Marketing, Search Engine Marketing, 3D Product Modeling, Google Ads, and Meta Ads services worldwide.";
+  "Fistech Ventures is a global IT agency specializing in Web & App Development, Graphics, UI/UX, SEO, Digital Marketing and 3D Modeling for clients worldwide.";
 
 const MAX_TITLE_LENGTH = 60;
 const MAX_DESCRIPTION_LENGTH = 160;
@@ -342,11 +342,7 @@ export function generateCaseStudyMetadata(
   options?: MetadataOptions,
 ): Metadata {
   const rawTitle = `${caseStudy.metadata.title} | ${SITE_NAME}`;
-  const rawDescription =
-    caseStudy.metadata.seoDescription ||
-    caseStudy.hero?.subHeadline ||
-    caseStudy.problem?.summary ||
-    SITE_TAGLINE;
+  const rawDescription = caseStudy.metadata.seoDescription || SITE_TAGLINE;
 
   const title = sanitize(rawTitle, SITE_NAME, MAX_TITLE_LENGTH);
   const description = sanitize(

@@ -2,6 +2,10 @@ import React from "react";
 import PageHeadline from "@/components/shared/page-headline";
 import { CASE_STUDIES } from "@/data/case-studies";
 import CasecaseStudyCard from "@/components/shared/case-study-card";
+import { generateCaseStudiesMetadata } from "@/lib/metadata";
+import { Metadata } from "next";
+
+export const metadata: Metadata = generateCaseStudiesMetadata();
 
 export default function CaseStudies() {
   return (
