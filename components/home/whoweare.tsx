@@ -5,12 +5,15 @@ import Link from "next/link";
 import { Send } from "lucide-react";
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
+import { contactInfo } from "@/data/constant";
 
 interface WhoweareProps {
   logos: string[];
 }
 
 export default function Whoweare({ logos = [] }: WhoweareProps) {
+  const email = contactInfo.find((item) => item.identifier === "email");
+
   return (
     <section className="lg:pt-20 pt-10 border-b border-[#020202]/30 pb-16 lg:pb-20">
       <div className="container mx-auto px-4">
@@ -43,7 +46,7 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
 
           <div className="flex gap-4 items-center">
             <div className="bg-secondary w-12 h-12 md:w-15 md:h-15 rounded-full flex justify-center items-center cursor-pointer">
-              <Link href="mailto:info@fistech.org">
+              <Link href={`mailto:${email?.value}`}>
                 <Send className="w-6 h-6 md:w-8 md:h-8" />
               </Link>
             </div>
@@ -52,10 +55,10 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
                 For More Inquiry
               </h4>
               <Link
-                href="mailto:info@fistech.org"
+                href={`mailto:${email?.value}`}
                 className="text-lg md:text-xl font-medium hover:text-gray-400 transition-colors"
               >
-                info@fistech.org
+                {email?.value}
               </Link>
             </div>
           </div>

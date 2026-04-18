@@ -1,18 +1,11 @@
 import { CASE_STUDIES } from "@/data/case-studies";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import {
-  ChartBarStacked,
-  CircleUserRound,
-  UserPen,
-  Facebook,
-  Linkedin,
-  Twitter,
-  Youtube,
-} from "lucide-react";
+import { ChartBarStacked, CircleUserRound, UserPen } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { generateCaseStudyMetadata } from "@/lib/metadata";
+import { socialLinks } from "@/data/constant";
 
 export async function generateMetadata({
   params,
@@ -43,13 +36,6 @@ export default async function Page({
   const data = CASE_STUDIES.find((cs) => cs.slug === slug);
 
   if (!data) notFound();
-
-  const socialLinks = [
-    { Icon: Facebook, path: "https://facebook.com/fistechventures" },
-    { Icon: Twitter, path: "https://twitter.com/fistechventures" },
-    { Icon: Linkedin, path: "https://linkedin.com/company/fistechventures" },
-    { Icon: Youtube, path: "https://youtube.com/fistechventures" },
-  ];
 
   return (
     <>
