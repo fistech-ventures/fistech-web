@@ -4,7 +4,7 @@ import SectionTag from "../shared/section-tag";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { solutions } from "@/data/service";
+import { solutions } from "@/data/solutions";
 import Image from "next/image";
 
 if (typeof window !== "undefined") {

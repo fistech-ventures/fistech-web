@@ -1,6 +1,6 @@
-import { Project } from "@/types";
+import { IProject } from "@/types";
 
-export const projects: Project[] = [
+export const projects: IProject[] = [
   {
     // --- 1. CORE IDENTITY ---
     id: "p16", // Sequential ID following SmsHome

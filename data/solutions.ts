@@ -1,6 +1,6 @@
-import { Solution } from "@/types";
+import { ISolution } from "@/types";
 
-export const solutions: Solution[] = [
+export const solutions: ISolution[] = [
   {
     id: "svc_web_app",
     slug: "web-application-development",

@@ -22,8 +22,8 @@ import {
   AppWindow,
   Paintbrush,
 } from "lucide-react";
-import { solutions } from "@/data/service";
-import { Solution } from "@/types";
+import { solutions } from "@/data/solutions";
+import { ISolution } from "@/types";
 import Link from "next/link";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -65,7 +65,7 @@ export default function Service() {
 }
 
 interface ServiceItemProps {
-  service: Solution;
+  service: ISolution;
   isOpen: boolean;
   onClick: () => void;
 }
@@ -163,11 +163,10 @@ function ServiceItem({ service, isOpen, onClick }: ServiceItemProps) {
           {/* Responsive Plus Button */}
           <div className="flex justify-end md:block shrink-0">
             <div
-              className={`w-12 h-12 md:w-16 lg:w-20 md:h-16 lg:h-20 rounded-full border border-black/10 flex items-center justify-center transition-all duration-500 z-20 ${
-                isOpen
+              className={`w-12 h-12 md:w-16 lg:w-20 md:h-16 lg:h-20 rounded-full border border-black/10 flex items-center justify-center transition-all duration-500 z-20 ${isOpen
                   ? "rotate-45 bg-[#D4FF70] text-black border-transparent"
                   : "bg-white text-black group-hover:bg-white group-hover:border-transparent"
-              }`}
+                }`}
             >
               <Plus
                 className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10"

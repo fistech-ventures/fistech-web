@@ -1,4 +1,4 @@
-import { Project } from "@/types";
+import { IProject } from "@/types";
 import React from "react";
 import ProjectCard from "../shared/project-card";
 import ProjectHeadline from "./project-headline";
@@ -8,7 +8,7 @@ export default function ProjectsSection({
   projects,
   showHeadline = true,
 }: {
-  projects: Project[];
+  projects: IProject[];
   showHeadline?: boolean;
 }) {
   return (
@@ -16,7 +16,7 @@ export default function ProjectsSection({
       <div className="container">
         {showHeadline && <ProjectHeadline />}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-14">
-          {projects.map((project: Project) => (
+          {projects.map((project: IProject) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </div>

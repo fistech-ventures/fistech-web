@@ -20,7 +20,7 @@ export interface ProjectSection {
   stats?: ProjectStat[];
 }
 
-export interface Project {
+export interface IProject {
   id: string;
   slug: string;
   title: string;
@@ -46,7 +46,7 @@ export interface Testimonial {
 }
 
 // Solution/service
-export interface Solution {
+export interface ISolution {
   id: string;
   title: string;
   slug: string;
@@ -87,7 +87,7 @@ export interface Solution {
   }[];
 }
 
-export interface CaseStudy {
+export interface ICaseStudy {
   caseStudyId: string;
   slug: string;
   metadata: {

@@ -24,8 +24,8 @@ import {
   Paintbrush,
 } from "lucide-react";
 import Link from "next/link";
-import { solutions } from "@/data/service";
-import { Solution } from "@/types";
+import { solutions } from "@/data/solutions";
+import { ISolution } from "@/types";
 import Image from "next/image";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -55,7 +55,7 @@ export default function WhatWeDo() {
 
   useGSAP(
     () => {
-      solutions.forEach((service: Solution) => {
+      solutions.forEach((service: ISolution) => {
         const content = containerRef.current?.querySelector(
           `.details-${service.id}`,
         );
@@ -113,7 +113,7 @@ export default function WhatWeDo() {
         </h2>
 
         <div className="flex flex-col gap-5 max-w-7xl mx-auto">
-          {solutions.map((service: Solution) => {
+          {solutions.map((service: ISolution) => {
             const Icon = IconMap[service.icon.name] || Code;
             const serviceLink = `/solutions/${service.slug}`;
 

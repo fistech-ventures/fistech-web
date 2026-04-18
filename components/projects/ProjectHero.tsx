@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { Project } from "@/types";
+import { IProject } from "@/types";
 import ImgWaterMark from "../shared/image-watermark";
 import Image from "next/image";
 
 type ProjectHeroProps = Pick<
-  Project,
+  IProject,
   | "title"
   | "categories"
   | "client"

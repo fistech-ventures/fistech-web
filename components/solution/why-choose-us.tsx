@@ -1,6 +1,6 @@
 "use client";
 
-import { Solution } from "@/types";
+import { ISolution } from "@/types";
 import { ArrowRight } from "lucide-react";
 import React from "react";
 import CTAButton from "../shared/cta";
@@ -8,7 +8,7 @@ import CTAButton from "../shared/cta";
 export default function WhyChooseUs({
   whyChooseUs,
 }: {
-  whyChooseUs?: Solution["whyChooseUs"];
+  whyChooseUs?: ISolution["whyChooseUs"];
 }) {
   const items = whyChooseUs?.content ?? [];
 
