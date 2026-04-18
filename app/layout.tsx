@@ -5,6 +5,11 @@ import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import { Metadata } from "next";
 import { generateHomeMetadata } from "@/lib/metadata";
+import {
+  generateOrganisationSchema,
+  generateWebsiteSchema,
+  toJsonLd,
+} from "@/lib/schema";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -27,7 +32,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: toJsonLd(generateOrganisationSchema()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: toJsonLd(generateWebsiteSchema()),
+          }}
+        />
+      </head>
       <body
         className={`${archivo.className} ${kanit.variable} antialiased overflow-x-hidden`}
       >

@@ -65,7 +65,6 @@ export interface ISolution {
     features: string[];
   };
 
-
   whyChooseUs: {
     description: string;
 
@@ -74,7 +73,7 @@ export interface ISolution {
       description: string;
     }[];
   };
-  
+
   process: {
     id: number;
     title: string;
@@ -132,4 +131,9 @@ export interface ICaseStudy {
       after: string;
     }>;
   };
+}
+
+export interface IFAQ {
+  question: string;
+  answer: string;
 }

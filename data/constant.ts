@@ -20,8 +20,8 @@ export const contactInfo = [
     id: 1,
     title: "WhatsApp Number",
     identifier: "whatsapp",
-    value: "+880 1609 302239",
-    href: "https://wa.me/+8801609302239",
+    value: "+880 1619 778199",
+    href: "https://wa.me/+8801619778199",
     icon: Phone,
   },
   {
@@ -41,3 +41,16 @@ export const contactInfo = [
     icon: MapPin,
   },
 ];
+
+export const metaData = {
+  SITE_NAME: "Fistech Ventures",
+  SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || "https://fistech.org",
+  FALLBACK_IMAGE: "/logo-p.png",
+  SITE_TAGLINE: "Your Vision. Our Expertise. Global Impact.",
+  SITE_DESCRIPTION:
+    "Fistech Ventures is a global IT agency specializing in Web & App Development, Graphics, UI/UX, SEO, Digital Marketing and 3D Modeling for clients worldwide.",
+  CONTACT_EMAIL: "info@fistech.org",
+  CONTACT_PHONE: "+880 1619 778199",
+  MAX_TITLE_LENGTH: 60,
+  MAX_DESCRIPTION_LENGTH: 160,
+};

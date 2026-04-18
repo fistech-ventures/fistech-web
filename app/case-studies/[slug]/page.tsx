@@ -6,6 +6,11 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { generateCaseStudyMetadata } from "@/lib/metadata";
 import { socialLinks } from "@/data/constant";
+import {
+  generateCaseStudySchema,
+  generateBreadcrumbSchema,
+  toJsonLd,
+} from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -39,6 +44,24 @@ export default async function Page({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: toJsonLd(generateCaseStudySchema(data)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: toJsonLd(
+            generateBreadcrumbSchema([
+              { name: "Home", href: "/" },
+              { name: "Case Studies", href: "/case-studies" },
+              { name: data.metadata.title, href: `/case-studies/${slug}` },
+            ]),
+          ),
+        }}
+      />
       <main className="min-h-screen bg-white">
         {/* Header Info */}
         <section className="pt-20 md:pt-32 lg:pt-40 pb-10 text-center px-4">

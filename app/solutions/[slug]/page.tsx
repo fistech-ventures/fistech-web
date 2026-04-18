@@ -5,6 +5,12 @@ import { solutions } from "@/data/solutions";
 import { generateSolutionMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import React from "react";
+import {
+  generateBreadcrumbSchema,
+  generateSolutionSchema,
+  toJsonLd,
+} from "@/lib/schema";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,
@@ -35,8 +41,28 @@ export default async function SolutionDetails({
 
   const solution = solutions.find((item) => item.slug === slug);
 
+  if (!solution) return notFound();
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: toJsonLd(generateSolutionSchema(solution)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: toJsonLd(
+            generateBreadcrumbSchema([
+              { name: "Home", href: "/" },
+              { name: "Solutions", href: "/solutions" },
+              { name: solution.title, href: `/solutions/${slug}` },
+            ]),
+          ),
+        }}
+      />
       <PageHeadline
         isSolution
         headline={solution?.title || "Solution Details"}
