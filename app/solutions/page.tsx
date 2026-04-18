@@ -6,6 +6,10 @@ import ParallaxHeroImage from "@/components/shared/parallax-hero-image";
 import React from "react";
 import fs from "fs";
 import path from "path";
+import { generateSolutionsMetadata } from "@/lib/metadata";
+import { Metadata } from "next";
+
+export const metadata: Metadata = generateSolutionsMetadata();
 
 export default function SolutionsPage() {
   const dir = path.join(process.cwd(), "public/images/clients");
@@ -20,7 +24,7 @@ export default function SolutionsPage() {
         imageSrc="/images/service/solution-bg.webp"
         imageAlt="Solution"
       />
-      <Whoweare logos={logos}/>
+      <Whoweare logos={logos} />
       <WhatWeDo />
       <CollaborateSection />
     </div>

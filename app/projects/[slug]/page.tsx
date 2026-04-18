@@ -6,6 +6,28 @@ import ProjectHero from "@/components/projects/ProjectHero";
 import ProjectImpact from "@/components/projects/ProjectImpact";
 import { notFound } from "next/navigation";
 import PageHeadline from "@/components/shared/page-headline";
+import { Metadata } from "next";
+import { generateProjectMetadata } from "@/lib/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  return generateProjectMetadata(project, {
+    path: `/projects/${slug}`,
+  });
+}
 
 export default async function Page({
   params,
