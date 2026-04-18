@@ -1,6 +1,6 @@
-import { CaseStudy } from "@/types";
+import { ICaseStudy } from "@/types";
 
-export const CASE_STUDIES: CaseStudy[] = [
+export const CASE_STUDIES: ICaseStudy[] = [
   {
     caseStudyId: "CS-FT-001",
     slug: "cinematic-digital-transformation-braga-experience",

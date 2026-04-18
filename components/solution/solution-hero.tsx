@@ -1,9 +1,9 @@
-import { Solution } from "@/types";
+import { ISolution } from "@/types";
 import { Plus } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
-export default function SolutionHero({ hero }: { hero?: Solution["hero"] }) {
+export default function SolutionHero({ hero }: { hero?: ISolution["hero"] }) {
   return (
     <>
       <section className="max-w-6xl mx-auto px-2 aspect-8/3 mb-7 md:mb-9 lg:mb-12 xl:mb-20 flex flex-col gap-5 lg:gap-10 xl:gap-14">

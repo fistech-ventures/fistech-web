@@ -1,7 +1,7 @@
 import PageHeadline from "@/components/shared/page-headline";
 import SolutionHero from "@/components/solution/solution-hero";
 import WhyChooseUs from "@/components/solution/why-choose-us";
-import { solutions } from "@/data/service";
+import { solutions } from "@/data/solutions";
 import React from "react";
 
 export default async function SolutionDetails({
