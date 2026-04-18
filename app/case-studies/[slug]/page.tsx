@@ -11,6 +11,28 @@ import {
   Youtube,
 } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from "next";
+import { generateCaseStudyMetadata } from "@/lib/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const data = CASE_STUDIES.find((cs) => cs.slug === slug);
+
+  if (!data) {
+    return {
+      title: "Case Study Not Found",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  return generateCaseStudyMetadata(data, {
+    path: `/case-studies/${slug}`,
+  });
+}
 
 export default async function Page({
   params,

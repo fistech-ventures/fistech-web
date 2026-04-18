@@ -3,7 +3,11 @@ import ContactForm from "@/components/contact/contact-form";
 import MapSection from "@/components/contact/map-sectin";
 import PageHeadline from "@/components/shared/page-headline";
 import ParallaxHeroImage from "@/components/shared/parallax-hero-image";
+import { generateContactMetadata } from "@/lib/metadata";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = generateContactMetadata();
 
 export default function ContactPage() {
   return (
