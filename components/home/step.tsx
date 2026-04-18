@@ -1,7 +1,10 @@
+import { contactInfo } from "@/data/constant";
 import Link from "next/link";
 import React from "react";
 
 export default function Step() {
+  const email = contactInfo.find((item) => item.identifier === "email");
+
   return (
     <section className="py-6 md:pb-8 lg:pb-10 xl:pb-30 px-4 md:px-0">
       <div className="flex items-center gap-2 md:gap-0">
@@ -13,10 +16,10 @@ export default function Step() {
           </h4>
 
           <Link
-            href="mailto:info@fistech.org"
+            href={`mailto:${email?.value}`}
             className="text-lg md:text-xl font-medium hover:text-gray-400 transition-colors"
           >
-            info@fistech.org
+            {email?.value}
           </Link>
         </div>
 

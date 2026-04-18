@@ -1,16 +1,11 @@
 import React from "react";
 import CTAButton from "../shared/cta";
-import { Facebook, Linkedin, MoveDown, Twitter, Youtube } from "lucide-react";
+import { MoveDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { socialLinks } from "@/data/constant";
 
 export default function Banner() {
-  const socialLinks = [
-    { Icon: Facebook, path: "https://facebook.com/fistechventures" },
-    { Icon: Twitter, path: "https://twitter.com/fistechventures" },
-    { Icon: Linkedin, path: "https://linkedin.com/company/fistechventures" },
-    { Icon: Youtube, path: "https://youtube.com/fistechventures" },
-  ];
   return (
     <section className="lg:max-h-[calc(100vh-50px)] flex items-center my-4">
       <div

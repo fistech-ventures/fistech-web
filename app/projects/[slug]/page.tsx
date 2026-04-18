@@ -8,6 +8,11 @@ import { notFound } from "next/navigation";
 import PageHeadline from "@/components/shared/page-headline";
 import { Metadata } from "next";
 import { generateProjectMetadata } from "@/lib/metadata";
+import {
+  generateBreadcrumbSchema,
+  generateProjectSchema,
+  toJsonLd,
+} from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -73,7 +78,25 @@ export default async function Page({
     "previous-project";
 
   return (
-    <div className="">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: toJsonLd(generateProjectSchema(project)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: toJsonLd(
+            generateBreadcrumbSchema([
+              { name: "Home", href: "/" },
+              { name: "Projects", href: "/projects" },
+              { name: project.title, href: `/projects/${slug}` },
+            ]),
+          ),
+        }}
+      />
       <PageHeadline headline={project.title} isProject={true} />
       <ProjectHero
         title={project.title}
@@ -102,6 +125,6 @@ export default async function Page({
         nextProjectTitle={nextProjectTitle}
         prevProjectTitle={prevProjectTitle}
       />
-    </div>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
-import { Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { contactInfo, socialLinks } from "@/data/constant";
 
 export default function Footer() {
   const footerNav = [
@@ -21,12 +21,6 @@ export default function Footer() {
         { name: "FAQ", path: "/faq" },
       ],
     },
-  ];
-  const socialLinks = [
-    { Icon: Facebook, path: "https://facebook.com/fistechventures" },
-    { Icon: Twitter, path: "https://twitter.com/fistechventures" },
-    { Icon: Linkedin, path: "https://linkedin.com/company/fistechventures" },
-    { Icon: Youtube, path: "https://youtube.com/fistechventures" },
   ];
 
   return (
@@ -48,11 +42,20 @@ export default function Footer() {
             <h4 className="text-gray-500 uppercase text-xs font-bold tracking-widest mb-4">
               Office Location
             </h4>
-            <Link href="/contact">
-              <address className="not-italic text-lg md:text-xl font-medium leading-snug underline decoration-gray-600 underline-offset-4 cursor-pointer">
-                Cha 192, TB Gate, Mohakhali, <br /> Dhaka, 1212, Bangladesh
-              </address>
-            </Link>
+            {contactInfo
+              .filter((item) => item.identifier === "location")
+              .map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <address className="not-italic text-lg md:text-xl font-medium leading-snug underline decoration-gray-600 underline-offset-4 cursor-pointer">
+                    {item.value}
+                  </address>
+                </Link>
+              ))}
           </div>
 
           <div className="footer-fade flex flex-col md:items-end">
@@ -60,12 +63,17 @@ export default function Footer() {
               Contact Info
             </h4>
             <div className="flex flex-col gap-2">
-              <Link
-                href="mailto:hello@anioagency.com"
-                className="text-lg md:text-xl font-medium hover:text-gray-400 transition-colors"
-              >
-                info@fistech.org
-              </Link>
+              {contactInfo
+                .filter((item) => item.identifier === "email")
+                .map((item) => (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    className="text-lg md:text-xl font-medium hover:text-gray-400 transition-colors"
+                  >
+                    {item.value}
+                  </Link>
+                ))}
             </div>
           </div>
         </div>

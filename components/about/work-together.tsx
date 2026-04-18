@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import { contactInfo } from "@/data/constant";
 
 export default function WorkTogether() {
   const [animationData, setAnimationData] = useState(null);
@@ -27,6 +28,8 @@ export default function WorkTogether() {
     if (!lottieRef.current?.animationItem) return;
     lottieRef.current.animationItem.loop = false;
   };
+
+  const email = contactInfo.find((item) => item.identifier === "email");
 
   return (
     <section className="py-12 md:py-20 bg-black border-b-2 border-gray-800 px-4">
@@ -61,9 +64,9 @@ export default function WorkTogether() {
               className="py-5 px-10 rounded-full bg-[#1e1e1e] text-white text-2xl font-medium hover:bg-secondary hover:text-black duration-300 ease-in-out cursor-pointer"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              onClick={() => window.location.href = "mailto:info@fistech.org"}
+              onClick={() => (window.location.href = `mailto:${email?.href}`)}
             >
-              info@fistech.org
+              {email?.value}
             </button>
           </div>
         </div>
