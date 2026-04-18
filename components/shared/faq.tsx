@@ -4,12 +4,14 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { faqs } from "@/data/faq";
+import { IFAQ } from "@/types";
 
 export default function FAQSection({
   isShowTitle = true,
+  faqs,
 }: {
   isShowTitle?: boolean;
+  faqs: IFAQ[];
 }) {
   return (
     <section className="section-gap">

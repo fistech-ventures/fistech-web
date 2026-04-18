@@ -1,31 +1,7 @@
-import { MapPin, Phone, Send } from "lucide-react";
+import { contactInfo } from "@/data/constant";
 import React from "react";
 
 export default function CollaborateSection() {
-  const contactInfo = [
-    {
-      id: 1,
-      title: "WhatsApp Number",
-      value: "+880 1609 302239",
-      href: "https://wa.me/+8801609302239",
-      icon: Phone,
-    },
-    {
-      id: 2,
-      title: "Email Address",
-      value: "info@fistech.org",
-      href: "mailto:info@fistech.org",
-      icon: Send,
-    },
-    {
-      id: 3,
-      title: "",
-      value: "Cha 192, TB Gate, Mohakhali, Dhaka 1212, Bangladesh",
-      href: "https://maps.google.com",
-      icon: MapPin,
-    },
-  ];
-
   return (
     <section className="bg-white py-16 px-6 md:py-32">
       <div className="max-w-6xl mx-auto text-center">
@@ -58,9 +34,9 @@ export default function CollaborateSection() {
                 {/* Text Content */}
                 <div className="">
                   <p className="text-sm font-bold tracking-widest text-start">
-                    {item.title}
+                    {item.identifier !== "location" && item.title}
                   </p>
-                  {item.id === 3 ? (
+                  {item.identifier === "location" ? (
                     <p className="text-base lg:text-xl font-bold text-[#1A1A1A] leading-tight text-start">
                       {item.value}
                     </p>

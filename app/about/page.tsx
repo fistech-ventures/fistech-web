@@ -6,6 +6,7 @@ import FAQSection from "@/components/shared/faq";
 import PageHeadline from "@/components/shared/page-headline";
 import ParallaxHeroImage from "@/components/shared/parallax-hero-image";
 import TestimonialSection from "@/components/shared/testimonial-section";
+import { faqs } from "@/data/faq";
 import { generateAboutMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import React from "react";
@@ -24,7 +25,7 @@ export default function AboutPage() {
       <Whatwedo />
       <Service />
       <TestimonialSection />
-      <FAQSection />
+      <FAQSection faqs={faqs} />
       <WorkTogether />
     </div>
   );

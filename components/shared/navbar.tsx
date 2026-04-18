@@ -8,6 +8,7 @@ import CTAButton from "./cta";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { contactInfo } from "@/data/constant";
 
 gsap.registerPlugin(useGSAP);
 
@@ -87,6 +88,8 @@ export default function Navbar() {
   ];
 
   const closeMenu = () => setIsOpen(false);
+
+  const email = contactInfo.find((item) => item.identifier === "email");
 
   return (
     <>
@@ -172,17 +175,17 @@ export default function Navbar() {
 
         <div className="mt-auto pt-8 border-t border-gray-100">
           <p className="text-gray-400 font-bold text-[11px] uppercase tracking-[0.2em] mb-6">
-            Contact Info
+            {email?.title}
           </p>
           <div className="space-y-6">
             <Link
-              href="mailto:info@fistech.org"
+              href={`mailto:${email?.value}`}
               className="flex items-center gap-4 group cursor-pointer"
             >
               <div className="bg-black p-3 rounded-full text-white group-hover:bg-[#D4FF70] group-hover:text-black transition-all">
                 <Mail size={18} />
               </div>
-              <span className="text-[15px] font-bold">info@fistech.org</span>
+              <span className="text-[15px] font-bold">{email?.value}</span>
             </Link>
           </div>
         </div>

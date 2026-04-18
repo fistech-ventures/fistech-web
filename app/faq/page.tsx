@@ -4,18 +4,26 @@ import ParallaxHeroImage from "@/components/shared/parallax-hero-image";
 import { generateFAQMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import React from "react";
+import { generateFaqSchema, toJsonLd } from "@/lib/schema";
+import { faqs } from "@/data/faq";
 
 export const metadata: Metadata = generateFAQMetadata();
 
 export default function FAQPage() {
   return (
-    <main>
-      <PageHeadline headline="FAQ" />
-      <ParallaxHeroImage
-        imageSrc="/images/contact/contact-hero.webp"
-        imageAlt="Faq Image"
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: toJsonLd(generateFaqSchema(faqs)) }}
       />
-      <FAQSection isShowTitle={false} />
-    </main>
+      <main>
+        <PageHeadline headline="FAQ" />
+        <ParallaxHeroImage
+          imageSrc="/images/contact/contact-hero.webp"
+          imageAlt="Faq Image"
+        />
+        <FAQSection faqs={faqs} isShowTitle={false} />
+      </main>
+    </>
   );
 }
