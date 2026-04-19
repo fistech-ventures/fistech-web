@@ -108,8 +108,8 @@ export default function WhatWeDo() {
         <SectionTag sectiontag="What We Do" />
 
         <h2 className="section-title text-center max-w-5xl mx-auto mt-6 mb-12 lg:mb-20 text-3xl md:text-5xl font-bold leading-tight">
-          We specialize in delivering flexible, scalable, and affordable
-          services for startups.
+          Specializing in streamlined efficiency, distinctive design, and
+          strategies that drive business growth.
         </h2>
 
         <div className="flex flex-col gap-5 max-w-7xl mx-auto">
