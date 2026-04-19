@@ -10,6 +10,9 @@ import {
   generateWebsiteSchema,
   toJsonLd,
 } from "@/lib/schema";
+import GoogleAnalytics from "@/components/analytics/google-analytics";
+import { Suspense } from "react";
+import PageViewTracker from "@/components/analytics/page-view-tracker";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -49,6 +52,10 @@ export default function RootLayout({
       <body
         className={`${archivo.className} ${kanit.variable} antialiased overflow-x-hidden`}
       >
+        <GoogleAnalytics />
+        <Suspense fallback={null}>
+          <PageViewTracker />
+        </Suspense>
         <SmoothScrollProvider>
           <Navbar />
           {children}
