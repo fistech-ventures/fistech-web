@@ -27,7 +27,7 @@ export default function Banner() {
                 >
                   <source src="/banner-video.mp4" type="video/mp4" />
                 </video>
-                <span>Execute And Accelerate Growth.</span>
+                <span>Execute Accelerate Digital Growth.</span>
               </h1>
               <p className="description lg:py-8 py-6">
                 Improving efficiency, designing uniquely, and executing
