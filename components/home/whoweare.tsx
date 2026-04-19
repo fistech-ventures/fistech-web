@@ -21,7 +21,6 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
 
         <h2 className="section-title text-center max-w-6xl mx-auto leading-tight">
           Beyond an agency — we streamline efficiency, create distinctive
-          designs,
           <video
             autoPlay
             loop
@@ -31,19 +30,18 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
           >
             <source src="/who-are.mp4" type="video/mp4" />
           </video>
-          and deliver strategies that grow startups .
-          <Image
+          designs, and deliver strategies that grow startups
+          {/* <Image
             width={1000}
             height={1000}
             src="/whoare.webp"
             alt="Demo"
             className="inline-block align-middle h-[1em] w-auto mx-2"
-          />
-          startup journey.
+          /> */}
         </h2>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 mt-10 lg:mt-15">
-          <CTAButton btnText="Discover Us" href="/about" />
+          <CTAButton btnText="Discover Us" href="/about" isDark={false}/>
 
           <div className="flex gap-4 items-center">
             <div className="bg-secondary w-12 h-12 md:w-15 md:h-15 rounded-full flex justify-center items-center cursor-pointer">
