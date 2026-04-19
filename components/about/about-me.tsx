@@ -79,8 +79,10 @@ export default function AboutMe() {
         <SectionTag sectiontag="About Us" />
 
         <h2 className="section-title max-w-5xl mx-auto py-10 font-medium">
-          I’m a product designer with 08 years+ of experience helping startups.
-          My focus is on UX, UI, and design systems that scale.
+          At Fistech Ventures, we merge 5+ years of product design expertise
+          with scalable engineering to transform complex ideas into intuitive
+          digital products. We don’t just design interfaces; we build the
+          foundations for your growth.
         </h2>
 
         <Image

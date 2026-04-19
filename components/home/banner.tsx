@@ -18,7 +18,7 @@ export default function Banner() {
           <div className="w-full lg:w-3/5 lg:pl-14 pb-6 md:pb-8 lg:pb-20 lg:text-left pt-24 md:pt-32 lg:pt-28 px-3 lg:px-0">
             <div className="max-w-xl lg:mt-20 mt-0">
               <h1 className="main-headline flex flex-wrap items-center gap-2 pr-5 lg:pr-0">
-                <span>Design &</span>
+                <span>Create</span>
                 <video
                   autoPlay
                   loop
@@ -27,11 +27,11 @@ export default function Banner() {
                 >
                   <source src="/banner-video.mp4" type="video/mp4" />
                 </video>
-                <span>Development for Startup.</span>
+                <span>Execute And Accelerate Growth.</span>
               </h1>
               <p className="description lg:py-8 py-6">
-                We provide tailored strategies, creative design, and rapid
-                development for startups ready to grow fast.
+                Improving efficiency, designing uniquely, and executing
+                strategic plans to support consistent startup growth.
               </p>
               <div className="flex flex-col md:flex-row gap-5 lg:mt-12">
                 <div className="flex flex-col sm:flex-row gap-4 lg:items-center justify-center lg:justify-start">
