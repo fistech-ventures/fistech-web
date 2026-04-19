@@ -27,8 +27,7 @@ export default function TestimonialSection() {
       <div className="text-center max-w-xl mx-auto space-y-4 mb-1 md:mb-16">
         <h2 className="section-title">Testimonials</h2>
         <p className="description text-center text-gray-600">
-          We helped us focus on what mattered, and their ideas consistently
-          pushed our business forward.
+          Helping Out People To Build New Relations For Growing Business.
         </p>
       </div>
 

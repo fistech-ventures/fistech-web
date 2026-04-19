@@ -20,7 +20,8 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
         <SectionTag sectiontag="Who We Are" />
 
         <h2 className="section-title text-center max-w-6xl mx-auto leading-tight">
-          We’re not just an agency—we’re your strategic partner{" "}
+          Beyond an agency — we streamline efficiency, create distinctive
+          designs,
           <video
             autoPlay
             loop
@@ -30,7 +31,7 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
           >
             <source src="/who-are.mp4" type="video/mp4" />
           </video>
-          creative collaborator, & technology guide on your{" "}
+          and deliver strategies that grow startups .
           <Image
             width={1000}
             height={1000}

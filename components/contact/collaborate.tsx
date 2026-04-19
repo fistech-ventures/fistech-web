@@ -11,8 +11,8 @@ export default function CollaborateSection() {
             Let&apos;s Collaborate
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#1A1A1A] mt-8 mb-16">
-            Let&apos;s Build Something <br className="hidden md:block" /> Great
-            Together!
+            Let&apos;s Achieve 
+            <br className="hidden md:block" /> Growth Together!
           </h2>
         </div>
 
