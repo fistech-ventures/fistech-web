@@ -174,7 +174,7 @@ export const solutions: ISolution[] = [
       subtitle:
         "Scalable, secure, and high-performing mobile apps built for growth.",
       description: "Engaging mobile experiences that users love.",
-      coverImage: "/images/services/mobile-app-1.png",
+      coverImage: "/images/service/mobile-app-1.png",
       features: [
         "iOS & Android apps",
         "Native & cross-platform",
@@ -320,7 +320,7 @@ export const solutions: ISolution[] = [
       subtitle: "Designs that convert and engage users.",
       description:
         "We create stunning, user-centered designs that enhance user experience and drive business growth.",
-      coverImage: "/images/services/ui-ux-2.png",
+      coverImage:"/images/service/ui-ux-1.png",
       features: [
         "UI/UX Design",
         "Product Design",
@@ -411,7 +411,7 @@ export const solutions: ISolution[] = [
       subtitle: "Beyond 2D. Architecture for the visual future.",
       description:
         "We replace text-heavy communication with high-impact 3D narratives, creating modern 'Apple-like' UX for industrial and commercial products.",
-      coverImage: "/images/service/3d-design-2.png",
+      coverImage: "/images/service/3d-design-1.png",
       features: [
         "Interactive 3D Product Viewers",
         "Industrial Process Visualization",
@@ -513,7 +513,7 @@ export const solutions: ISolution[] = [
       subtitle: "Drive traffic, leads, and growth.",
       description:
         "We craft data-driven SEO strategies that boost visibility, attract qualified leads, and accelerate business growth.",
-      coverImage: "/images/services/seo-2.png",
+      coverImage: "/images/service/seo-1.png",
       features: [
         "Technical SEO Audit",
         "On-Page Optimization",
