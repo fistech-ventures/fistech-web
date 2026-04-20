@@ -1,6 +1,7 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(SplitText);
 import Link from "next/link";
 import Image from "next/image";
 import { Send } from "lucide-react";
@@ -11,7 +12,6 @@ import { contactInfo } from "@/data/constant";
 import SectionTag from "../shared/section-tag";
 import React, { useEffect, useRef } from "react";
 
-gsap.registerPlugin(SplitText);
 
 interface WhoweareProps {
   logos: string[];

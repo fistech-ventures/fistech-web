@@ -1,13 +1,13 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(SplitText, ScrollTrigger);
 import SplitText from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import CTAButton from "../shared/cta";
 import React, { useState, useRef } from "react";
 import SectionTag from "../shared/section-tag";
 import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(SplitText, ScrollTrigger);
 import {
   Search,
   Layers,
@@ -31,8 +31,6 @@ import Link from "next/link";
 import { solutions } from "@/data/solutions";
 import { ISolution } from "@/types";
 import Image from "next/image";
-
-gsap.registerPlugin(SplitText);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const IconMap: Record<string, any> = {
