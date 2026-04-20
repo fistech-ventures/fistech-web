@@ -5,9 +5,71 @@ import { testimonials } from "@/data/testimonials";
 import { Testimonial } from "@/types";
 import TestimonialCard from "./testimonial-card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import gsap from "gsap";
+import SplitText from "gsap/SplitText";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export default function TestimonialSection() {
-  // 1. Get the emblaApi from the hook
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const descRef = useRef<HTMLParagraphElement | null>(null);
+  const splitRef = useRef<SplitText | null>(null);
+  useGSAP(() => {
+    if (!titleRef.current) return;
+
+    splitRef.current?.revert();
+
+    splitRef.current = SplitText.create(titleRef.current, {
+      type: "chars,words",
+    });
+
+    const chars = splitRef.current.chars;
+
+    const ctx = gsap.context(() => {
+      gsap.from(chars, {
+        y: 80,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.03,
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+
+      if (descRef.current) {
+        gsap.fromTo(
+          descRef.current,
+          {
+            y: 40,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: descRef.current,
+              start: "top 85%",
+              toggleActions: "play none none none",
+            },
+          },
+        );
+      }
+    });
+
+    return () => {
+      ctx.revert();
+      splitRef.current?.revert();
+    };
+  }, []);
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     loop: true,
@@ -25,8 +87,11 @@ export default function TestimonialSection() {
   return (
     <section className="max-w-7xl px-4 mx-auto section-gap overflow-hidden">
       <div className="text-center max-w-xl mx-auto space-y-4 mb-1 md:mb-16">
-        <h2 className="section-title">Testimonials</h2>
-        <p className="description text-center text-gray-600">
+        <h2 ref={titleRef} className="section-title">
+          Testimonials
+        </h2>
+
+        <p ref={descRef} className="description text-center text-gray-600">
           Helping Out People To Build New Relations For Growing Business.
         </p>
       </div>
@@ -48,10 +113,8 @@ export default function TestimonialSection() {
         </div>
       </div>
 
-      {/* 3. Functional Slider Controls */}
       <div className="flex items-center justify-center gap-6 mt-12">
         <div className="flex gap-4 items-center">
-          {/* Previous Button */}
           <button
             onClick={scrollPrev}
             className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95 cursor-pointer"
@@ -60,7 +123,6 @@ export default function TestimonialSection() {
             <ChevronLeft size={20} />
           </button>
 
-          {/* Center Branding/Rating (Matching image_3193e1.jpg) */}
           <div className="flex flex-col items-center px-4">
             <div className="flex gap-1 text-orange-500 mb-1">
               {[...Array(5)].map((_, i) => (
@@ -72,7 +134,6 @@ export default function TestimonialSection() {
             </span>
           </div>
 
-          {/* Next Button */}
           <button
             onClick={scrollNext}
             className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95 cursor-pointer"

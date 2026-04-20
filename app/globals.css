@@ -116,3 +116,13 @@ body {
     @apply my-5 md:my-8 lg:my-12 xl:my-16;
   }
 }
+.mask-wrapper {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.mask-text {
+  display: inline-block;
+  transform: translateY(100%);
+  will-change: transform;
+}
