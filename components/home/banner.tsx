@@ -7,7 +7,7 @@ import { socialLinks } from "@/data/constant";
 
 export default function Banner() {
   return (
-    <section className="lg:max-h-[calc(100vh-50px)] flex items-center my-4">
+    <section className="lg:max-h-[calc(100vh-50px)] flex items-center lg:my-12 my-2">
       <div
         className="container mx-auto rounded-3xl overflow-visible"
         style={{
