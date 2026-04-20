@@ -1,11 +1,11 @@
-import CollaborateSection from "@/components/contact/collaborate";
-import ContactForm from "@/components/contact/contact-form";
-import MapSection from "@/components/contact/map-sectin";
-import PageHeadline from "@/components/shared/page-headline";
-import ParallaxHeroImage from "@/components/shared/parallax-hero-image";
-import { generateContactMetadata } from "@/lib/metadata";
-import { Metadata } from "next";
 import React from "react";
+import { Metadata } from "next";
+import { generateContactMetadata } from "@/lib/metadata";
+import MapSection from "@/components/contact/map-sectin";
+import ContactForm from "@/components/contact/contact-form";
+import PageHeadline from "@/components/shared/page-headline";
+import CollaborateSection from "@/components/contact/collaborate";
+import ParallaxHeroImage from "@/components/shared/parallax-hero-image";
 
 export const metadata: Metadata = generateContactMetadata();
 

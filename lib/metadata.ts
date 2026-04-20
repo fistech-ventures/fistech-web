@@ -1,6 +1,6 @@
-import { ICaseStudy, IProject, ISolution } from "@/types";
 import { Metadata } from "next";
 import { metaData } from "@/data/constant";
+import { ICaseStudy, IProject, ISolution } from "@/types";
 
 interface MetadataOptions {
   path?: string;

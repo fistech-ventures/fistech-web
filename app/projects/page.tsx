@@ -1,9 +1,9 @@
-import ProjectsSection from "@/components/home/projects-section";
-import PageHeadline from "@/components/shared/page-headline";
+import React from "react";
+import { Metadata } from "next";
 import { projects } from "@/data/projects";
 import { generateProjectsMetadata } from "@/lib/metadata";
-import { Metadata } from "next";
-import React from "react";
+import PageHeadline from "@/components/shared/page-headline";
+import ProjectsSection from "@/components/home/projects-section";
 
 export const metadata: Metadata = generateProjectsMetadata();
 

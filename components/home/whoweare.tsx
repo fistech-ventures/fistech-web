@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import SectionTag from "../shared/section-tag";
-import CTAButton from "../shared/cta";
-import Link from "next/link";
-import { Send } from "lucide-react";
-import Marquee from "react-fast-marquee";
-import Image from "next/image";
-import { contactInfo } from "@/data/constant";
 import gsap from "gsap";
+import Link from "next/link";
+import Image from "next/image";
+import { Send } from "lucide-react";
+import CTAButton from "../shared/cta";
 import SplitText from "gsap/SplitText";
+import Marquee from "react-fast-marquee";
+import { contactInfo } from "@/data/constant";
+import SectionTag from "../shared/section-tag";
+import React, { useEffect, useRef } from "react";
 
 gsap.registerPlugin(SplitText);
 

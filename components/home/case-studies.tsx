@@ -1,13 +1,13 @@
 "use client";
 
-import React from "react";
-import SectionTag from "../shared/section-tag";
-import { CASE_STUDIES } from "@/data/case-studies";
-import CTAButton from "../shared/cta";
-import CasecaseStudyCard from "../shared/case-study-card";
-import { useRef, useEffect } from "react";
 import gsap from "gsap";
+import React from "react";
+import CTAButton from "../shared/cta";
+import { useRef, useEffect } from "react";
+import SectionTag from "../shared/section-tag";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { CASE_STUDIES } from "@/data/case-studies";
+import CasecaseStudyCard from "../shared/case-study-card";
 
 gsap.registerPlugin(ScrollTrigger);
 

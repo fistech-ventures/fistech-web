@@ -1,15 +1,15 @@
 "use client";
-import React, { useCallback } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import { testimonials } from "@/data/testimonials";
-import { Testimonial } from "@/types";
-import TestimonialCard from "./testimonial-card";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import gsap from "gsap";
-import SplitText from "gsap/SplitText";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import { Testimonial } from "@/types";
 import { useGSAP } from "@gsap/react";
+import SplitText from "gsap/SplitText";
+import React, { useCallback } from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import TestimonialCard from "./testimonial-card";
+import { testimonials } from "@/data/testimonials";
+import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 

@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { IProject } from "@/types";
 import ImgWaterMark from "../shared/image-watermark";
-import Image from "next/image";
 
 type ProjectHeroProps = Pick<
   IProject,

@@ -1,8 +1,8 @@
 "use client";
 
+import React from "react";
 import { ISolution } from "@/types";
 import { ArrowRight } from "lucide-react";
-import React from "react";
 import CTAButton from "../shared/cta";
 
 export default function WhyChooseUs({

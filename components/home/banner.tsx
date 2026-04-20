@@ -1,8 +1,8 @@
 import React from "react";
-import CTAButton from "../shared/cta";
-import { MoveDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import CTAButton from "../shared/cta";
+import { MoveDown } from "lucide-react";
 import { socialLinks } from "@/data/constant";
 
 export default function Banner() {

@@ -1,6 +1,6 @@
-import { contactInfo } from "@/data/constant";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import { contactInfo } from "@/data/constant";
 
 export default function Step() {
   const email = contactInfo.find((item) => item.identifier === "email");

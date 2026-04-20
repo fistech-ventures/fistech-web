@@ -1,9 +1,9 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
-import { Quote, ChevronDown, ChevronUp } from "lucide-react";
+import Image from "next/image";
 import { Testimonial } from "@/types";
 import RatingStars from "./rating-stars";
-import Image from "next/image";
+import React, { useState, useRef, useEffect } from "react";
+import { Quote, ChevronDown, ChevronUp } from "lucide-react";
 
 interface TestimonialCardProps {
   item: Testimonial;

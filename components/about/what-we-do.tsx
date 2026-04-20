@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useRef } from "react";
-import SectionTag from "../shared/section-tag";
-import Image from "next/image";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
+import SectionTag from "../shared/section-tag";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
-import { CheckCircle2 } from "lucide-react";
 import gsap from "gsap";
+import { CheckCircle2 } from "lucide-react";
+import React, { useRef, useEffect } from "react";
 
 interface SuccessModalProps {
   isOpen: boolean;

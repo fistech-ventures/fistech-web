@@ -1,11 +1,11 @@
 "use client";
+import gsap from "gsap";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ArrowUpRight } from "lucide-react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
