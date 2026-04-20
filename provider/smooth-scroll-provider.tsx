@@ -1,13 +1,12 @@
 "use client";
 
+import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Observer);
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { Observer } from "gsap/Observer";
-
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Observer);
 
 export default function SmoothScrollProvider({
   children,

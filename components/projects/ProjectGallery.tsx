@@ -1,16 +1,12 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 import Image from "next/image";
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ImgWaterMark from "../shared/image-watermark";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
-
 interface IProps {
   imageOneSrc: string;
   imageTwoSrc: string;

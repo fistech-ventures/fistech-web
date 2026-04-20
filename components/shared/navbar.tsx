@@ -1,6 +1,7 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(useGSAP);
 import Image from "next/image";
 import Link from "next/link";
 import CTAButton from "./cta";
@@ -10,7 +11,6 @@ import { contactInfo } from "@/data/constant";
 import React, { useState, useEffect, useRef } from "react";
 import { Mail, X, Menu, Asterisk, ChevronRight } from "lucide-react";
 
-gsap.registerPlugin(useGSAP);
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

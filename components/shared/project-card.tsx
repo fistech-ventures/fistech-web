@@ -1,6 +1,7 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 import Link from "next/link";
 import Image from "next/image";
 import { IProject } from "@/types";
@@ -9,7 +10,6 @@ import { useGSAP } from "@gsap/react";
 import ImgWaterMark from "./image-watermark";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
 
 interface ProjectCardProps {
   project: IProject;

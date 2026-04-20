@@ -14,8 +14,8 @@ export const solutions: ISolution[] = [
       "Next.js development",
     ],
     images: [
-      "/images/service/service-image.png",
-      "/images/service/service-image.png",
+      "/images/service/web-app-1.png",
+      "/images/service/web-app-2.png",
     ],
 
     icon: {
@@ -27,7 +27,7 @@ export const solutions: ISolution[] = [
         "Scalable, secure, and high-performing web apps built for growth.",
       description:
         "We build modern web applications with robust architecture, seamless UX, and high scalability using cutting-edge technologies.",
-      coverImage: "/images/service/service-image.png",
+      coverImage: "/images/service/web-app-1.png",
       features: [
         "Custom scalable architecture",
         "Modern UI/UX",
@@ -162,8 +162,8 @@ export const solutions: ISolution[] = [
       "Next.js development",
     ],
     images: [
-      "/images/service/service-image.png",
-      "/images/service/service-image.png",
+      "/images/service/mobile-app-1.png",
+      "/images/service/mobile-app-2.png",
     ],
 
     icon: {
@@ -174,7 +174,7 @@ export const solutions: ISolution[] = [
       subtitle:
         "Scalable, secure, and high-performing mobile apps built for growth.",
       description: "Engaging mobile experiences that users love.",
-      coverImage: "/images/services/mobile-hero.jpg",
+      coverImage: "/images/service/mobile-app-1.png",
       features: [
         "iOS & Android apps",
         "Native & cross-platform",
@@ -308,8 +308,8 @@ export const solutions: ISolution[] = [
       "We craft visually stunning and user-friendly designs that elevate your brand.",
     keywords: ["ui ux design", "product design", "branding", "figma design"],
     images: [
-      "/images/service/service-image.png",
-      "/images/service/service-image.png",
+      "/images/service/ui-ux-1.png",
+      "/images/service/ui-ux-2.png",
     ],
 
     icon: {
@@ -320,7 +320,7 @@ export const solutions: ISolution[] = [
       subtitle: "Designs that convert and engage users.",
       description:
         "We create stunning, user-centered designs that enhance user experience and drive business growth.",
-      coverImage: "/images/services/ui-ux-hero.jpg",
+      coverImage:"/images/service/ui-ux-1.png",
       features: [
         "UI/UX Design",
         "Product Design",
@@ -411,7 +411,7 @@ export const solutions: ISolution[] = [
       subtitle: "Beyond 2D. Architecture for the visual future.",
       description:
         "We replace text-heavy communication with high-impact 3D narratives, creating modern 'Apple-like' UX for industrial and commercial products.",
-      coverImage: "/images/service/3d-hero.png",
+      coverImage: "/images/service/3d-design-1.png",
       features: [
         "Interactive 3D Product Viewers",
         "Industrial Process Visualization",
@@ -501,8 +501,8 @@ export const solutions: ISolution[] = [
       "digital marketing",
     ],
     images: [
-      "/images/service/service-image.png",
-      "/images/service/service-image.png",
+      "/images/service/seo-1.png",
+      "/images/service/seo-2.png",
     ],
 
     icon: {
@@ -513,7 +513,7 @@ export const solutions: ISolution[] = [
       subtitle: "Drive traffic, leads, and growth.",
       description:
         "We craft data-driven SEO strategies that boost visibility, attract qualified leads, and accelerate business growth.",
-      coverImage: "/images/services/ui-ux-hero.jpg",
+      coverImage: "/images/service/seo-1.png",
       features: [
         "Technical SEO Audit",
         "On-Page Optimization",

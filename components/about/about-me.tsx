@@ -1,14 +1,13 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 import Image from "next/image";
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { solutions } from "@/data/solutions";
 import SectionTag from "../shared/section-tag";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutMe() {
   const containerRef = useRef<HTMLDivElement>(null);

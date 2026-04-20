@@ -15,7 +15,7 @@ export default function PageHeadline({
     <div className="max-w-4xl mx-auto flex justify-center items-end h-72 md:h-100 pb-10 md:pb-16">
       <div className="flex flex-col items-center gap-5">
         <h1
-          className={`${!isSolution && !isProject ? "page-title" : "text- xl md:text-2xl lg:text-3xl xl:text-6xl text-foreground font-semibold leading-normal"}`}
+          className={`text-center ${!isSolution && !isProject ? "page-title" : "text-xl md:text-2xl lg:text-3xl xl:text-5xl text-foreground font-semibold leading-normal"}`}
         >
           {headline}
         </h1>
