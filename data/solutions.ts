@@ -14,8 +14,8 @@ export const solutions: ISolution[] = [
       "Next.js development",
     ],
     images: [
-      "/images/service/service-image.png",
-      "/images/service/service-image.png",
+      "/images/service/web-app-1.png",
+      "/images/service/web-app-2.png",
     ],
 
     icon: {
@@ -162,8 +162,8 @@ export const solutions: ISolution[] = [
       "Next.js development",
     ],
     images: [
-      "/images/service/service-image.png",
-      "/images/service/service-image.png",
+      "/images/service/mobile-app-1.png",
+      "/images/service/mobile-app-2.png",
     ],
 
     icon: {
@@ -308,8 +308,8 @@ export const solutions: ISolution[] = [
       "We craft visually stunning and user-friendly designs that elevate your brand.",
     keywords: ["ui ux design", "product design", "branding", "figma design"],
     images: [
-      "/images/service/service-image.png",
-      "/images/service/service-image.png",
+      "/images/service/ui-ux-1.png",
+      "/images/service/ui-ux-2.png",
     ],
 
     icon: {
@@ -501,8 +501,8 @@ export const solutions: ISolution[] = [
       "digital marketing",
     ],
     images: [
-      "/images/service/service-image.png",
-      "/images/service/service-image.png",
+      "/images/service/seo-1.png",
+      "/images/service/seo-2.png",
     ],
 
     icon: {
