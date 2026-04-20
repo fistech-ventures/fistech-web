@@ -386,6 +386,109 @@ export const solutions: ISolution[] = [
     ],
   },
   {
+    id: "svc_3d_design",
+    slug: "3d-immersive-design",
+    title: "3D & Immersive Experience Design",
+    shortDescription:
+      "We architect high-fidelity 3D environments and interactive models that transform static products into immersive digital experiences.",
+    keywords: [
+      "3D product modeling",
+      "interactive 3D web",
+      "industrial 3D visualization",
+      "Three.js development",
+      "immersive UX",
+    ],
+    images: [
+      "/images/service/3d-design-1.png",
+      "/images/service/3d-design-2.png",
+    ],
+
+    icon: {
+      name: "cube", // Ensure your icon library supports this
+    },
+
+    hero: {
+      subtitle: "Beyond 2D. Architecture for the visual future.",
+      description:
+        "We replace text-heavy communication with high-impact 3D narratives, creating modern 'Apple-like' UX for industrial and commercial products.",
+      coverImage: "/images/service/3d-hero.png",
+      features: [
+        "Interactive 3D Product Viewers",
+        "Industrial Process Visualization",
+        "Spatial UI/UX Design",
+        "High-Performance WebGL/Three.js Integration",
+      ],
+    },
+    whyChooseUs: {
+      description:
+        "We combine technical precision with user psychology to build 3D systems that drive trust and conversion.",
+      content: [
+        {
+          title: "Precision Engineering",
+          description:
+            "Our 3D models are built with mathematical accuracy, ideal for complex industrial product calculations and simulations.",
+        },
+        {
+          title: "High-Performance Rendering",
+          description:
+            "We optimize 3D assets for the web, ensuring zero-lag experiences even on mobile devices.",
+        },
+        {
+          title: "Strategic Storytelling",
+          description:
+            "We don't just make it look good; we design the interaction to guide the user toward business goals.",
+        },
+      ],
+    },
+    process: [
+      {
+        id: 1,
+        title: "Conceptualization",
+        description: "Defining the immersive narrative and technical constraints",
+        features: [
+          "Visual Storyboarding",
+          "Technical Feasibility Study",
+          "Interaction Mapping",
+          "Asset Optimization Strategy",
+        ],
+        image: {
+          url: "/images/service/3d-process-1.png",
+          alt: "3d design conceptualization",
+        },
+      },
+      {
+        id: 2,
+        title: "Modeling & Texture",
+        description: "Crafting high-fidelity digital twins",
+        features: [
+          "High-Poly & Low-Poly Modeling",
+          "PBR Texturing",
+          "Lighting Orchestration",
+          "Animation Rigging",
+        ],
+        image: {
+          url: "/images/service/3d-process-2.png",
+          alt: "3d modeling process",
+        },
+      },
+      {
+        id: 3,
+        title: "System Integration",
+        description: "Embedding 3D logic into the web ecosystem",
+        features: [
+          "WebGL/Three.js Implementation",
+          "Responsive Interaction Design",
+          "Performance Stress Testing",
+          "Cross-Browser Optimization",
+        ],
+        image: {
+          url: "/images/service/3d-process-3.png",
+          alt: "3d system integration",
+        },
+      },
+    ],
+  },
+  {
     id: "svc_seo",
     slug: "seo-optimization",
     title: "SEO & Digital Growth",

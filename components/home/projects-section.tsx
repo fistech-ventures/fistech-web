@@ -1,8 +1,8 @@
-import { IProject } from "@/types";
 import React from "react";
+import { IProject } from "@/types";
+import CTAButton from "../shared/cta";
 import ProjectCard from "../shared/project-card";
 import ProjectHeadline from "./project-headline";
-import CTAButton from "../shared/cta";
 
 export default function ProjectsSection({
   projects,

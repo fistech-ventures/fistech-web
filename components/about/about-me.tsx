@@ -1,19 +1,18 @@
 "use client";
-import React, { useRef } from "react";
-import SectionTag from "../shared/section-tag";
+
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
+import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { solutions } from "@/data/solutions";
-import Image from "next/image";
+import SectionTag from "../shared/section-tag";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutMe() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const counterRef = useRef<HTMLHeadingElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null);
   const tickerLeftRef = useRef<HTMLDivElement>(null);
   const tickerRightRef = useRef<HTMLDivElement>(null);
 
@@ -21,16 +20,25 @@ export default function AboutMe() {
 
   useGSAP(
     () => {
-      // Counter
-      gsap.from(counterRef.current, {
-        innerText: 0,
-        duration: 2,
-        snap: { innerText: 1 },
-        scrollTrigger: {
-          trigger: counterRef.current,
-          start: "top 85%",
+      const el = textRef.current;
+      if (!el) return;
+
+      gsap.fromTo(
+        el,
+        {
+          clipPath: "inset(0 0% 0 0)",
         },
-      });
+        {
+          clipPath: "inset(0 100% 0 0)",
+          ease: "none",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 75%",
+            end: "top 10%",
+            scrub: true,
+          },
+        },
+      );
 
       const initMarquee = (el: HTMLDivElement | null, direction: number) => {
         if (!el) return;
@@ -64,7 +72,6 @@ export default function AboutMe() {
       };
 
       initMarquee(tickerLeftRef.current, 1);
-
       initMarquee(tickerRightRef.current, -1);
     },
     { scope: containerRef },
@@ -77,13 +84,23 @@ export default function AboutMe() {
     >
       <div className="container mx-auto text-center relative z-20 mb-20">
         <SectionTag sectiontag="About Us" />
+        <div className="relative">
+          <h2 className="section-title max-w-5xl mx-auto py-10 font-medium text-black">
+            We Focus on Outcomes , Fistech is about 5+ years of engineering
+            ideas into impactful digital businesses and helping them scale.
+          </h2>
 
-        <h2 className="section-title max-w-5xl mx-auto py-10 font-medium">
-          At Fistech Ventures, we merge 5+ years of product design expertise
-          with scalable engineering to transform complex ideas into intuitive
-          digital products. We don’t just design interfaces; we build the
-          foundations for your growth.
-        </h2>
+          <h2
+            ref={textRef}
+            className="section-title max-w-5xl mx-auto py-10 font-medium text-gray-400 absolute inset-0"
+            style={{
+              clipPath: "inset(0 0% 0 0)",
+            }}
+          >
+            We Focus on Outcomes , Fistech is about 5+ years of engineering
+            ideas into impactful digital businesses and helping them scale.
+          </h2>
+        </div>
 
         <Image
           src="/images/about/signature.png"
@@ -93,12 +110,9 @@ export default function AboutMe() {
           className="mx-auto mb-16 h-12 md:h-20 object-contain"
         />
 
-        <div
-          className="w-72 h-96 md:w-[320px] md:h-105 border border-foreground
-         rounded-full mx-auto flex flex-col justify-center items-center  backdrop-blur-sm shadow-xl"
-        >
+        <div className="w-72 h-96 md:w-[320px] md:h-105 border border-foreground rounded-full mx-auto flex flex-col justify-center items-center backdrop-blur-sm shadow-xl">
           <h3 className="text-9xl md:text-[160px] font-bold text-black flex items-start leading-none">
-            <span ref={counterRef}>5</span>
+            <span>5</span>
             <span className="text-4xl md:text-5xl mt-6">+</span>
           </h3>
           <h5 className="text-xl md:text-2xl font-semibold text-black mt-2">
@@ -107,8 +121,8 @@ export default function AboutMe() {
         </div>
       </div>
 
+      {/* MARQUEE SECTION */}
       <div className="relative flex flex-col mt-40">
-        {/* BLACK RIBBON */}
         <div className="bg-black lg:py-10 py-5 lg:-rotate-10 -rotate-30 w-[200%] -translate-x-[30%] z-20 shadow-2xl">
           <div
             ref={tickerLeftRef}
@@ -125,7 +139,6 @@ export default function AboutMe() {
           </div>
         </div>
 
-        {/* WHITE RIBBON */}
         <div className="bg-white lg:py-10 py-5 lg:rotate-15 rotate-40 w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
           <div
             ref={tickerRightRef}

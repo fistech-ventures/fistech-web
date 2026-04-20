@@ -1,9 +1,13 @@
 "use client";
+
 import gsap from "gsap";
+import SplitText from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import CTAButton from "../shared/cta";
 import React, { useState, useRef } from "react";
 import SectionTag from "../shared/section-tag";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(SplitText, ScrollTrigger);
 import {
   Search,
   Layers,
@@ -27,6 +31,8 @@ import Link from "next/link";
 import { solutions } from "@/data/solutions";
 import { ISolution } from "@/types";
 import Image from "next/image";
+
+gsap.registerPlugin(SplitText);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const IconMap: Record<string, any> = {
@@ -52,6 +58,37 @@ const IconMap: Record<string, any> = {
 export default function WhatWeDo() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const splitRef = useRef<SplitText | null>(null);
+
+  useGSAP(() => {
+    if (!titleRef.current) return;
+
+    splitRef.current?.revert();
+
+    splitRef.current = SplitText.create(titleRef.current, {
+      type: "chars,words,lines",
+    });
+
+    gsap.from(splitRef.current.chars, {
+      x: 150,
+      opacity: 0,
+      duration: 0.3,
+      stagger: 0.02,
+
+      scrollTrigger: {
+        trigger: titleRef.current,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    return () => {
+      splitRef.current?.revert();
+      ScrollTrigger.killAll();
+    };
+  }, []);
 
   useGSAP(
     () => {
@@ -107,7 +144,10 @@ export default function WhatWeDo() {
       <div className="container mx-auto">
         <SectionTag sectiontag="What We Do" />
 
-        <h2 className="section-title text-center max-w-5xl mx-auto mt-6 mb-12 lg:mb-20 text-3xl md:text-5xl font-bold leading-tight">
+        <h2
+          ref={titleRef}
+          className="section-title text-center max-w-5xl mx-auto mt-6 mb-12 lg:mb-20 text-3xl md:text-5xl font-bold leading-tight"
+        >
           Specializing in streamlined efficiency, distinctive design, and
           strategies that drive business growth.
         </h2>
@@ -124,7 +164,6 @@ export default function WhatWeDo() {
                 onMouseLeave={() => setHoveredId(null)}
                 className="bg-white px-4 py-5 md:px-16 md:py-10 rounded-lg w-full flex flex-col transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] overflow-hidden"
               >
-                {/* Fixed Header Layout */}
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
                   <div className="flex flex-col md:flex-row items-start gap-2 md:gap-8 lg:gap-20 flex-1">
                     <div className="shrink-0 p-1">
@@ -143,6 +182,7 @@ export default function WhatWeDo() {
                         >
                           {service.title}
                         </Link>
+
                         <div className="flex flex-wrap gap-2">
                           {service.keywords.map((keyword: string) => (
                             <span key={keyword} className="tag">
@@ -159,7 +199,6 @@ export default function WhatWeDo() {
                   </div>
                 </div>
 
-                {/* Expanded Content with Grid Layout from Screenshots */}
                 <div
                   className={`details-${service.id} overflow-hidden h-0 opacity-0`}
                 >
@@ -182,7 +221,7 @@ export default function WhatWeDo() {
                               height={1000}
                               src={image}
                               alt={`Service image ${i + 1}`}
-                              className="h-full w-full object-cover  transition-all duration-1000 ease-out group-hover/img:scale-110"
+                              className="h-full w-full object-cover transition-all duration-1000 ease-out group-hover/img:scale-110"
                             />
                           </Link>
                         </div>

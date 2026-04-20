@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { projects } from "@/data/projects";
-import ProjectDiscovery from "@/components/projects/ProjectDiscovery";
-import ProjectGallery from "@/components/projects/ProjectGallery";
-import ProjectHero from "@/components/projects/ProjectHero";
-import ProjectImpact from "@/components/projects/ProjectImpact";
-import { notFound } from "next/navigation";
-import PageHeadline from "@/components/shared/page-headline";
 import { Metadata } from "next";
+import { projects } from "@/data/projects";
+import { notFound } from "next/navigation";
 import { generateProjectMetadata } from "@/lib/metadata";
+import ProjectHero from "@/components/projects/ProjectHero";
+import PageHeadline from "@/components/shared/page-headline";
+import ProjectImpact from "@/components/projects/ProjectImpact";
+import ProjectGallery from "@/components/projects/ProjectGallery";
+import ProjectDiscovery from "@/components/projects/ProjectDiscovery";
 import {
   generateBreadcrumbSchema,
   generateProjectSchema,

@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { createPortal } from "react-dom";
 import { Play, Plus, X } from "lucide-react";
+import React, { useState, useEffect } from "react";
 import ImgWaterMark from "../shared/image-watermark";
-import Image from "next/image";
 
 interface VisionData {
   header: string;

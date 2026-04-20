@@ -1,11 +1,17 @@
-import React from "react";
-import SectionTag from "../shared/section-tag";
-import CTAButton from "../shared/cta";
+"use client";
+
+import gsap from "gsap";
 import Link from "next/link";
-import { Send } from "lucide-react";
-import Marquee from "react-fast-marquee";
 import Image from "next/image";
+import { Send } from "lucide-react";
+import CTAButton from "../shared/cta";
+import SplitText from "gsap/SplitText";
+import Marquee from "react-fast-marquee";
 import { contactInfo } from "@/data/constant";
+import SectionTag from "../shared/section-tag";
+import React, { useEffect, useRef } from "react";
+
+gsap.registerPlugin(SplitText);
 
 interface WhoweareProps {
   logos: string[];
@@ -14,12 +20,47 @@ interface WhoweareProps {
 export default function Whoweare({ logos = [] }: WhoweareProps) {
   const email = contactInfo.find((item) => item.identifier === "email");
 
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const splitRef = useRef<SplitText | null>(null);
+
+  useEffect(() => {
+    if (!titleRef.current) return;
+
+    const setup = () => {
+      splitRef.current?.revert();
+
+      splitRef.current = SplitText.create(titleRef.current as HTMLElement, {
+        type: "chars,words,lines",
+      });
+
+      gsap.from(splitRef.current.chars, {
+        x: 150,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power4",
+        stagger: 0.04,
+      });
+    };
+
+    setup();
+
+    window.addEventListener("resize", setup);
+
+    return () => {
+      splitRef.current?.revert();
+      window.removeEventListener("resize", setup);
+    };
+  }, []);
+
   return (
     <section className="lg:pt-20 pt-10 border-b border-[#020202]/30 pb-16 lg:pb-20">
       <div className="container mx-auto px-4">
         <SectionTag sectiontag="Who We Are" />
 
-        <h2 className="section-title text-center max-w-6xl mx-auto leading-tight">
+        <h2
+          ref={titleRef}
+          className="section-title text-center max-w-6xl mx-auto leading-tight"
+        >
           Beyond an agency — we streamline efficiency, create distinctive
           <video
             autoPlay
@@ -31,17 +72,10 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
             <source src="/who-are.mp4" type="video/mp4" />
           </video>
           designs, and deliver strategies that grow startups
-          {/* <Image
-            width={1000}
-            height={1000}
-            src="/whoare.webp"
-            alt="Demo"
-            className="inline-block align-middle h-[1em] w-auto mx-2"
-          /> */}
         </h2>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12 mt-10 lg:mt-15">
-          <CTAButton btnText="Discover Us" href="/about" isDark={false}/>
+          <CTAButton btnText="Discover Us" href="/about" isDark={false} />
 
           <div className="flex gap-4 items-center">
             <div className="bg-secondary w-12 h-12 md:w-15 md:h-15 rounded-full flex justify-center items-center cursor-pointer">
@@ -70,12 +104,7 @@ export default function Whoweare({ logos = [] }: WhoweareProps) {
         </div>
 
         <div className="mt-8 lg:mt-15 overflow-hidden">
-          <Marquee
-            speed={90}
-            gradient={false}
-            pauseOnHover={true}
-            direction="right"
-          >
+          <Marquee speed={90} gradient={false} pauseOnHover direction="right">
             <div className="flex items-center gap-5 md:gap-16 pr-12 md:pr-20">
               {logos.map((file) => (
                 <div

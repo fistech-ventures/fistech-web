@@ -1,36 +1,16 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { socialLinks } from "@/data/constant";
 import { CASE_STUDIES } from "@/data/case-studies";
-import { generateCaseStudyMetadata } from "@/lib/metadata";
-import { ChartBarStacked, CircleUserRound, UserPen } from "lucide-react";
+import { notFound } from "next/navigation";
+import Image from "next/image";
 import {
-  generateCaseStudySchema,
-  generateBreadcrumbSchema,
-  toJsonLd,
-} from "@/lib/schema";
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  const data = CASE_STUDIES.find((cs) => cs.slug === slug);
-
-  if (!data) {
-    return {
-      title: "Case Study Not Found",
-      robots: { index: false, follow: false },
-    };
-  }
-
-  return generateCaseStudyMetadata(data, {
-    path: `/case-studies/${slug}`,
-  });
-}
+  ChartBarStacked,
+  CircleUserRound,
+  UserPen,
+  Facebook,
+  Linkedin,
+  Twitter,
+  Youtube,
+} from "lucide-react";
+import Link from "next/link";
 
 export default async function Page({
   params,
@@ -42,26 +22,19 @@ export default async function Page({
 
   if (!data) notFound();
 
+  const socialLinks = [
+    { Icon: Facebook, path: "https://facebook.com/fistech" },
+    { Icon: Twitter, path: "https://twitter.com/fistech" },
+    { Icon: Linkedin, path: "https://linkedin.com/company/fistech" },
+    { Icon: Youtube, path: "https://youtube.com/fistech" },
+  ];
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: toJsonLd(generateCaseStudySchema(data)),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: toJsonLd(
-            generateBreadcrumbSchema([
-              { name: "Home", href: "/" },
-              { name: "Case Studies", href: "/case-studies" },
-              { name: data.metadata.title, href: `/case-studies/${slug}` },
-            ]),
-          ),
-        }}
-      />
+      <div className="container mx-auto py-20">
+        <h1 className="text-3xl font-bold">Case Study: {slug}</h1>
+      </div>
+
       <main className="min-h-screen bg-white">
         {/* Header Info */}
         <section className="pt-20 md:pt-32 lg:pt-40 pb-10 text-center px-4">
@@ -134,7 +107,7 @@ export default async function Page({
         </section>
 
         {/* Content Section */}
-        <section className="max-w-6xl mx-auto px-4 md:px-6 pb-20 md:pb-24">
+        <section className="container mx-auto px-4 md:px-6 max-w-6xl pb-20 md:pb-24">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
             <div className="w-full lg:w-2/3 prose prose-gray max-w-none prose-h2:text-gray-900 prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:font-bold">
               {/* Problem Section using .description */}

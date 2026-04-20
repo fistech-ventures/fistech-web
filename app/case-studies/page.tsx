@@ -1,9 +1,9 @@
 import React from "react";
-import PageHeadline from "@/components/shared/page-headline";
-import { CASE_STUDIES } from "@/data/case-studies";
-import CasecaseStudyCard from "@/components/shared/case-study-card";
-import { generateCaseStudiesMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
+import { CASE_STUDIES } from "@/data/case-studies";
+import PageHeadline from "@/components/shared/page-headline";
+import { generateCaseStudiesMetadata } from "@/lib/metadata";
+import CasecaseStudyCard from "@/components/shared/case-study-card";
 
 export const metadata: Metadata = generateCaseStudiesMetadata();
 

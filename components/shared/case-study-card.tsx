@@ -1,6 +1,13 @@
+"use client";
+import gsap from "gsap";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import { ArrowUpRight } from "lucide-react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 type CasecaseStudyCardProps = {
   caseStudy: {
@@ -20,10 +27,39 @@ type CasecaseStudyCardProps = {
 export default function CasecaseStudyCard({
   caseStudy,
 }: CasecaseStudyCardProps) {
+  const imageRef = useRef<HTMLDivElement | null>(null);
+  useGSAP(() => {
+    if (!imageRef.current) return;
+
+    const img = imageRef.current.querySelector("img");
+
+    if (!img) return;
+
+    gsap.set(img, { scale: 1.2 });
+
+    gsap.to(img, {
+      scale: 1,
+      duration: 1.2,
+      ease: "power3.out",
+
+      scrollTrigger: {
+        trigger: imageRef.current,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    return () => {
+      ScrollTrigger.killAll();
+    };
+  }, []);
   return (
     <Link href={`/case-studies/${caseStudy.slug}`}>
       <article className="group cursor-pointer">
-        <div className="relative aspect-16/10 overflow-hidden rounded-xl bg-gray-100">
+        <div
+          ref={imageRef}
+          className="relative aspect-16/10 overflow-hidden rounded-xl bg-gray-100"
+        >
           <Image
             width={2000}
             height={1000}
