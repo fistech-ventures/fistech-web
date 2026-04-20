@@ -1,5 +1,7 @@
 "use client";
+
 import gsap from "gsap";
+gsap.registerPlugin(SplitText, ScrollTrigger);
 import { useRef } from "react";
 import { Testimonial } from "@/types";
 import { useGSAP } from "@gsap/react";
@@ -11,7 +13,6 @@ import { testimonials } from "@/data/testimonials";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export default function TestimonialSection() {
   const titleRef = useRef<HTMLHeadingElement | null>(null);

@@ -1,6 +1,7 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 import React from "react";
 import CTAButton from "../shared/cta";
 import { useRef, useEffect } from "react";
@@ -9,7 +10,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { CASE_STUDIES } from "@/data/case-studies";
 import CasecaseStudyCard from "../shared/case-study-card";
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function CaseStudies() {
   const titleRef = useRef<HTMLHeadingElement | null>(null);
