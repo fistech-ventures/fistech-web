@@ -79,10 +79,7 @@ export default function AboutMe() {
         <SectionTag sectiontag="About Us" />
 
         <h2 className="section-title max-w-5xl mx-auto py-10 font-medium">
-          At Fistech Ventures, we merge 5+ years of product design expertise
-          with scalable engineering to transform complex ideas into intuitive
-          digital products. We don’t just design interfaces; we build the
-          foundations for your growth.
+          We Focus on Outcomes , Fistech is about 5+ years of engineering ideas into impactful digital businesses and helping them scale. 
         </h2>
 
         <Image

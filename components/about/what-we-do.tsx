@@ -11,8 +11,10 @@ export default function Whatwedo() {
           className="section-title max-w-4xl mx-auto py-10 font-medium text-center"
           style={{ fontFamily: "var(--font-kanit)" }}
         >
-          From strategy and design to content and technology — we scale your
-          vision into a market-leading reality.
+          {/* From strategy and design to content and technology — we scale your
+          vision into a market-leading reality. */}
+
+          We help businesses turn ideas into real products that grow, reach people, and perform in the real world.
         </h2>
         <div className="absolute top-35 left-50">
           <Image
