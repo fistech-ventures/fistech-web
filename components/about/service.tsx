@@ -75,6 +75,7 @@ function ServiceItem({ service, isOpen, onClick }: ServiceItemProps) {
   const bgRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const iconRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = React.useState(false); // ✅ track hover state
 
   const iconKey = service.icon.name || "code";
   const Icon = IconMap[iconKey] || Code;
@@ -106,6 +107,8 @@ function ServiceItem({ service, isOpen, onClick }: ServiceItemProps) {
       ref={containerRef}
       className="relative group border-t border-black/10 last:border-b overflow-hidden cursor-pointer"
       onClick={onClick}
+      onMouseEnter={() => setIsHovered(true)} 
+      onMouseLeave={() => setIsHovered(false)} 
     >
       {/* Animated Background */}
       <div
@@ -149,7 +152,11 @@ function ServiceItem({ service, isOpen, onClick }: ServiceItemProps) {
                     {service.keywords.map((tag: string) => (
                       <span
                         key={tag}
-                        className="tag group-hover:text-white/40 group-hover:border-secondary/30 transition-colors"
+                        className={`tag transition-colors ${
+                          isHovered
+                            ? "text-white/40 border-secondary/30" 
+                            : "text-foreground border-black/10" 
+                        }`}
                       >
                         {tag}
                       </span>
@@ -163,10 +170,11 @@ function ServiceItem({ service, isOpen, onClick }: ServiceItemProps) {
           {/* Responsive Plus Button */}
           <div className="flex justify-end md:block shrink-0">
             <div
-              className={`w-12 h-12 md:w-16 lg:w-20 md:h-16 lg:h-20 rounded-full border border-black/10 flex items-center justify-center transition-all duration-500 z-20 ${isOpen
+              className={`w-12 h-12 md:w-16 lg:w-20 md:h-16 lg:h-20 rounded-full border border-black/10 flex items-center justify-center transition-all duration-500 z-20 ${
+                isOpen
                   ? "rotate-45 bg-[#D4FF70] text-black border-transparent"
                   : "bg-white text-black group-hover:bg-white group-hover:border-transparent"
-                }`}
+              }`}
             >
               <Plus
                 className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10"

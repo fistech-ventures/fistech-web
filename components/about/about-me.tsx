@@ -34,7 +34,7 @@ export default function AboutMe() {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 75%",
-            end: "top 35%",
+            end: "top 10%",
             scrub: true,
           },
         },
@@ -84,10 +84,23 @@ export default function AboutMe() {
     >
       <div className="container mx-auto text-center relative z-20 mb-20">
         <SectionTag sectiontag="About Us" />
+        <div className="relative">
+          <h2 className="section-title max-w-5xl mx-auto py-10 font-medium text-black">
+            We Focus on Outcomes , Fistech is about 5+ years of engineering
+            ideas into impactful digital businesses and helping them scale.
+          </h2>
 
-        <h2 className="section-title max-w-5xl mx-auto py-10 font-medium">
-          We Focus on Outcomes , Fistech is about 5+ years of engineering ideas into impactful digital businesses and helping them scale. 
-        </h2>
+          <h2
+            ref={textRef}
+            className="section-title max-w-5xl mx-auto py-10 font-medium text-gray-400 absolute inset-0"
+            style={{
+              clipPath: "inset(0 0% 0 0)",
+            }}
+          >
+            We Focus on Outcomes , Fistech is about 5+ years of engineering
+            ideas into impactful digital businesses and helping them scale.
+          </h2>
+        </div>
 
         <Image
           src="/images/about/signature.png"
