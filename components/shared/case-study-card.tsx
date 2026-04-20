@@ -1,13 +1,13 @@
 "use client";
+
 import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 import Link from "next/link";
 import Image from "next/image";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { ArrowUpRight } from "lucide-react";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 type CasecaseStudyCardProps = {
   caseStudy: {

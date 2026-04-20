@@ -1,12 +1,11 @@
 "use client";
 
 import gsap from "gsap";
-import React, { useEffect, useRef } from "react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
+import React, { useEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function ProjectHeadline() {
   const sectionRef = useRef<HTMLElement>(null);

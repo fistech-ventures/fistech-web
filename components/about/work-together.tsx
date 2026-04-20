@@ -1,13 +1,13 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 import { useGSAP } from "@gsap/react";
 import { contactInfo } from "@/data/constant";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef, useState } from "react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function WorkTogether() {
   const [animationData, setAnimationData] = useState(null);
