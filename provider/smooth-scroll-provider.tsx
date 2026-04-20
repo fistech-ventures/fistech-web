@@ -1,24 +1,45 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
-import { ScrollTrigger, SplitText, ScrollSmoother } from "gsap/all";
+import { ScrollTrigger, ScrollSmoother } from "gsap/all";
 
-gsap.registerPlugin(ScrollTrigger, SplitText, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export default function SmoothScrollProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
   useEffect(() => {
-    ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 2.5,
-      effects: true,
-    });
-  }, []);
+    let smoother = ScrollSmoother.get();
+
+    if (!smoother) {
+      smoother = ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: 2.5,
+        effects: true,
+        normalizeScroll: true,
+      });
+    }
+
+    const timeout = setTimeout(() => {
+      if (!smoother) return;
+
+      gsap.killTweensOf(smoother);
+
+      gsap.to(smoother, {
+        scrollTop: 0,
+        duration: 1,
+        ease: "power1.out",
+      });
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, [pathname]);
 
   return (
     <div id="smooth-wrapper" className="h-screen overflow-hidden">
