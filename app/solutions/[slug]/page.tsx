@@ -1,16 +1,16 @@
-import PageHeadline from "@/components/shared/page-headline";
-import SolutionHero from "@/components/solution/solution-hero";
-import WhyChooseUs from "@/components/solution/why-choose-us";
+import React from "react";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { solutions } from "@/data/solutions";
 import { generateSolutionMetadata } from "@/lib/metadata";
-import { Metadata } from "next";
-import React from "react";
+import PageHeadline from "@/components/shared/page-headline";
+import WhyChooseUs from "@/components/solution/why-choose-us";
+import SolutionHero from "@/components/solution/solution-hero";
 import {
   generateBreadcrumbSchema,
   generateSolutionSchema,
   toJsonLd,
 } from "@/lib/schema";
-import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,

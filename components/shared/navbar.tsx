@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { Mail, X, Menu, Asterisk, ChevronRight } from "lucide-react";
-import CTAButton from "./cta";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
+import CTAButton from "./cta";
+import { useGSAP } from "@gsap/react";
+import { usePathname } from "next/navigation";
 import { contactInfo } from "@/data/constant";
+import React, { useState, useEffect, useRef } from "react";
+import { Mail, X, Menu, Asterisk, ChevronRight } from "lucide-react";
 
 gsap.registerPlugin(useGSAP);
 

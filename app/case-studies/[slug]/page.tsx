@@ -1,11 +1,11 @@
-import { CASE_STUDIES } from "@/data/case-studies";
-import { notFound } from "next/navigation";
-import Image from "next/image";
-import { ChartBarStacked, CircleUserRound, UserPen } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
-import { generateCaseStudyMetadata } from "@/lib/metadata";
+import { notFound } from "next/navigation";
 import { socialLinks } from "@/data/constant";
+import { CASE_STUDIES } from "@/data/case-studies";
+import { generateCaseStudyMetadata } from "@/lib/metadata";
+import { ChartBarStacked, CircleUserRound, UserPen } from "lucide-react";
 import {
   generateCaseStudySchema,
   generateBreadcrumbSchema,

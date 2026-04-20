@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import { contactInfo } from "@/data/constant";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { contactInfo } from "@/data/constant";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef, useState } from "react";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
 
 gsap.registerPlugin(ScrollTrigger);
 

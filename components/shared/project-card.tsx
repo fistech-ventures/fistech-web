@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useRef } from "react";
-import Link from "next/link";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { IProject } from "@/types";
-import ImgWaterMark from "./image-watermark";
+import Link from "next/link";
 import Image from "next/image";
+import { IProject } from "@/types";
+import React, { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import ImgWaterMark from "./image-watermark";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,5 +1,5 @@
-import { contactInfo } from "@/data/constant";
 import React from "react";
+import { contactInfo } from "@/data/constant";
 
 export default function CollaborateSection() {
   return (

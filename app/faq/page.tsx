@@ -1,11 +1,11 @@
+import React from "react";
+import { Metadata } from "next";
+import { faqs } from "@/data/faq";
 import FAQSection from "@/components/shared/faq";
+import { generateFAQMetadata } from "@/lib/metadata";
+import { generateFaqSchema, toJsonLd } from "@/lib/schema";
 import PageHeadline from "@/components/shared/page-headline";
 import ParallaxHeroImage from "@/components/shared/parallax-hero-image";
-import { generateFAQMetadata } from "@/lib/metadata";
-import { Metadata } from "next";
-import React from "react";
-import { generateFaqSchema, toJsonLd } from "@/lib/schema";
-import { faqs } from "@/data/faq";
 
 export const metadata: Metadata = generateFAQMetadata();
 
