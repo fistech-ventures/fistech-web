@@ -95,7 +95,7 @@ export default function Navbar() {
     <>
       <nav
         ref={navRef}
-        className="fixed top-0 left-0 w-full z-40 bg-transparent transition-all duration-300 py-2 md:py-4 lg:py-6"
+        className="fixed top-0 left-0 w-full z-40 bg-transparent transition-all duration-300 py-4"
       >
         <div className="container flex items-center justify-between">
           <div className="flex items-center gap-x-16 lg:pl-10 pl-5">
@@ -106,7 +106,7 @@ export default function Navbar() {
                   height={100}
                   src="/logo-p.png"
                   alt="Fistech Logo"
-                  className="lg:w-40 md:w-30 sm:w-25 w-18 h-20 object-contain"
+                  className="lg:w-40 md:w-30 sm:w-25 w-18 h-10 object-contain"
                 />
               </div>
             </Link>

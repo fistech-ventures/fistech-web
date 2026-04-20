@@ -74,14 +74,13 @@ export default function WhatWeDo() {
     gsap.from(splitRef.current.chars, {
       x: 150,
       opacity: 0,
-      duration: 0.7,
-      ease: "power4",
-      stagger: 0.04,
+      duration: 0.3,
+      stagger: 0.02,
 
       scrollTrigger: {
         trigger: titleRef.current,
         start: "top 80%",
-        toggleActions: "play none none none", 
+        toggleActions: "play none none none",
       },
     });
 
