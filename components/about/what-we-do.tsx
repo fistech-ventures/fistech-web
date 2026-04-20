@@ -42,25 +42,15 @@ export default function Whatwedo() {
     <section className="py-10" ref={containerRef}>
       <div className="container mx-auto relative">
         <SectionTag sectiontag="What We Do" />
+        <h2
+          className="section-title max-w-4xl mx-auto py-10 font-medium text-center"
+          style={{ fontFamily: "var(--font-kanit)" }}
+        >
+          {/* From strategy and design to content and technology — we scale your
+          vision into a market-leading reality. */}
 
-        <div className="relative">
-          <h2 className="section-title max-w-4xl mx-auto py-10 font-medium text-center text-black">
-            From strategy and design to content and technology — we scale your
-            vision into a market-leading reality.
-          </h2>
-
-          <h2
-            ref={textRef}
-            className="section-title max-w-4xl mx-auto py-10 font-medium text-center text-gray-400 absolute inset-0"
-            style={{
-              clipPath: "inset(0 0% 0 0)",
-            }}
-          >
-            From strategy and design to content and technology — we scale your
-            vision into a market-leading reality.
-          </h2>
-        </div>
-
+          We help businesses turn ideas into real products that grow, reach people, and perform in the real world.
+        </h2>
         <div className="absolute top-35 left-50">
           <Image
             width={150}

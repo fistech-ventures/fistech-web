@@ -18,7 +18,7 @@ export default function AboutPage() {
     <div>
       <PageHeadline headline="About Us" />
       <ParallaxHeroImage
-        imageSrc="/images/about/about-hero.png"
+        imageSrc="/images/about/about.jpg"
         imageAlt="Contact Image"
       />
       <AboutMe />

@@ -85,27 +85,9 @@ export default function AboutMe() {
       <div className="container mx-auto text-center relative z-20 mb-20">
         <SectionTag sectiontag="About Us" />
 
-        <div className="relative">
-          <h2 className="section-title max-w-5xl mx-auto py-10 font-medium text-black">
-            At Fistech Ventures, we merge 5+ years of product design expertise
-            with scalable engineering to transform complex ideas into intuitive
-            digital products. We don’t just design interfaces; we build the
-            foundations for your growth.
-          </h2>
-
-          <h2
-            ref={textRef}
-            className="section-title max-w-5xl mx-auto py-10 font-medium text-gray-400 absolute inset-0"
-            style={{
-              clipPath: "inset(0 0% 0 0)",
-            }}
-          >
-            At Fistech Ventures, we merge 5+ years of product design expertise
-            with scalable engineering to transform complex ideas into intuitive
-            digital products. We don’t just design interfaces; we build the
-            foundations for your growth.
-          </h2>
-        </div>
+        <h2 className="section-title max-w-5xl mx-auto py-10 font-medium">
+          We Focus on Outcomes , Fistech is about 5+ years of engineering ideas into impactful digital businesses and helping them scale. 
+        </h2>
 
         <Image
           src="/images/about/signature.png"
