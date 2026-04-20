@@ -379,7 +379,7 @@ export const CASE_STUDIES: ICaseStudy[] = [
     },
 
     author: {
-      name: "Fahim Sarkar",
+      name: "Fahim Sarker",
       role: "Solutions Architect",
     },
 
@@ -586,7 +586,7 @@ export const CASE_STUDIES: ICaseStudy[] = [
     },
 
     author: {
-      name: "Fahim Sarkar",
+      name: "Fahim Sarker",
       role: "Lead Solutions Architect",
     },
 
@@ -780,7 +780,7 @@ export const CASE_STUDIES: ICaseStudy[] = [
     },
 
     author: {
-      name: "Fahim Sarkar",
+      name: "Fahim Sarker",
       role: "Lead Solutions Architect",
     },
 
@@ -975,7 +975,7 @@ export const CASE_STUDIES: ICaseStudy[] = [
     },
 
     author: {
-      name: "Fahim Sarkar",
+      name: "Fahim Sarker",
       role: "Solutions Architect",
     },
 

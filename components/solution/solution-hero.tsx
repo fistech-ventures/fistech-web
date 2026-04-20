@@ -1,7 +1,7 @@
+import React from "react";
+import Image from "next/image";
 import { ISolution } from "@/types";
 import { Plus } from "lucide-react";
-import Image from "next/image";
-import React from "react";
 
 export default function SolutionHero({ hero }: { hero?: ISolution["hero"] }) {
   return (

@@ -1,12 +1,22 @@
 "use client";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { contactInfo } from "@/data/constant";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef, useState } from "react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-import { contactInfo } from "@/data/constant";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function WorkTogether() {
   const [animationData, setAnimationData] = useState(null);
   const lottieRef = useRef<LottieRefCurrentProps>(null);
+
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subRef = useRef<HTMLHeadingElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     fetch("/gift.json")
@@ -15,9 +25,50 @@ export default function WorkTogether() {
       .catch((err) => console.error("Failed to load animation:", err));
   }, []);
 
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "top 40%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      tl.from(titleRef.current, {
+        y: 80,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      })
+        .from(
+          subRef.current,
+          {
+            y: 60,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out",
+          },
+          "-=0.6",
+        )
+        .from(
+          buttonRef.current,
+          {
+            y: 40,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power3.out",
+          },
+          "-=0.5",
+        );
+    },
+    { scope: sectionRef },
+  );
+
   const handleMouseEnter = () => {
     if (!lottieRef.current) return;
-    // Re-enable looping in case it was turned off by a previous mouse leave
     if (lottieRef.current.animationItem) {
       lottieRef.current.animationItem.loop = true;
     }
@@ -32,7 +83,10 @@ export default function WorkTogether() {
   const email = contactInfo.find((item) => item.identifier === "email");
 
   return (
-    <section className="py-12 md:py-20 bg-black border-b-2 border-gray-800 px-4">
+    <section
+      ref={sectionRef}
+      className="py-12 md:py-20 bg-black border-b-2 border-gray-800 px-4"
+    >
       <div className="container mx-auto">
         <div className="relative flex flex-col items-center justify-center">
           {animationData && (
@@ -54,13 +108,22 @@ export default function WorkTogether() {
           )}
 
           <div className="relative z-10 flex flex-col items-center gap-10 py-20">
-            <h4 className="text-4xl font-medium text-center text-white">
+            <h4
+              ref={titleRef}
+              className="text-4xl font-medium text-center text-white"
+            >
               Let&apos;s Collaborate!
             </h4>
-            <h2 className="font-medium text-white xl:text-9xl lg:text-7xl md:text-6xl text-5xl text-center">
+
+            <h2
+              ref={subRef}
+              className="font-medium text-white xl:text-9xl lg:text-7xl md:text-6xl text-5xl text-center"
+            >
               Work Together
             </h2>
+
             <button
+              ref={buttonRef}
               className="py-5 px-10 rounded-full bg-[#1e1e1e] text-white text-2xl font-medium hover:bg-secondary hover:text-black duration-300 ease-in-out cursor-pointer"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}

@@ -1,6 +1,6 @@
 "use client";
-import React, { useRef } from "react";
 import gsap from "gsap";
+import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import {
   Plus,
@@ -22,9 +22,9 @@ import {
   AppWindow,
   Paintbrush,
 } from "lucide-react";
-import { solutions } from "@/data/solutions";
-import { ISolution } from "@/types";
 import Link from "next/link";
+import { ISolution } from "@/types";
+import { solutions } from "@/data/solutions";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const IconMap: Record<string, any> = {

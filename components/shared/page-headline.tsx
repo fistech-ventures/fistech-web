@@ -1,6 +1,6 @@
-import { GitCommitHorizontal } from "lucide-react";
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
+import { GitCommitHorizontal } from "lucide-react";
 
 export default function PageHeadline({
   headline,

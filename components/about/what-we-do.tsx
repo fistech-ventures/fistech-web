@@ -1,10 +1,45 @@
-import React from "react";
-import SectionTag from "../shared/section-tag";
+"use client";
+
+import gsap from "gsap";
 import Image from "next/image";
+import React, { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import SectionTag from "../shared/section-tag";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Whatwedo() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null);
+
+  useGSAP(
+    () => {
+      const el = textRef.current;
+      if (!el) return;
+
+      gsap.fromTo(
+        el,
+        {
+          clipPath: "inset(0 0% 0 0)",
+        },
+        {
+          ease: "none",
+          clipPath: "inset(0 100% 0 0)",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 40%",
+            end: "bottom 90%",
+            scrub: 1.5,
+          },
+        },
+      );
+    },
+    { scope: containerRef },
+  );
+
   return (
-    <section className="py-10 ">
+    <section className="py-10" ref={containerRef}>
       <div className="container mx-auto relative">
         <SectionTag sectiontag="What We Do" />
         <h2
