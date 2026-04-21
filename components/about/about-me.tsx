@@ -1,13 +1,13 @@
 "use client";
 
 import gsap from "gsap";
-gsap.registerPlugin(ScrollTrigger);
 import Image from "next/image";
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { solutions } from "@/data/solutions";
 import SectionTag from "../shared/section-tag";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// USE DIST IMPORT FOR PRODUCTION STABILITY
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function AboutMe() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,59 +19,99 @@ export default function AboutMe() {
 
   useGSAP(
     () => {
-      const el = textRef.current;
-      if (!el) return;
+      // 1. REGISTER PLUGIN INSIDE THE HOOK
+      gsap.registerPlugin(ScrollTrigger);
 
-      gsap.fromTo(
-        el,
-        {
-          clipPath: "inset(0 0% 0 0)",
-        },
-        {
-          clipPath: "inset(0 100% 0 0)",
-          ease: "none",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 75%",
-            end: "top 10%",
-            scrub: true,
+      // Reveal Text Animation
+      const textEl = textRef.current;
+      if (textEl) {
+        gsap.fromTo(
+          textEl,
+          { clipPath: "inset(0 0% 0 0)" },
+          {
+            clipPath: "inset(0 100% 0 0)",
+            ease: "none",
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top 75%",
+              end: "top 10%",
+              scrub: true,
+            },
           },
+        );
+      }
+
+      // Marquee Animations
+      const leftEl = tickerLeftRef.current;
+      const rightEl = tickerRightRef.current;
+
+      if (!leftEl || !rightEl) return;
+
+      // Safety check for scrollWidth (avoid division by zero/null)
+      const leftWidth = leftEl.scrollWidth / 3 || 500;
+      const rightWidth = rightEl.scrollWidth / 3 || 500;
+
+      // Left ticker
+      const leftAnim = gsap.fromTo(
+        leftEl,
+        { x: 0 },
+        {
+          x: -leftWidth,
+          duration: 25,
+          repeat: -1,
+          ease: "none",
         },
       );
 
-      const initMarquee = (el: HTMLDivElement | null, direction: number) => {
-        if (!el) return;
-
-        const rollWidth = el.scrollWidth / 3;
-
-        const animation = gsap.to(el, {
-          x: -rollWidth,
-          duration: 30,
+      // Right ticker
+      const rightAnim = gsap.fromTo(
+        rightEl,
+        { x: -rightWidth },
+        {
+          x: 0,
+          duration: 25,
           repeat: -1,
           ease: "none",
-        });
+        },
+      );
 
-        animation.timeScale(direction);
+      // Scroll speed boost
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        onUpdate: (self) => {
+          const velocity = self.getVelocity();
+          const speed = gsap.utils.clamp(1, 5, Math.abs(velocity / 500));
 
-        ScrollTrigger.create({
-          trigger: containerRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          onUpdate: (self) => {
-            const velocity = Math.abs(self.getVelocity() / 100);
-            const scrollDir = self.direction;
-
-            gsap.to(animation, {
-              timeScale: direction * scrollDir * (1 + velocity),
-              duration: 2,
+          // CRITICAL: Check if instance exists and isActive is a function
+          if (
+            leftAnim &&
+            typeof leftAnim.isActive === "function" &&
+            leftAnim.isActive()
+          ) {
+            gsap.to(leftAnim, {
+              timeScale: speed,
+              duration: 1,
               ease: "power3.out",
+              overwrite: true,
             });
-          },
-        });
-      };
+          }
 
-      initMarquee(tickerLeftRef.current, 1);
-      initMarquee(tickerRightRef.current, -1);
+          if (
+            rightAnim &&
+            typeof rightAnim.isActive === "function" &&
+            rightAnim.isActive()
+          ) {
+            gsap.to(rightAnim, {
+              timeScale: speed,
+              duration: 1,
+              ease: "power3.out",
+              overwrite: true,
+            });
+          }
+        },
+      });
     },
     { scope: containerRef },
   );
@@ -85,19 +125,17 @@ export default function AboutMe() {
         <SectionTag sectiontag="About Us" />
         <div className="relative">
           <h2 className="section-title max-w-5xl mx-auto py-10 font-medium text-black">
-            We Focus on Outcomes , Fistech is about 5+ years of engineering
-            ideas into impactful digital businesses and helping them scale.
+            We Focus on Outcomes, Fistech is about 5+ years of engineering ideas
+            into impactful digital businesses and helping them scale.
           </h2>
 
           <h2
             ref={textRef}
             className="section-title max-w-5xl mx-auto py-10 font-medium text-gray-400 absolute inset-0"
-            style={{
-              clipPath: "inset(0 0% 0 0)",
-            }}
+            style={{ clipPath: "inset(0 0% 0 0)" }}
           >
-            We Focus on Outcomes , Fistech is about 5+ years of engineering
-            ideas into impactful digital businesses and helping them scale.
+            We Focus on Outcomes, Fistech is about 5+ years of engineering ideas
+            into impactful digital businesses and helping them scale.
           </h2>
         </div>
 
@@ -122,7 +160,7 @@ export default function AboutMe() {
 
       {/* MARQUEE SECTION */}
       <div className="relative flex flex-col mt-40">
-        <div className="bg-black lg:py-10 py-5 lg:-rotate-10 -rotate-30 w-[200%] -translate-x-[30%] z-20 shadow-2xl">
+        <div className="bg-black lg:py-10 py-5 lg:-rotate-[10deg] -rotate-[30deg] w-[200%] -translate-x-[30%] z-20 shadow-2xl">
           <div
             ref={tickerLeftRef}
             className="flex whitespace-nowrap gap-16 items-center w-max"
@@ -138,7 +176,7 @@ export default function AboutMe() {
           </div>
         </div>
 
-        <div className="bg-white lg:py-10 py-5 lg:rotate-15 rotate-40 w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
+        <div className="bg-white lg:py-10 py-5 lg:rotate-[15deg] rotate-[40deg] w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
           <div
             ref={tickerRightRef}
             className="flex whitespace-nowrap gap-16 items-center w-max"
