@@ -1,6 +1,7 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 import React from "react";
 import CTAButton from "../shared/cta";
 import { useRef, useEffect } from "react";

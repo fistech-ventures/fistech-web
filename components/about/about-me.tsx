@@ -6,7 +6,8 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { solutions } from "@/data/solutions";
 import SectionTag from "../shared/section-tag";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// USE DIST IMPORT FOR PRODUCTION STABILITY
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function AboutMe() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -18,7 +19,10 @@ export default function AboutMe() {
 
   useGSAP(
     () => {
-      // 1. Reveal Text Animation
+      // 1. REGISTER PLUGIN INSIDE THE HOOK
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Reveal Text Animation
       const textEl = textRef.current;
       if (textEl) {
         gsap.fromTo(
@@ -37,16 +41,17 @@ export default function AboutMe() {
         );
       }
 
-      // 2. Marquee Animations
+      // Marquee Animations
       const leftEl = tickerLeftRef.current;
       const rightEl = tickerRightRef.current;
 
       if (!leftEl || !rightEl) return;
 
-      const leftWidth = leftEl.scrollWidth / 3;
-      const rightWidth = rightEl.scrollWidth / 3;
+      // Safety check for scrollWidth (avoid division by zero/null)
+      const leftWidth = leftEl.scrollWidth / 3 || 500;
+      const rightWidth = rightEl.scrollWidth / 3 || 500;
 
-      // Left ticker — moves left
+      // Left ticker
       const leftAnim = gsap.fromTo(
         leftEl,
         { x: 0 },
@@ -58,7 +63,7 @@ export default function AboutMe() {
         },
       );
 
-      // Right ticker — moves right (opposite direction)
+      // Right ticker
       const rightAnim = gsap.fromTo(
         rightEl,
         { x: -rightWidth },
@@ -79,6 +84,7 @@ export default function AboutMe() {
           const velocity = self.getVelocity();
           const speed = gsap.utils.clamp(1, 5, Math.abs(velocity / 500));
 
+          // CRITICAL: Check if instance exists and isActive is a function
           if (
             leftAnim &&
             typeof leftAnim.isActive === "function" &&
@@ -91,6 +97,7 @@ export default function AboutMe() {
               overwrite: true,
             });
           }
+
           if (
             rightAnim &&
             typeof rightAnim.isActive === "function" &&
@@ -153,7 +160,6 @@ export default function AboutMe() {
 
       {/* MARQUEE SECTION */}
       <div className="relative flex flex-col mt-40">
-        {/* Left Ticker (Black) */}
         <div className="bg-black lg:py-10 py-5 lg:-rotate-[10deg] -rotate-[30deg] w-[200%] -translate-x-[30%] z-20 shadow-2xl">
           <div
             ref={tickerLeftRef}
@@ -170,7 +176,6 @@ export default function AboutMe() {
           </div>
         </div>
 
-        {/* Right Ticker (White) */}
         <div className="bg-white lg:py-10 py-5 lg:rotate-[15deg] rotate-[40deg] w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
           <div
             ref={tickerRightRef}

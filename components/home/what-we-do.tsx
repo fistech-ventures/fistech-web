@@ -1,6 +1,7 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(SplitText, ScrollTrigger);
 import SplitText from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import CTAButton from "../shared/cta";

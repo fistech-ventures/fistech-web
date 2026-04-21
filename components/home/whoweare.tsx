@@ -1,6 +1,7 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(SplitText);
 import Link from "next/link";
 import Image from "next/image";
 import { Send } from "lucide-react";
