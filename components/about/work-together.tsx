@@ -114,11 +114,10 @@ export default function WorkTogether() {
               Work Together
             </h2>
 
-            {/* 3. FIXED: Button styles for production */}
             <button
               ref={buttonRef}
-              className="relative py-5 px-10 rounded-full text-white text-2xl font-medium transition-colors duration-300 ease-in-out cursor-pointer hover:bg-secondary hover:text-black z-20"
-              style={{ backgroundColor: "#1e1e1e" }} // Forced inline style for critical BG
+              className="relative py-5 px-10 rounded-full text-white text-2xl font-medium transition-colors duration-300 ease-in-out cursor-pointer hover:bg-secondary  z-20"
+              style={{ backgroundColor: "#1e1e1e" }} 
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               onClick={() => (window.location.href = `mailto:${email?.href}`)}
