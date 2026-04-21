@@ -1,11 +1,13 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(SplitText, ScrollTrigger);
 import { useRef } from "react";
 import { Testimonial } from "@/types";
 import { useGSAP } from "@gsap/react";
 import SplitText from "gsap/SplitText";
 import React, { useCallback } from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import TestimonialCard from "./testimonial-card";
 import { testimonials } from "@/data/testimonials";
 import useEmblaCarousel from "embla-carousel-react";

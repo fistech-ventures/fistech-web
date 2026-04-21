@@ -13,7 +13,6 @@ import {
 import GoogleAnalytics from "@/components/analytics/google-analytics";
 import { Suspense } from "react";
 import PageViewTracker from "@/components/analytics/page-view-tracker";
-import GsapInit from "@/components/shared/gsap-init";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -53,7 +52,6 @@ export default function RootLayout({
       <body
         className={`${archivo.className} ${kanit.variable} antialiased overflow-x-hidden`}
       >
-        <GsapInit />
         <GoogleAnalytics />
         <Suspense fallback={null}>
           <PageViewTracker />

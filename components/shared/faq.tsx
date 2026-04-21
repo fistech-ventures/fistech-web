@@ -1,6 +1,7 @@
 "use client";
 
 import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 import React, { useRef } from "react";
 import {
   Accordion,
@@ -10,6 +11,7 @@ import {
 } from "@/components/ui/accordion";
 import { IFAQ } from "@/types";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function FAQSection({
   isShowTitle = true,
