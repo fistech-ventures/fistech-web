@@ -21,7 +21,7 @@ export default function AboutPage() {
         imageSrc="/images/about/about.jpg"
         imageAlt="Contact Image"
       />
-      {/* <AboutMe /> */}
+      <AboutMe />
       <Whatwedo />
       <Service />
       <TestimonialSection />

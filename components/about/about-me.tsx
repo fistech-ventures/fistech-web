@@ -8,11 +8,6 @@ import { solutions } from "@/data/solutions";
 import SectionTag from "../shared/section-tag";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Prevent SSR issues and register plugin
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 export default function AboutMe() {
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLHeadingElement>(null);
@@ -42,47 +37,74 @@ export default function AboutMe() {
         );
       }
 
-      // 2. Marquee Initialization Function
-      const initMarquee = (el: HTMLDivElement | null, direction: number) => {
-        if (!el) return;
+      // 2. Marquee Animations
+      const leftEl = tickerLeftRef.current;
+      const rightEl = tickerRightRef.current;
 
-        // Calculate width for seamless loop (assuming 3x items)
-        const rollWidth = el.scrollWidth / 3;
+      if (!leftEl || !rightEl) return;
 
-        const animation = gsap.to(el, {
-          x: -rollWidth,
-          duration: 30,
+      const leftWidth = leftEl.scrollWidth / 3;
+      const rightWidth = rightEl.scrollWidth / 3;
+
+      // Left ticker — moves left
+      const leftAnim = gsap.fromTo(
+        leftEl,
+        { x: 0 },
+        {
+          x: -leftWidth,
+          duration: 25,
           repeat: -1,
           ease: "none",
-        });
+        },
+      );
 
-        animation.timeScale(direction);
+      // Right ticker — moves right (opposite direction)
+      const rightAnim = gsap.fromTo(
+        rightEl,
+        { x: -rightWidth },
+        {
+          x: 0,
+          duration: 25,
+          repeat: -1,
+          ease: "none",
+        },
+      );
 
-        // Create ScrollTrigger to react to scroll speed/direction
-        ScrollTrigger.create({
-          trigger: containerRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          onUpdate: (self) => {
-            // CRITICAL: Ensure animation exists and is active before updating
-            // This prevents the "eP is not a function" error in production
-            if (animation && animation.isActive()) {
-              const velocity = Math.abs(self.getVelocity() / 100);
-              const scrollDir = self.direction;
+      // Scroll speed boost
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        onUpdate: (self) => {
+          const velocity = self.getVelocity();
+          const speed = gsap.utils.clamp(1, 5, Math.abs(velocity / 500));
 
-              gsap.to(animation, {
-                timeScale: direction * scrollDir * (1 + velocity),
-                duration: 2,
-                ease: "power3.out",
-              });
-            }
-          },
-        });
-      };
-
-      // Initialize both tickers
-      initMarquee(tickerLeftRef.current, 1);
-      initMarquee(tickerRightRef.current, -1);
+          if (
+            leftAnim &&
+            typeof leftAnim.isActive === "function" &&
+            leftAnim.isActive()
+          ) {
+            gsap.to(leftAnim, {
+              timeScale: speed,
+              duration: 1,
+              ease: "power3.out",
+              overwrite: true,
+            });
+          }
+          if (
+            rightAnim &&
+            typeof rightAnim.isActive === "function" &&
+            rightAnim.isActive()
+          ) {
+            gsap.to(rightAnim, {
+              timeScale: speed,
+              duration: 1,
+              ease: "power3.out",
+              overwrite: true,
+            });
+          }
+        },
+      });
     },
     { scope: containerRef },
   );
@@ -132,7 +154,7 @@ export default function AboutMe() {
       {/* MARQUEE SECTION */}
       <div className="relative flex flex-col mt-40">
         {/* Left Ticker (Black) */}
-        <div className="bg-black lg:py-10 py-5 lg:-rotate-10 -rotate-30 w-[200%] -translate-x-[30%] z-20 shadow-2xl">
+        <div className="bg-black lg:py-10 py-5 lg:-rotate-[10deg] -rotate-[30deg] w-[200%] -translate-x-[30%] z-20 shadow-2xl">
           <div
             ref={tickerLeftRef}
             className="flex whitespace-nowrap gap-16 items-center w-max"
@@ -149,7 +171,7 @@ export default function AboutMe() {
         </div>
 
         {/* Right Ticker (White) */}
-        <div className="bg-white lg:py-10 py-5 lg:rotate-15 rotate-40 w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
+        <div className="bg-white lg:py-10 py-5 lg:rotate-[15deg] rotate-[40deg] w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
           <div
             ref={tickerRightRef}
             className="flex whitespace-nowrap gap-16 items-center w-max"
