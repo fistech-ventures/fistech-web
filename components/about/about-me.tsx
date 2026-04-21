@@ -6,7 +6,6 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { solutions } from "@/data/solutions";
 import SectionTag from "../shared/section-tag";
-// USE DIST IMPORT FOR PRODUCTION STABILITY
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function AboutMe() {
@@ -41,17 +40,14 @@ export default function AboutMe() {
         );
       }
 
-      // Marquee Animations
       const leftEl = tickerLeftRef.current;
       const rightEl = tickerRightRef.current;
 
       if (!leftEl || !rightEl) return;
 
-      // Safety check for scrollWidth (avoid division by zero/null)
       const leftWidth = leftEl.scrollWidth / 3 || 500;
       const rightWidth = rightEl.scrollWidth / 3 || 500;
 
-      // Left ticker
       const leftAnim = gsap.fromTo(
         leftEl,
         { x: 0 },
@@ -63,7 +59,6 @@ export default function AboutMe() {
         },
       );
 
-      // Right ticker
       const rightAnim = gsap.fromTo(
         rightEl,
         { x: -rightWidth },
@@ -75,7 +70,6 @@ export default function AboutMe() {
         },
       );
 
-      // Scroll speed boost
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top bottom",
@@ -84,7 +78,6 @@ export default function AboutMe() {
           const velocity = self.getVelocity();
           const speed = gsap.utils.clamp(1, 5, Math.abs(velocity / 500));
 
-          // CRITICAL: Check if instance exists and isActive is a function
           if (
             leftAnim &&
             typeof leftAnim.isActive === "function" &&
@@ -160,7 +153,7 @@ export default function AboutMe() {
 
       {/* MARQUEE SECTION */}
       <div className="relative flex flex-col mt-40">
-        <div className="bg-black lg:py-10 py-5 lg:-rotate-[10deg] -rotate-[30deg] w-[200%] -translate-x-[30%] z-20 shadow-2xl">
+        <div className="bg-black lg:py-10 py-5 lg:-rotate-10 -rotate-30 w-[200%] -translate-x-[30%] z-20 shadow-2xl">
           <div
             ref={tickerLeftRef}
             className="flex whitespace-nowrap gap-16 items-center w-max"
@@ -176,7 +169,7 @@ export default function AboutMe() {
           </div>
         </div>
 
-        <div className="bg-white lg:py-10 py-5 lg:rotate-[15deg] rotate-[40deg] w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
+        <div className="bg-white lg:py-10 py-5 lg:rotate-15 rotate-40 w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
           <div
             ref={tickerRightRef}
             className="flex whitespace-nowrap gap-16 items-center w-max"
