@@ -1242,10 +1242,10 @@ export const projects: IProject[] = [
     websiteUrl: "https://scubalife.net/",
 
     // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/projects/scubalife.webp",
+    heroImage: "/images/projects/scubalife-0.webp",
     gallery: [
-      "/images/projects/scubalife-1.webp",
-      "/images/projects/scubalife-2.webp",
+      "/images/projects/scubalife-11.webp",
+      "/images/projects/scubalife-22.webp",
       "/images/projects/scubalife-3.webp",
       "/images/projects/scubalife-4.webp",
       "/images/projects/scubalife-5.webp",
