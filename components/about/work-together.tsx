@@ -1,13 +1,11 @@
 "use client";
 
 import gsap from "gsap";
-gsap.registerPlugin(ScrollTrigger);
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { contactInfo } from "@/data/constant";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect, useRef, useState } from "react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
-
 
 export default function WorkTogether() {
   const [animationData, setAnimationData] = useState(null);
@@ -25,9 +23,11 @@ export default function WorkTogether() {
       .catch((err) => console.error("Failed to load animation:", err));
   }, []);
 
-
   useGSAP(
     () => {
+      // 2. FIXED: Register inside hook for production stability
+      gsap.registerPlugin(ScrollTrigger);
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -57,7 +57,7 @@ export default function WorkTogether() {
           buttonRef.current,
           {
             y: 40,
-            opacity: 0,
+            opacity: 0, // Ensure opacity: 0 isn't getting stuck
             duration: 0.8,
             ease: "power3.out",
           },
@@ -68,10 +68,8 @@ export default function WorkTogether() {
   );
 
   const handleMouseEnter = () => {
-    if (!lottieRef.current) return;
-    if (lottieRef.current.animationItem) {
-      lottieRef.current.animationItem.loop = true;
-    }
+    if (!lottieRef.current?.animationItem) return;
+    lottieRef.current.animationItem.loop = true;
     lottieRef.current.goToAndPlay(0, true);
   };
 
@@ -96,12 +94,6 @@ export default function WorkTogether() {
                 animationData={animationData}
                 loop={true}
                 autoplay={false}
-                onComplete={() => {
-                  lottieRef.current?.goToAndStop(0, true);
-                  if (lottieRef.current?.animationItem) {
-                    lottieRef.current.animationItem.loop = true;
-                  }
-                }}
                 style={{ width: "600px", height: "1000px" }}
               />
             </div>
@@ -124,12 +116,13 @@ export default function WorkTogether() {
 
             <button
               ref={buttonRef}
-              className="py-5 px-10 rounded-full bg-[#1e1e1e] text-white text-2xl font-medium hover:bg-secondary hover:text-black duration-300 ease-in-out cursor-pointer"
+              className="relative py-5 px-10 rounded-full text-white text-2xl font-medium transition-colors duration-300 ease-in-out cursor-pointer hover:bg-secondary  z-20"
+              style={{ backgroundColor: "#1e1e1e" }} 
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               onClick={() => (window.location.href = `mailto:${email?.href}`)}
             >
-              {email?.value}
+              {email?.value || "Get in Touch"}
             </button>
           </div>
         </div>
