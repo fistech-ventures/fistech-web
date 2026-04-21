@@ -1,13 +1,17 @@
 "use client";
 
 import gsap from "gsap";
-gsap.registerPlugin(ScrollTrigger);
 import Image from "next/image";
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { solutions } from "@/data/solutions";
 import SectionTag from "../shared/section-tag";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Prevent SSR issues and register plugin
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function AboutMe() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -19,29 +23,30 @@ export default function AboutMe() {
 
   useGSAP(
     () => {
-      const el = textRef.current;
-      if (!el) return;
-
-      gsap.fromTo(
-        el,
-        {
-          clipPath: "inset(0 0% 0 0)",
-        },
-        {
-          clipPath: "inset(0 100% 0 0)",
-          ease: "none",
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 75%",
-            end: "top 10%",
-            scrub: true,
+      // 1. Reveal Text Animation
+      const textEl = textRef.current;
+      if (textEl) {
+        gsap.fromTo(
+          textEl,
+          { clipPath: "inset(0 0% 0 0)" },
+          {
+            clipPath: "inset(0 100% 0 0)",
+            ease: "none",
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top 75%",
+              end: "top 10%",
+              scrub: true,
+            },
           },
-        },
-      );
+        );
+      }
 
+      // 2. Marquee Initialization Function
       const initMarquee = (el: HTMLDivElement | null, direction: number) => {
         if (!el) return;
 
+        // Calculate width for seamless loop (assuming 3x items)
         const rollWidth = el.scrollWidth / 3;
 
         const animation = gsap.to(el, {
@@ -53,23 +58,29 @@ export default function AboutMe() {
 
         animation.timeScale(direction);
 
+        // Create ScrollTrigger to react to scroll speed/direction
         ScrollTrigger.create({
           trigger: containerRef.current,
           start: "top bottom",
           end: "bottom top",
           onUpdate: (self) => {
-            const velocity = Math.abs(self.getVelocity() / 100);
-            const scrollDir = self.direction;
+            // CRITICAL: Ensure animation exists and is active before updating
+            // This prevents the "eP is not a function" error in production
+            if (animation && animation.isActive()) {
+              const velocity = Math.abs(self.getVelocity() / 100);
+              const scrollDir = self.direction;
 
-            gsap.to(animation, {
-              timeScale: direction * scrollDir * (1 + velocity),
-              duration: 2,
-              ease: "power3.out",
-            });
+              gsap.to(animation, {
+                timeScale: direction * scrollDir * (1 + velocity),
+                duration: 2,
+                ease: "power3.out",
+              });
+            }
           },
         });
       };
 
+      // Initialize both tickers
       initMarquee(tickerLeftRef.current, 1);
       initMarquee(tickerRightRef.current, -1);
     },
@@ -85,19 +96,17 @@ export default function AboutMe() {
         <SectionTag sectiontag="About Us" />
         <div className="relative">
           <h2 className="section-title max-w-5xl mx-auto py-10 font-medium text-black">
-            We Focus on Outcomes , Fistech is about 5+ years of engineering
-            ideas into impactful digital businesses and helping them scale.
+            We Focus on Outcomes, Fistech is about 5+ years of engineering ideas
+            into impactful digital businesses and helping them scale.
           </h2>
 
           <h2
             ref={textRef}
             className="section-title max-w-5xl mx-auto py-10 font-medium text-gray-400 absolute inset-0"
-            style={{
-              clipPath: "inset(0 0% 0 0)",
-            }}
+            style={{ clipPath: "inset(0 0% 0 0)" }}
           >
-            We Focus on Outcomes , Fistech is about 5+ years of engineering
-            ideas into impactful digital businesses and helping them scale.
+            We Focus on Outcomes, Fistech is about 5+ years of engineering ideas
+            into impactful digital businesses and helping them scale.
           </h2>
         </div>
 
@@ -122,6 +131,7 @@ export default function AboutMe() {
 
       {/* MARQUEE SECTION */}
       <div className="relative flex flex-col mt-40">
+        {/* Left Ticker (Black) */}
         <div className="bg-black lg:py-10 py-5 lg:-rotate-10 -rotate-30 w-[200%] -translate-x-[30%] z-20 shadow-2xl">
           <div
             ref={tickerLeftRef}
@@ -138,6 +148,7 @@ export default function AboutMe() {
           </div>
         </div>
 
+        {/* Right Ticker (White) */}
         <div className="bg-white lg:py-10 py-5 lg:rotate-15 rotate-40 w-[300%] -translate-x-[30%] z-10 shadow-xl border-y border-black/10 -mt-16 md:-mt-24">
           <div
             ref={tickerRightRef}
