@@ -13,6 +13,7 @@ import {
 import GoogleAnalytics from "@/components/analytics/google-analytics";
 import { Suspense } from "react";
 import PageViewTracker from "@/components/analytics/page-view-tracker";
+import ClarityAnalytics from "@/components/analytics/microsoft-clarity";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -53,6 +54,7 @@ export default function RootLayout({
         className={`${archivo.className} ${kanit.variable} antialiased overflow-x-hidden`}
       >
         <GoogleAnalytics />
+        <ClarityAnalytics />
         <Suspense fallback={null}>
           <PageViewTracker />
         </Suspense>
