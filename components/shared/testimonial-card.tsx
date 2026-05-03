@@ -2,97 +2,112 @@
 import Image from "next/image";
 import { Testimonial } from "@/types";
 import RatingStars from "./rating-stars";
-import React, { useState, useRef, useEffect } from "react";
-import { Quote, ChevronDown, ChevronUp } from "lucide-react";
+import React from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 interface TestimonialCardProps {
   item: Testimonial;
-  index: number;
 }
 
-export default function TestimonialCard({ item, index }: TestimonialCardProps) {
-  const [expanded, setExpanded] = useState(false);
-  const [isClamped, setIsClamped] = useState(false);
-  const textRef = useRef<HTMLParagraphElement>(null);
-
-  useEffect(() => {
-    const el = textRef.current;
-    if (el) {
-      // scrollHeight > clientHeight means text is being cut off
-      setIsClamped(el.scrollHeight > el.clientHeight);
-    }
-  }, [item.description]);
+export default function TestimonialCard({ item }: TestimonialCardProps) {
+  const maxLength = 105;
+  const isLong = item.description.length > maxLength;
+  let displayText = item.description;
+  if (isLong) {
+    const lastSpace = item.description.lastIndexOf(" ", maxLength);
+    displayText = item.description.substring(0, lastSpace > 0 ? lastSpace : maxLength) + "... ";
+  }
 
   return (
-    <div
-      className={`relative group shrink-0 w-full rounded-xl p-4 md:p-6 flex flex-col h-full shadow-sm border border-secondary hover:border-gray-200 ${
-        index % 2 === 0 ? "bg-[#E9E9E9]" : "bg-white"
-      }`}
-    >
-      {/* Hover overlay — desktop only */}
-      <div className="hidden md:flex absolute top-0 left-0 rounded-xl w-full z-50 items-start opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-in-out pointer-events-none group-hover:pointer-events-auto backdrop-blur-xl bg-white/30 invisible group-hover:visible">
-        <div className="w-full rounded-xl p-5 text-black text-base border-2 border-secondary text-justify leading-relaxed max-h-full overflow-y-auto">
-          {item.description}
-        </div>
+    <div className="relative group shrink-0 w-full rounded-2xl p-6 md:p-8 flex flex-col h-full shadow-sm border border-gray-100 bg-[#f9fafb] hover:shadow-md transition-shadow">
+      <div className="text-blue-600 text-6xl font-serif leading-none h-8 mb-4">
+        &ldquo;
       </div>
 
-      <div className="text-gray-400 mb-8">
-        <Quote size={48} fill="currentColor" className="opacity-70" />
-      </div>
-
-      <div className="grow">
-        <p
-          ref={textRef}
-          className={`lg:text-xl leading-normal lg:mb-10 mb-3 text-justify ${
-            expanded ? "" : "line-clamp-6"
-          }`}
-        >
-          {item.description}
-        </p>
-
-        {/* Only renders if text is actually clamped */}
-        {isClamped && (
-          <button
-            onClick={() => setExpanded(!expanded)}
-            className="md:hidden flex items-center gap-1 text-sm font-semibold text-gray-500 hover:text-gray-800 transition-colors mb-4"
-          >
-            {expanded ? (
-              <>
-                Show less <ChevronUp size={16} />
-              </>
-            ) : (
-              <>
-                Read more <ChevronDown size={16} />
-              </>
-            )}
-          </button>
+      <div className="grow mb-6">
+        <p className="lg:text-xl leading-normal lg:mb-10 mb-3 text-justify text-gray-800">
+          {displayText}
+          {isLong && (
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="text-blue-600 font-medium text-lg hover:underline inline ml-1">
+                  Read more
+                </button>
+              </DialogTrigger>
+              <DialogContent className="flex flex-col w-[95vw] max-h-[90vh] sm:max-w-[600px] lg:max-w-[900px] bg-white p-6 md:p-10 rounded-2xl">
+                <DialogHeader className="shrink-0">
+                  <DialogTitle className="text-blue-600 text-6xl font-serif leading-none h-8 mb-4">&ldquo;</DialogTitle>
+                </DialogHeader>
+                <div className="mt-4 overflow-y-auto grow pr-2 lg:text-xl leading-normal text-justify text-gray-800">
+                  {item.description}
+                </div>
+              <div className="shrink-0 flex items-center justify-between mt-8 pt-6 border-t border-gray-100 mb-4">
+                <Image
+                  width={300}
+                  height={300}
+                  src={item.businessLogo}
+                  alt="Company Logo"
+                  className="w-24 h-12 object-contain object-left"
+                />
+                <RatingStars rating={item.rating} />
+              </div>
+              <div className="shrink-0 flex items-center gap-4">
+                <Image
+                  width={60}
+                  height={60}
+                  src={item.profileImage || "/images/home/clientsprofile.png"}
+                  alt={item.name}
+                  className="w-14 h-14 rounded-full object-cover"
+                />
+                <div className="flex flex-col">
+                  <h4 className="font-bold text-[#1A1A1A] text-lg leading-tight">
+                    {item.name}
+                  </h4>
+                  <p className="text-sm text-gray-500 font-medium mt-1">
+                    {item.title}
+                  </p>
+                </div>
+              </div>
+            </DialogContent>
+          </Dialog>
         )}
+        </p>
       </div>
 
-      <div className="mb-4 pt-4 border-t border-gray-300/60 flex items-center justify-between">
-        <Image
-          width={300}
-          height={300}
-          src={item.businessLogo}
-          alt="Logo"
-          className="w-20 md:w-28 h-14 md:h-18 object-contain"
-        />
-        <RatingStars rating={item.rating} />
-      </div>
+      <div className="mt-auto">
+        <div className="mb-4 pb-4 border-b border-gray-100 flex items-center justify-between">
+          <Image
+            width={300}
+            height={300}
+            src={item.businessLogo}
+            alt="Company Logo"
+            className="w-20 md:w-24 h-10 object-contain object-left"
+          />
+          <RatingStars rating={item.rating} />
+        </div>
 
-      <div className="flex items-center gap-4">
-        <Image
-          width={300}
-          height={300}
-          src={item.profileImage || ""}
-          alt={item.name}
-          className="w-14 h-14 rounded-full object-cover"
-        />
-        <div className="flex flex-col">
-          <h4 className="font-bold text-[#1A1A1A] text-lg leading-tight">
-            {item.name}, {item.country}
-          </h4>
-          <p className="text-sm text-gray-500 font-medium mt-1">{item.title}</p>
+        <div className="flex items-center gap-4">
+          <Image
+            width={60}
+            height={60}
+            src={item.profileImage || "/images/home/clientsprofile.png"}
+            alt={item.name}
+            className="w-12 h-12 rounded-full object-cover"
+          />
+          <div className="flex flex-col">
+            <h4 className="font-bold text-[#1A1A1A] text-lg leading-tight">
+              {item.name}
+            </h4>
+            <p className="text-sm text-gray-500 font-medium mt-1">
+              {item.title}
+            </p>
+          </div>
         </div>
       </div>
     </div>
