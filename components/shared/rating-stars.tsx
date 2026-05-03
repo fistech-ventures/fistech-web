@@ -8,9 +8,9 @@ export default function RatingStars({ rating }: { rating: number }) {
 
         return (
           <div key={i} className="relative">
-            <div className="text-orange-700">★</div>
+            <div className="text-gray-300 text-xl">★</div>
             <div
-              className="absolute top-0 left-0 overflow-hidden"
+              className="absolute top-0 left-0 overflow-hidden text-yellow-400 text-xl"
               style={{
                 width:
                   rating >= starValue
@@ -20,7 +20,7 @@ export default function RatingStars({ rating }: { rating: number }) {
                       : "0%",
               }}
             >
-              {/* <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" /> */}
+              ★
             </div>
           </div>
         );

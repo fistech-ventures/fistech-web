@@ -6,13 +6,11 @@ import { useRef } from "react";
 import { Testimonial } from "@/types";
 import { useGSAP } from "@gsap/react";
 import SplitText from "gsap/SplitText";
-import React, { useCallback } from "react";
+import React from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import TestimonialCard from "./testimonial-card";
 import { testimonials } from "@/data/testimonials";
-import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-
+import Marquee from "react-fast-marquee";
 
 export default function TestimonialSection() {
   const titleRef = useRef<HTMLHeadingElement | null>(null);
@@ -71,23 +69,12 @@ export default function TestimonialSection() {
     };
   }, []);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "start",
-    loop: true,
-    dragFree: true,
-  });
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
+  const firstRow = testimonials.slice(0, Math.ceil(testimonials.length / 2));
+  const secondRow = testimonials.slice(Math.ceil(testimonials.length / 2));
 
   return (
     <section className="max-w-7xl px-4 mx-auto section-gap overflow-hidden">
-      <div className="text-center max-w-xl mx-auto space-y-4 mb-1 md:mb-16">
+      <div className="text-center max-w-xl mx-auto space-y-4 mb-8 md:mb-16">
         <h2 ref={titleRef} className="section-title">
           Testimonials
         </h2>
@@ -97,52 +84,22 @@ export default function TestimonialSection() {
         </p>
       </div>
 
-      <div
-        className="embla cursor-grab active:cursor-grabbing"
-        ref={emblaRef}
-        style={{ touchAction: "pan-y" }}
-      >
-        <div className="embla__container flex gap-5">
-          {testimonials.map((item: Testimonial, index: number) => (
-            <div
-              key={index}
-              className="embla__slide flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-h-0"
-            >
-              <TestimonialCard item={item} index={index} />
+      <div className="relative flex flex-col gap-6 md:gap-8 overflow-hidden mask-[linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
+        <Marquee pauseOnHover={true} speed={30} direction="left" className="overflow-hidden">
+          {firstRow.map((item: Testimonial, index: number) => (
+            <div key={`row1-${index}`} className="mx-3 md:mx-4 w-87.5 md:w-112.5 h-90 md:h-100 flex py-2">
+              <TestimonialCard item={item} />
             </div>
           ))}
-        </div>
-      </div>
+        </Marquee>
 
-      <div className="flex items-center justify-center gap-6 mt-12">
-        <div className="flex gap-4 items-center">
-          <button
-            onClick={scrollPrev}
-            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95 cursor-pointer"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft size={20} />
-          </button>
-
-          <div className="flex flex-col items-center px-4">
-            <div className="flex gap-1 text-orange-500 mb-1">
-              {[...Array(5)].map((_, i) => (
-                <span key={i}>★</span>
-              ))}
+        <Marquee pauseOnHover={true} speed={30} direction="right" className="overflow-hidden">
+          {secondRow.map((item: Testimonial, index: number) => (
+            <div key={`row2-${index}`} className="mx-3 md:mx-4 w-87.5 md:w-112.5 h-90 md:h-100 flex py-2">
+              <TestimonialCard item={item} />
             </div>
-            <span className="text-[10px] font-extrabold uppercase text-black">
-              {testimonials.length} Reviews
-            </span>
-          </div>
-
-          <button
-            onClick={scrollNext}
-            className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-black hover:text-white transition-all active:scale-95 cursor-pointer"
-            aria-label="Next slide"
-          >
-            <ChevronRight size={20} />
-          </button>
-        </div>
+          ))}
+        </Marquee>
       </div>
     </section>
   );

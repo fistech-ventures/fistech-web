@@ -25,7 +25,6 @@ export default function WorkTogether() {
 
   useGSAP(
     () => {
-      // 2. FIXED: Register inside hook for production stability
       gsap.registerPlugin(ScrollTrigger);
 
       const tl = gsap.timeline({
@@ -57,7 +56,7 @@ export default function WorkTogether() {
           buttonRef.current,
           {
             y: 40,
-            opacity: 0, // Ensure opacity: 0 isn't getting stuck
+            opacity: 0,
             duration: 0.8,
             ease: "power3.out",
           },
