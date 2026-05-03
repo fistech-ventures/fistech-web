@@ -84,10 +84,10 @@ export default function TestimonialSection() {
         </p>
       </div>
 
-      <div className="relative flex flex-col gap-6 md:gap-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
+      <div className="relative flex flex-col gap-6 md:gap-8 overflow-hidden mask-[linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
         <Marquee pauseOnHover={true} speed={30} direction="left" className="overflow-hidden">
           {firstRow.map((item: Testimonial, index: number) => (
-            <div key={`row1-${index}`} className="mx-3 md:mx-4 w-[350px] md:w-[450px] h-[360px] md:h-[400px] flex py-2">
+            <div key={`row1-${index}`} className="mx-3 md:mx-4 w-87.5 md:w-112.5 h-90 md:h-100 flex py-2">
               <TestimonialCard item={item} />
             </div>
           ))}
@@ -95,7 +95,7 @@ export default function TestimonialSection() {
 
         <Marquee pauseOnHover={true} speed={30} direction="right" className="overflow-hidden">
           {secondRow.map((item: Testimonial, index: number) => (
-            <div key={`row2-${index}`} className="mx-3 md:mx-4 w-[350px] md:w-[450px] h-[360px] md:h-[400px] flex py-2">
+            <div key={`row2-${index}`} className="mx-3 md:mx-4 w-87.5 md:w-112.5 h-90 md:h-100 flex py-2">
               <TestimonialCard item={item} />
             </div>
           ))}

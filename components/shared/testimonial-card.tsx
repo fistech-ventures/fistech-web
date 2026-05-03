@@ -36,11 +36,11 @@ export default function TestimonialCard({ item }: TestimonialCardProps) {
           {isLong && (
             <Dialog>
               <DialogTrigger asChild>
-                <button className="text-blue-600 font-medium text-lg hover:underline inline ml-1">
+                <button className="text-blue-600 cursor-pointer font-medium text-lg hover:underline inline ml-1">
                   Read more
                 </button>
               </DialogTrigger>
-              <DialogContent className="flex flex-col w-[95vw] max-h-[90vh] sm:max-w-[600px] lg:max-w-[900px] bg-white p-6 md:p-10 rounded-2xl">
+              <DialogContent className="flex flex-col w-[95vw] max-h-[90vh] sm:max-w-150 lg:max-w-225 bg-white p-6 md:p-10 rounded-2xl">
                 <DialogHeader className="shrink-0">
                   <DialogTitle className="text-blue-600 text-6xl font-serif leading-none h-8 mb-4">&ldquo;</DialogTitle>
                 </DialogHeader>
