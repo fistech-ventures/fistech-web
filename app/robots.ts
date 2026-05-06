@@ -1,7 +1,6 @@
 import { MetadataRoute } from "next";
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://fistechventures.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://fistech.org";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -12,14 +11,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
       {
-        userAgent: [
-          "GPTBot",
-          "CCBot",
-          "anthropic-ai",
-          "Claude-Web",
-          "Bytespider",
-          "Amazonbot",
-        ],
+        userAgent: ["CCBot", "Bytespider"],
         disallow: "/",
       },
     ],
