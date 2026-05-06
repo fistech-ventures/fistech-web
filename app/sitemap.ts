@@ -4,15 +4,14 @@ import { ICaseStudy, ISolution } from "@/types";
 import { CASE_STUDIES } from "@/data/case-studies";
 import { solutions } from "@/data/solutions";
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://fistechventures.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://fistech.org";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
     {
-      url: `${SITE_URL}/`,
+      url: `${SITE_URL}`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 1.0,
