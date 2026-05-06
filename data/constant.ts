@@ -10,9 +10,9 @@ import {
 
 export const socialLinks = [
   { Icon: Facebook, path: "https://facebook.com/fistechventures" },
-  { Icon: Twitter, path: "https://twitter.com/@fistechventures" },
+  { Icon: Twitter, path: "https://twitter.com/fistechventures" },
   { Icon: Linkedin, path: "https://linkedin.com/company/fistechventures" },
-  { Icon: Youtube, path: "https://youtube.com/@fistechventures" },
+  { Icon: Youtube, path: "https://youtube.com/fistechventures" },
 ];
 
 export const contactInfo = [
