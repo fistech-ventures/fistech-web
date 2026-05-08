@@ -263,12 +263,12 @@ export const projects: IProject[] = [
     heroImage: "/images/projects/royal-house-check.webp",
     gallery: [
       "/images/projects/royal-house-check.webp",
-      "/images/projects/royal-house-check.webp",
-      "/images/projects/royal-house-check.webp",
-      "/images/projects/royal-house-check.webp",
-      "/images/projects/royal-house-check.webp",
-      "/images/projects/royal-house-check.webp",
-      "/images/projects/royal-house-check.webp",
+      "/images/projects/royal-house-check-01.webp",
+      "/images/projects/royal-house-check-02.webp",
+      "/images/projects/royal-house-check-03.webp",
+      "/images/projects/royal-house-check-04.webp",
+      "/images/projects/royal-house-check-05.webp",
+      "/images/projects/royal-house-check-06.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---
@@ -593,12 +593,12 @@ export const projects: IProject[] = [
     heroImage: "/images/projects/sktch-labs.webp",
     gallery: [
       "/images/projects/sktch-labs.webp",
-      "/images/projects/sktch-labs.webp",
-      "/images/projects/sktch-labs.webp",
-      "/images/projects/sktch-labs.webp",
-      "/images/projects/sktch-labs.webp",
-      "/images/projects/sktch-labs.webp",
-      "/images/projects/sktch-labs.webp",
+      "/images/projects/sktch-labs-01.webp",
+      "/images/projects/sktch-labs-02.webp",
+      "/images/projects/sktch-labs-03.webp",
+      "/images/projects/sktch-labs-04.webp",
+      "/images/projects/sktch-labs-05.webp",
+      "/images/projects/sktch-labs-06.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---
