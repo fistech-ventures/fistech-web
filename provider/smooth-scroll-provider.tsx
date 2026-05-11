@@ -2,8 +2,8 @@
 
 import gsap from "gsap";
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Observer);
-import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { Observer } from "gsap/Observer";
@@ -14,16 +14,15 @@ export default function SmoothScrollProvider({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  useEffect(() => {
+  useGSAP(() => {
     let smoother = ScrollSmoother.get();
 
     if (!smoother) {
       smoother = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
         content: "#smooth-content",
-        smooth: 2.5,
+        smooth: 1.5,
         effects: true,
-        normalizeScroll: true,
       });
     }
 
@@ -37,6 +36,8 @@ export default function SmoothScrollProvider({
         duration: 1,
         ease: "power1.out",
       });
+      
+      ScrollTrigger.refresh();
     }, 100);
 
     return () => clearTimeout(timeout);
