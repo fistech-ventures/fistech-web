@@ -7,7 +7,7 @@ import { socialLinks } from "@/data/constant";
 
 export default function Banner() {
   return (
-    <section className="lg:max-h-[calc(100vh-50px)] flex items-center lg:my-6 my-2">
+    <section className="lg:max-h-[calc(100vh-50px)] flex items-center lg:my-8 my-2">
       <div
         className="container mx-auto rounded-3xl overflow-visible"
         style={{
@@ -15,7 +15,7 @@ export default function Banner() {
         }}
       >
         <div className="flex flex-col lg:flex-row">
-          <div className="w-full lg:w-3/5 lg:pl-14 pb-6 md:pb-8 lg:pb-20 lg:text-left pt-24 md:pt-32 lg:pt-28 px-3 lg:px-0">
+          <div className="w-full lg:w-2/4 lg:pl-14 pb-6 md:pb-8 lg:pb-20 lg:text-left pt-24 md:pt-32 lg:pt-28 px-3 lg:px-0">
             <div className="max-w-xl lg:mt-20 mt-0">
               <h1 className="main-headline flex flex-wrap items-center gap-2 pr-5 lg:pr-0">
                 <span>Create</span>
@@ -57,7 +57,7 @@ export default function Banner() {
             </div>
           </div>
 
-          <div className="w-full lg:w-2/5 relative">
+          <div className="w-full lg:w-2/4 relative">
             <Image
               width={1000}
               height={1000}
