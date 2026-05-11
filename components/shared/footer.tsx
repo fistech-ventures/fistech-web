@@ -99,7 +99,7 @@ export default function Footer() {
                   href={social.path}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-secondary hover:text-black transition-all"
+                  className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-secondary transition-all"
                 >
                   <social.Icon size={18} />
                 </Link>
