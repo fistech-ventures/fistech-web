@@ -595,4 +595,131 @@ export const solutions: ISolution[] = [
       },
     ],
   },
+  {
+  id: "svc_video_editing",
+  slug: "video-editing-production",
+  title: "Video Editing & Motion Graphics",
+  shortDescription:
+    "We create high-quality video edits, motion graphics, and cinematic content that capture attention and grow your brand.",
+  keywords: [
+    "video editing",
+    "motion graphics",
+    "youtube video editing",
+    "reels editing",
+    "commercial video production",
+  ],
+
+  images: [
+    "/images/service/video-editing-1.png",
+    "/images/service/video-editing-2.png",
+  ],
+
+  icon: {
+    name: "video",
+  },
+
+  hero: {
+    subtitle:
+      "Cinematic storytelling that engages, converts, and inspires.",
+    description:
+      "From social media reels to commercial productions, we craft visually compelling videos with professional editing, motion graphics, sound design, and storytelling.",
+    coverImage: "/images/service/video-editing-1.png",
+    features: [
+      "Professional Video Editing",
+      "Motion Graphics & Animation",
+      "Color Grading",
+      "Sound Design & Mixing",
+      "YouTube & Social Media Content",
+      "Commercial & Brand Videos",
+    ],
+  },
+
+  whyChooseUs: {
+    description:
+      "We combine creativity, storytelling, and technical expertise to deliver videos that leave a lasting impact.",
+    content: [
+      {
+        title: "Creative Storytelling",
+        description:
+          "We transform raw footage into engaging stories that connect with your audience.",
+      },
+      {
+        title: "High-End Production Quality",
+        description:
+          "From smooth transitions to cinematic color grading, we ensure every frame looks professional.",
+      },
+      {
+        title: "Platform-Focused Content",
+        description:
+          "We optimize videos for YouTube, TikTok, Instagram Reels, Facebook, and commercial campaigns.",
+      },
+    ],
+  },
+
+  process: [
+    {
+      id: 1,
+      title: "Planning",
+      description: "Understanding your vision, audience, and content goals",
+      features: [
+        "Creative Direction",
+        "Content Strategy",
+        "Script & Storyboarding",
+        "Platform Research",
+      ],
+      image: {
+        url: "/images/service/process-image.png",
+        alt: "video editing planning process",
+      },
+    },
+    {
+      id: 2,
+      title: "Editing",
+      description: "Crafting engaging and polished video content",
+      features: [
+        "Cutting & Sequencing",
+        "Transitions & Effects",
+        "Motion Graphics",
+        "Text Animation",
+        "Multi-Cam Editing",
+      ],
+      image: {
+        url: "/images/service/process-image.png",
+        alt: "video editing process",
+      },
+    },
+    {
+      id: 3,
+      title: "Audio & Color",
+      description: "Enhancing visuals and sound for cinematic quality",
+      features: [
+        "Color Correction",
+        "Color Grading",
+        "Sound Design",
+        "Audio Mixing",
+        "Noise Reduction",
+      ],
+      image: {
+        url: "/images/service/process-image.png",
+        alt: "video color grading and sound design",
+      },
+    },
+    {
+      id: 4,
+      title: "Delivery",
+      description: "Exporting optimized videos for every platform",
+      features: [
+        "4K Export",
+        "Social Media Optimization",
+        "YouTube Optimization",
+        "Format Conversion",
+        "Performance Compression",
+      ],
+      image: {
+        url: "/images/service/process-image.png",
+        alt: "video delivery process",
+      },
+    },
+  ],
+  },
 ];
