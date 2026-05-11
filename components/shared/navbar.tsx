@@ -140,7 +140,7 @@ export default function Navbar() {
       {/* The Menu */}
       <div
         ref={menuRef}
-        className="fixed top-6 right-6 z-50 w-[90%] max-w-105 bg-white rounded-[2.5rem] shadow-2xl p-10 flex flex-col border border-gray-100 translate-x-[110%] opacity-0"
+        className="fixed top-6 right-6 z-50 w-[90%] max-w-105 bg-white rounded-[1.5rem] shadow-2xl p-10 flex flex-col border border-gray-100 translate-x-[110%] opacity-0"
       >
         <div className="flex justify-end items-center gap-4 mb-6">
           <button
