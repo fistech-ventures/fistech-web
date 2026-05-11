@@ -5,7 +5,7 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 import SplitText from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import CTAButton from "../shared/cta";
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import SectionTag from "../shared/section-tag";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import {
@@ -54,7 +54,6 @@ const IconMap: Record<string, any> = {
 };
 
 export default function WhatWeDo() {
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const titleRef = useRef<HTMLHeadingElement | null>(null);
@@ -90,48 +89,46 @@ export default function WhatWeDo() {
 
   useGSAP(
     () => {
-      solutions.forEach((service: ISolution) => {
-        const content = containerRef.current?.querySelector(
-          `.details-${service.id}`,
-        );
+      const cards = gsap.utils.toArray<HTMLElement>(".service-card");
+
+      cards.forEach((card) => {
+        const id = card.dataset.id;
+        const content = card.querySelector(`.details-${id}`);
         const items = content?.querySelectorAll(".reveal-item");
 
-        if (content) {
-          if (hoveredId === service.id) {
-            const tl = gsap.timeline();
-            tl.to(content, {
-              height: "auto",
+        if (!content) return;
+
+        const tl = gsap.timeline({ paused: true });
+        
+        tl.to(content, {
+          height: "auto",
+          opacity: 1,
+          duration: 0.8,
+          ease: "expo.out",
+          onComplete: () => ScrollTrigger.refresh(),
+          onReverseComplete: () => ScrollTrigger.refresh(),
+        });
+
+        if (items && items.length > 0) {
+          tl.fromTo(
+            items,
+            { y: 40, opacity: 0 },
+            {
+              y: 0,
               opacity: 1,
-              duration: 0.8,
-              ease: "expo.out",
-            });
-            if (items) {
-              tl.fromTo(
-                items,
-                { y: 40, opacity: 0 },
-                {
-                  y: 0,
-                  opacity: 1,
-                  duration: 0.6,
-                  stagger: 0.1,
-                  ease: "power3.out",
-                },
-                "-=0.5",
-              );
-            }
-          } else {
-            gsap.to(content, {
-              height: 0,
-              opacity: 0,
-              duration: 0.4,
-              ease: "expo.inOut",
-              overwrite: true,
-            });
-          }
+              duration: 0.6,
+              stagger: 0.1,
+              ease: "power3.out",
+            },
+            "-=0.5"
+          );
         }
+
+        card.addEventListener("mouseenter", () => tl.play());
+        card.addEventListener("mouseleave", () => tl.reverse());
       });
     },
-    { dependencies: [hoveredId], scope: containerRef },
+    { scope: containerRef }
   );
 
   return (
@@ -158,9 +155,8 @@ export default function WhatWeDo() {
             return (
               <div
                 key={service.id}
-                onMouseEnter={() => setHoveredId(service.id)}
-                onMouseLeave={() => setHoveredId(null)}
-                className="bg-white px-4 py-5 md:px-16 md:py-10 rounded-lg w-full flex flex-col transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] overflow-hidden"
+                data-id={service.id}
+                className="service-card bg-white px-4 py-5 md:px-16 md:py-10 rounded-lg w-full flex flex-col transition-all duration-500 hover:shadow-[0_30px_60px_rgba(0,0,0,0.04)] overflow-hidden"
               >
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
                   <div className="flex flex-col md:flex-row items-start gap-2 md:gap-8 lg:gap-20 flex-1">
