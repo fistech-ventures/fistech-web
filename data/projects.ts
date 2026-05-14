@@ -186,6 +186,7 @@ export const projects: IProject[] = [
       "/images/projects/instrufix-5.webp",
       "/images/projects/instrufix-6.webp",
       "/images/projects/instrufix-7.webp",
+      "/images/projects/instrufix-8.webp",
     ],
 
     // --- 3. DYNAMIC SECTIONS ---
