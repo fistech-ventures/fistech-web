@@ -6,11 +6,12 @@ import {
   Send,
   Twitter,
   Youtube,
+  X,
 } from "lucide-react";
 
 export const socialLinks = [
   { Icon: Facebook, path: "https://facebook.com/fistechventures" },
-  { Icon: Twitter, path: "https://twitter.com/fistechventures" },
+  { Icon: X, path: "https://twitter.com/fistechventures" },
   { Icon: Linkedin, path: "https://linkedin.com/company/fistechventures" },
   { Icon: Youtube, path: "https://youtube.com/fistechventures" },
 ];
