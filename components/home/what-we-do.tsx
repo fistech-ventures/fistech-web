@@ -26,6 +26,7 @@ import {
   AppWindow,
   TabletSmartphone,
   Paintbrush,
+  Video,
 } from "lucide-react";
 import Link from "next/link";
 import { solutions } from "@/data/solutions";
@@ -51,6 +52,7 @@ const IconMap: Record<string, any> = {
   user: User,
   check: Check,
   seo: BarChart,
+  video: Video,
 };
 
 export default function WhatWeDo() {

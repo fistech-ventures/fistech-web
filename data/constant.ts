@@ -4,14 +4,13 @@ import {
   MapPin,
   Phone,
   Send,
-  Twitter,
   Youtube,
-  X,
 } from "lucide-react";
+import { SiX } from "react-icons/si";
 
 export const socialLinks = [
   { Icon: Facebook, path: "https://facebook.com/fistechventures" },
-  { Icon: X, path: "https://twitter.com/fistechventures" },
+  { Icon: SiX, path: "https://twitter.com/fistechventures" },
   { Icon: Linkedin, path: "https://linkedin.com/company/fistechventures" },
   { Icon: Youtube, path: "https://youtube.com/fistechventures" },
 ];
