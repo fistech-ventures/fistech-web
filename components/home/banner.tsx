@@ -144,7 +144,7 @@ export default function Banner() {
             "radial-gradient(circle at 15% 90%, rgba(168, 85, 247, 0.25) 0%, rgba(229, 231, 235, 0) 50%), #F3F4F6",
         }}
       >
-        <div className="flex flex-col lg:flex-row items-start justify-between">
+        <div className="flex flex-col lg:flex-row items-stretch justify-between">
           {/* LEFT CONTENT */}
           <div className="w-full lg:w-[58%] lg:pl-14 pb-6 md:pb-8 lg:pb-20 lg:text-left pt-24 md:pt-32 lg:pt-28 px-3 lg:px-0">
             <div className="max-w-xl lg:mt-20 mt-0">
@@ -198,13 +198,13 @@ export default function Banner() {
 
           {/* RIGHT IMAGE */}
           <div className="w-full lg:w-[42%] relative p-4 lg:p-0">
-            <div className="relative group">
+            <div className="relative group w-full h-full">
               <Image
                 width={1000}
                 height={1000}
                 src="/images/home/homebanner.png"
                 alt="homebanner"
-                className="rounded-3xl w-full object-cover"
+                className="rounded-3xl w-full h-full object-cover"
               />
             </div>
 
