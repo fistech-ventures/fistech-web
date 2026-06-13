@@ -953,65 +953,65 @@ export const CASE_STUDIES: ICaseStudy[] = [
   // ─────────────────────────────────────────────
   // CS-FT-012 | Instrufix (Marketplace)
   // ─────────────────────────────────────────────
-  {
-    caseStudyId: "CS-FT-012",
-    slug: "hyperlocal-musical-instrument-repair-marketplace",
+  // {
+  //   caseStudyId: "CS-FT-012",
+  //   slug: "hyperlocal-musical-instrument-repair-marketplace",
 
-    metadata: {
-      title: "Architecting a Hyper-Local Instrument Repair Marketplace", // 56 chars
-      seoDescription:
-        "How Fistech built a scalable two-sided marketplace for musical instrument repair using Next.js, MERN, and SEO-driven architecture.", // 130 chars
-      publishDate: "2026-03-31",
-      readingTime: "7 min read",
-      category: "Marketplace / Local SEO Platform",
-      contentType: "Case Study",
-    },
+  //   metadata: {
+  //     title: "Architecting a Hyper-Local Instrument Repair Marketplace", // 56 chars
+  //     seoDescription:
+  //       "How Fistech built a scalable two-sided marketplace for musical instrument repair using Next.js, MERN, and SEO-driven architecture.", // 130 chars
+  //     publishDate: "2026-03-31",
+  //     readingTime: "7 min read",
+  //     category: "Marketplace / Local SEO Platform",
+  //     contentType: "Case Study",
+  //   },
 
-    hero: {
-      headline: "Transforming a Fragmented Industry into a Scalable Digital Marketplace",
-      subHeadline:
-        "A high-performance platform connecting musicians with verified repair professionals through SEO-driven discovery.",
-      mainImage: "/images/projects/instrufix-1.webp",
-    },
+  //   hero: {
+  //     headline: "Transforming a Fragmented Industry into a Scalable Digital Marketplace",
+  //     subHeadline:
+  //       "A high-performance platform connecting musicians with verified repair professionals through SEO-driven discovery.",
+  //     mainImage: "/images/projects/instrufix-1.webp",
+  //   },
 
-    author: {
-      name: "Fahim Sarker",
-      role: "Solutions Architect",
-    },
+  //   author: {
+  //     name: "Fahim Sarker",
+  //     role: "Solutions Architect",
+  //   },
 
-    problem: {
-      title: "Fragmentation in a Niche Service Economy",
-      summary:
-        "A lack of centralized digital infrastructure created inefficiencies for both service providers and customers.",
-    },
+  //   problem: {
+  //     title: "Fragmentation in a Niche Service Economy",
+  //     summary:
+  //       "A lack of centralized digital infrastructure created inefficiencies for both service providers and customers.",
+  //   },
 
-    solution: {
-      title: "Fistech Marketplace Growth Engine",
-      approach:
-        "A scalable, SEO-first marketplace architecture combining hyper-local search, dual-user flows, and high-performance infrastructure.",
-    },
+  //   solution: {
+  //     title: "Fistech Marketplace Growth Engine",
+  //     approach:
+  //       "A scalable, SEO-first marketplace architecture combining hyper-local search, dual-user flows, and high-performance infrastructure.",
+  //   },
 
-    sections: [
-      {
-        id: "if-1",
-        type: "list",
-        title: "Platform Architecture",
-        items: [
-          "SEO-Dominant SSR Rendering — pre-rendered Next.js pages for location-based service queries",
-          "Dual-Flow Marketplace Logic — separate Node.js workflows for professionals and customers",
-          "Parametric Search & Filtering Engine — real-time filtering by instrument, location, and rating",
-          "AWS Infrastructure & CI/CD Pipeline — synchronized staging and production environments",
-        ],
-      },
-    ],
+  //   sections: [
+  //     {
+  //       id: "if-1",
+  //       type: "list",
+  //       title: "Platform Architecture",
+  //       items: [
+  //         "SEO-Dominant SSR Rendering — pre-rendered Next.js pages for location-based service queries",
+  //         "Dual-Flow Marketplace Logic — separate Node.js workflows for professionals and customers",
+  //         "Parametric Search & Filtering Engine — real-time filtering by instrument, location, and rating",
+  //         "AWS Infrastructure & CI/CD Pipeline — synchronized staging and production environments",
+  //       ],
+  //     },
+  //   ],
 
-    metrics: {
-      kpis: [
-        { metric: "Search Visibility", before: "Fragmented/local listings", after: "SEO-dominant platform (100% indexable routes)" },
-        { metric: "Onboarding Speed", before: "Manual processes", after: "Automated claim system (3x faster listing growth)" },
-        { metric: "Platform Performance", before: "Slow directories", after: "Sub-1s latency (improved retention)" },
-        { metric: "Scalability", before: "Local limitation", after: "AWS-backed system (global expansion ready)" },
-      ],
-    },
-  },
+  //   metrics: {
+  //     kpis: [
+  //       { metric: "Search Visibility", before: "Fragmented/local listings", after: "SEO-dominant platform (100% indexable routes)" },
+  //       { metric: "Onboarding Speed", before: "Manual processes", after: "Automated claim system (3x faster listing growth)" },
+  //       { metric: "Platform Performance", before: "Slow directories", after: "Sub-1s latency (improved retention)" },
+  //       { metric: "Scalability", before: "Local limitation", after: "AWS-backed system (global expansion ready)" },
+  //     ],
+  //   },
+  // },
 ];

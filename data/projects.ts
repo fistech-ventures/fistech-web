@@ -166,86 +166,86 @@ export const projects: IProject[] = [
       },
     ],
   },
-  {
-    // --- 1. CORE IDENTITY ---
-    id: "p14", // Sequential ID following RoyalHouseCheck
-    slug: "instrufix-hyperlocal-directory",
-    title: "Instrufix",
-    categories: ["SaaS Architecture", "Marketplace Ecosystem", "Next.js SSR"],
-    location: "Spain / Western Europe (Niche Marketplace)",
-    client: "Instrufix (Specialized Instrument Repair)",
-    date: "2026-03-30",
-    websiteUrl: "https://test.instrufix.com/",
+  // {
+  //   // --- 1. CORE IDENTITY ---
+  //   id: "p14", // Sequential ID following RoyalHouseCheck
+  //   slug: "instrufix-hyperlocal-directory",
+  //   title: "Instrufix",
+  //   categories: ["SaaS Architecture", "Marketplace Ecosystem", "Next.js SSR"],
+  //   location: "Spain / Western Europe (Niche Marketplace)",
+  //   client: "Instrufix (Specialized Instrument Repair)",
+  //   date: "2026-03-30",
+  //   websiteUrl: "https://test.instrufix.com/",
 
-    // --- 2. MEDIA ASSETS ---
-    heroImage: "/images/projects/instrufix-1.webp",
-    gallery: [
-      "/images/projects/instrufix-2.webp",
-      "/images/projects/instrufix-3.webp",
-      "/images/projects/instrufix-4.webp",
-      "/images/projects/instrufix-5.webp",
-      "/images/projects/instrufix-6.webp",
-      "/images/projects/instrufix-7.webp",
-      "/images/projects/instrufix-8.webp",
-    ],
+  //   // --- 2. MEDIA ASSETS ---
+  //   heroImage: "/images/projects/instrufix-1.webp",
+  //   gallery: [
+  //     "/images/projects/instrufix-2.webp",
+  //     "/images/projects/instrufix-3.webp",
+  //     "/images/projects/instrufix-4.webp",
+  //     "/images/projects/instrufix-5.webp",
+  //     "/images/projects/instrufix-6.webp",
+  //     "/images/projects/instrufix-7.webp",
+  //     "/images/projects/instrufix-8.webp",
+  //   ],
 
-    // --- 3. DYNAMIC SECTIONS ---
-    sections: [
-      {
-        id: "section-vision",
-        type: "vision",
-        header: "Digitizing the Luthier’s Craft",
-        shortSummary:
-          "Transforming a fragmented offline repair niche into a high-velocity, SEO-dominant digital marketplace.",
-        fullDescription:
-          "The musical instrument repair industry suffered from a critical 'Discovery Gap.' We architected Instrufix to bridge the trust gap between elite technicians and musicians, replacing fragmented search results with a high-performance, centralized service hub. By engineering a search-first architecture, we've enabled micro-businesses to capture high-intent local traffic that was previously lost to generic retail giants.",
-        servicesProvided: [
-          "Marketplace Strategy",
-          "Next.js SSR Optimization",
-          "Two-Sided Workflow Engineering",
-          "AWS Cloud Deployment",
-          "Hyper-Local SEO Architecture",
-        ],
-      },
-      {
-        id: "section-solution",
-        type: "solution",
-        header: "The Fistech Engineering Solution: 'Architecture of Authority'",
-        bodyText:
-          "Our objective was to solve for both discoverability and trust. We engineered a scalable directory ecosystem where specialized skills are indexed with sub-second latency.",
-        features: [
-          {
-            title: "SSR-Dominant SEO Architecture",
-            desc: "Utilized Next.js Server-Side Rendering to ensure 100% indexability for hyper-local 'Service + City' dynamic routes, maximizing organic SERP dominance.",
-          },
-          {
-            title: "Parametric Logic Search Engine",
-            desc: "A custom-built filtering backbone that resolves location, instrument family, and shop ratings with zero-refresh state management.",
-          },
-          {
-            title: "Bi-Directional Marketplace Logic",
-            desc: "Architected distinct, permissioned workflows for 'Verified Professionals' and 'Customers,' including a low-friction 'Claim My Business' protocol.",
-          },
-          {
-            title: "Safe-Fail Staging Infrastructure",
-            desc: "Integrated a robust AWS-backed CI/CD pipeline that synchronizes production data to staging for risk-free iterative scaling.",
-          },
-        ],
-      },
-      {
-        id: "section-metrics",
-        type: "metrics",
-        header: "Strategic ROI & Results",
-        bodyText:
-          "By 'Productizing' a fragmented service niche, we successfully positioned Instrufix as the primary digital authority for instrument maintenance.",
-        stats: [
-          { label: "Search Visibility", value: "85% Increase (SEO)" },
-          { label: "Filtering Latency", value: "< 1.2 Seconds" },
-          { label: "Lead Gen Velocity", value: "3.5x Business Inquiries" },
-        ],
-      },
-    ],
-  },
+  //   // --- 3. DYNAMIC SECTIONS ---
+  //   sections: [
+  //     {
+  //       id: "section-vision",
+  //       type: "vision",
+  //       header: "Digitizing the Luthier’s Craft",
+  //       shortSummary:
+  //         "Transforming a fragmented offline repair niche into a high-velocity, SEO-dominant digital marketplace.",
+  //       fullDescription:
+  //         "The musical instrument repair industry suffered from a critical 'Discovery Gap.' We architected Instrufix to bridge the trust gap between elite technicians and musicians, replacing fragmented search results with a high-performance, centralized service hub. By engineering a search-first architecture, we've enabled micro-businesses to capture high-intent local traffic that was previously lost to generic retail giants.",
+  //       servicesProvided: [
+  //         "Marketplace Strategy",
+  //         "Next.js SSR Optimization",
+  //         "Two-Sided Workflow Engineering",
+  //         "AWS Cloud Deployment",
+  //         "Hyper-Local SEO Architecture",
+  //       ],
+  //     },
+  //     {
+  //       id: "section-solution",
+  //       type: "solution",
+  //       header: "The Fistech Engineering Solution: 'Architecture of Authority'",
+  //       bodyText:
+  //         "Our objective was to solve for both discoverability and trust. We engineered a scalable directory ecosystem where specialized skills are indexed with sub-second latency.",
+  //       features: [
+  //         {
+  //           title: "SSR-Dominant SEO Architecture",
+  //           desc: "Utilized Next.js Server-Side Rendering to ensure 100% indexability for hyper-local 'Service + City' dynamic routes, maximizing organic SERP dominance.",
+  //         },
+  //         {
+  //           title: "Parametric Logic Search Engine",
+  //           desc: "A custom-built filtering backbone that resolves location, instrument family, and shop ratings with zero-refresh state management.",
+  //         },
+  //         {
+  //           title: "Bi-Directional Marketplace Logic",
+  //           desc: "Architected distinct, permissioned workflows for 'Verified Professionals' and 'Customers,' including a low-friction 'Claim My Business' protocol.",
+  //         },
+  //         {
+  //           title: "Safe-Fail Staging Infrastructure",
+  //           desc: "Integrated a robust AWS-backed CI/CD pipeline that synchronizes production data to staging for risk-free iterative scaling.",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       id: "section-metrics",
+  //       type: "metrics",
+  //       header: "Strategic ROI & Results",
+  //       bodyText:
+  //         "By 'Productizing' a fragmented service niche, we successfully positioned Instrufix as the primary digital authority for instrument maintenance.",
+  //       stats: [
+  //         { label: "Search Visibility", value: "85% Increase (SEO)" },
+  //         { label: "Filtering Latency", value: "< 1.2 Seconds" },
+  //         { label: "Lead Gen Velocity", value: "3.5x Business Inquiries" },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     // --- 1. CORE IDENTITY ---
     id: "p13", // Sequential ID following Graphodio
