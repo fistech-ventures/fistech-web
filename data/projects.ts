@@ -175,7 +175,7 @@ export const projects: IProject[] = [
     location: "Spain / Western Europe (Niche Marketplace)",
     client: "Instrufix (Specialized Instrument Repair)",
     date: "2026-03-30",
-    websiteUrl: "https://test.instrufix.com/",
+    websiteUrl: "https://instrufix.com/",
 
     // --- 2. MEDIA ASSETS ---
     heroImage: "/images/projects/instrufix-1.webp",
